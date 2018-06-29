@@ -3,29 +3,17 @@
   
     
     <entry>
-      <title>hello</title>
-      <link href="/2018/06/29/hello/"/>
-      <url>/2018/06/29/hello/</url>
-      <content type="html"><![CDATA[]]></content>
+      <title>Hexo+github搭建自己的个人博客</title>
+      <link href="/2018/06/29/Hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+      <url>/2018/06/29/Hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+      <content type="html"><![CDATA[<h1 id="使用hexo-github搭建自己的个人博客"><a href="#使用hexo-github搭建自己的个人博客" class="headerlink" title="使用hexo+github搭建自己的个人博客"></a>使用hexo+github搭建自己的个人博客</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    现在各种个人博客的搭建方式层出不穷, 尤其是Github Pages的出现, 使得个人博客的搭建有了一种方便而又快捷的方式. 不过这里我想介绍的不是Jekyll, 而是hexo. 这里选择hexo的原因就是因为它极致的博客部署速度, 只需要小半天的时间, 一个不懂前端的人也可以照猫画虎地做出自己的个人博客.<del>我才不会说主要是因为它有官方中文文档</del></p><p>​    一个个人博客应该是什么样子的? 这一点估计每个人都有自己的想法. 对于我来说<strong>一个优秀的<del>高逼格的</del>界面是最吸引人的, 其次是优良的文章, 以及一些必不可少的功能, 比如说搜索,评论和分享.</strong> 如果建这个博客只是为了好玩的话, 建议大家大可找CSDN,简书或者其他公共博客平台, 但如果做好了折腾的准备, 为了个性化的博客不惜牺牲这点时间的话, 记住你对博客的美好想法, 然后接着往下看吧.</p><p>​    经过小半天的折腾, 最终成品就是大家现在正在看着的博客了, 总共耗时1小时. 现在博客具备的功能如下:</p><ul><li>一个优秀的界面(by material)</li><li>评论功能(by Valine)</li><li>我的联系方式</li><li>本地搜索系统(hexo-generator-search)</li><li>分享</li></ul>]]></content>
       
       
-    </entry>
-    
-    <entry>
-      <title>first post</title>
-      <link href="/2018/06/29/first-post/"/>
-      <url>/2018/06/29/first-post/</url>
-      <content type="html"><![CDATA[<h1 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'hello,world'</span>)</span><br></pre></td></tr></table></figure><h2 id="mermaid-test"><a href="#mermaid-test" class="headerlink" title="mermaid test"></a>mermaid test</h2>]]></content>
-      
-      
-    </entry>
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2018/06/29/hello-world/"/>
-      <url>/2018/06/29/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
+        <tags>
+            
+            <tag> github </tag>
+            
+        </tags>
       
     </entry>
     
