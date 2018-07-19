@@ -587,12 +587,24 @@
                 
               
 
-              <time title="创建时间：2018-07-15 19:18:27 / 修改时间：20:43:40" itemprop="dateCreated datePublished" datetime="2018-07-15T19:18:27+08:00">2018-07-15</time>
+              <time title="创建时间：2018-07-15 19:18:27" itemprop="dateCreated datePublished" datetime="2018-07-15T19:18:27+08:00">2018-07-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-07-19 22:05:12" itemprop="dateModified" datetime="2018-07-19T22:05:12+08:00">2018-07-19</time>
               
             
           </span>
@@ -665,7 +677,7 @@
 
       
         
-          <h1 id="安装windows-10第三方主题"><a href="#安装windows-10第三方主题" class="headerlink" title="安装windows 10第三方主题"></a>安装windows 10第三方主题</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    Win10系统在主题的定制功能上做了削减, 导致主题只能做到更改窗口颜色等有限的改变.<img src="images/1531654651295.png" alt=""></p>
+          <h1 id="安装windows-10第三方主题"><a href="#安装windows-10第三方主题" class="headerlink" title="安装windows 10第三方主题"></a>安装windows 10第三方主题</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>​    Win10系统在主题的定制功能上做了削减, 导致主题只能做到更改窗口颜色等有限的改变.<img src="/images/1531654651295.png" alt=""></p>
 <p>​    美化后的文件管理器如上图, 破解了Windows的系统文件之后就可以有更多更酷炫的主题了, 这种主题用起来才有当初Win 7的感觉.</p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -788,7 +800,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-30 21:55:25" itemprop="dateModified" datetime="2018-06-30T21:55:25+08:00">2018-06-30</time>
+                <time title="修改时间：2018-07-19 22:04:50" itemprop="dateModified" datetime="2018-07-19T22:04:50+08:00">2018-07-19</time>
               
             
           </span>
@@ -1837,9 +1849,25 @@
             });
           } else {
             
-              var $element = $(document.getElementById(url));
-              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
-              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
             
           }
         },
