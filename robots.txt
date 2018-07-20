@@ -9,7 +9,6 @@ Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
 Disallow: /images/
-Disallow: /lib/
 Disallow: /live2dw/
 
 Sitemap: https://yucklys.github.io/sitemap.xml
