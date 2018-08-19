@@ -4,6 +4,33 @@
 
     
   <url>
+    <loc>http://yucklys.github.io/2018/08/17/install-ss-with-vultr/</loc>
+    <lastmod>2018-08-19T15:30:55.660Z</lastmod>
+    <data>
+        <display>
+        <title>vultr搭建SS/SSR服务</title>
+        <pubTime>2018-08-17T14:24:45.000Z</pubTime>
+        
+        <tag>windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="网络" url="http://yucklys.github.io/categories/%E7%BD%91%E7%BB%9C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+    
+    
+    
+  <url>
     <loc>http://yucklys.github.io/2018/07/17/Python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/</loc>
     <lastmod>2018-07-20T02:45:35.870Z</lastmod>
     <data>
@@ -22,6 +49,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>http://yucklys.github.io/2018/07/15/win10-UltraUXThemePatcher/</loc>
@@ -64,6 +92,8 @@
     </data>
     </url>
 
+    
+    
     
   <url>
     <loc>http://yucklys.github.io/2018/06/29/hello-world/</loc>
