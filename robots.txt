@@ -11,5 +11,4 @@ Disallow: /fonts/
 Disallow: /images/
 Disallow: /live2dw/
 
-Sitemap: https://yucklys.github.io/sitemap.xml
-Sitemap: https://yucklys.github.io/baidusitemap.xml
+Sitemap: https://yucklys/sitemap.xml
