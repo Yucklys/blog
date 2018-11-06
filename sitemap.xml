@@ -44,14 +44,14 @@
   </url>
   
   <url>
-    <loc>http://yucklys.com/live2d/model/histoire/model.json</loc>
+    <loc>http://yucklys.com/live2d/message.json</loc>
     
     <lastmod>2018-07-25T11:36:18.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yucklys.com/live2d/message.json</loc>
+    <loc>http://yucklys.com/live2d/model/histoire/model.json</loc>
     
     <lastmod>2018-07-25T11:36:18.000Z</lastmod>
     
@@ -72,14 +72,14 @@
   </url>
   
   <url>
-    <loc>http://yucklys.com/live2d/model/z16/exp/f00.exp.json</loc>
+    <loc>http://yucklys.com/live2d/model/z16/z16.physics.json</loc>
     
     <lastmod>2018-07-19T13:49:18.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yucklys.com/live2d/model/z16/z16.physics.json</loc>
+    <loc>http://yucklys.com/live2d/model/z16/exp/f00.exp.json</loc>
     
     <lastmod>2018-07-19T13:49:18.000Z</lastmod>
     
