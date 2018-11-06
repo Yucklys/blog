@@ -4,35 +4,8 @@
 
     
   <url>
-    <loc>http://yucklys.com/2018/06/29/Hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2018-11-04T11:14:36.610Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo+github搭建自己的个人博客</title>
-        <pubTime>2018-06-29T13:34:29.000Z</pubTime>
-        
-        <tag>Github</tag>
-         
-        <tag>Blog</tag>
-         
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Customization" url="http://yucklys.com/categories/Customization/"/>
-          
-             
-              <breadCrumb title="Blog" url="http://yucklys.com/categories/Customization/Blog/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yucklys.com/2018/07/15/win10-UltraUXThemePatcher/</loc>
-    <lastmod>2018-11-04T11:13:47.694Z</lastmod>
+    <lastmod>2018-11-06T06:17:44.263Z</lastmod>
     <data>
         <display>
         <title>win10 第三方主题</title>
@@ -49,6 +22,80 @@
           
              
               <breadCrumb title="Beautify" url="http://yucklys.com/categories/Customization/Beautify/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yucklys.com/2018/11/05/%E6%90%AC%E5%AE%B6%EF%BC%81GitHub-page%E5%85%B3%E8%81%94%E5%9F%9F%E5%90%8D/</loc>
+    <lastmod>2018-11-06T06:16:00.870Z</lastmod>
+    <data>
+        <display>
+        <title>搬家！GitHub-Page关联域名</title>
+        <pubTime>2018-11-05T04:17:33.000Z</pubTime>
+        
+        <tag>Vultr</tag>
+         
+        <tag>Web</tag>
+         
+         
+           
+             
+              <breadCrumb title="Life" url="http://yucklys.com/categories/Life/"/>
+          
+             
+              <breadCrumb title="Blog" url="http://yucklys.com/categories/Life/Blog/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yucklys.com/2018/08/17/install-ss-with-vultr/</loc>
+    <lastmod>2018-11-05T12:04:11.417Z</lastmod>
+    <data>
+        <display>
+        <title>vultr搭建SS/SSR服务</title>
+        <pubTime>2018-08-17T14:24:45.000Z</pubTime>
+        
+        <tag>Vultr</tag>
+         
+        <tag>Shadowsocks</tag>
+         
+         
+           
+             
+              <breadCrumb title="Life" url="http://yucklys.com/categories/Life/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yucklys.com/2018/06/29/Hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2018-11-05T12:03:38.673Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo+github搭建自己的个人博客</title>
+        <pubTime>2018-06-29T13:34:29.000Z</pubTime>
+        
+        <tag>Github</tag>
+         
+        <tag>Blog</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Life" url="http://yucklys.com/categories/Life/"/>
+          
+             
+              <breadCrumb title="Blog" url="http://yucklys.com/categories/Life/Blog/"/>
           
         </display>
     </data>
@@ -74,30 +121,6 @@
           
              
               <breadCrumb title="Python" url="http://yucklys.com/categories/Programming/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yucklys.com/2018/08/17/install-ss-with-vultr/</loc>
-    <lastmod>2018-11-04T11:03:57.030Z</lastmod>
-    <data>
-        <display>
-        <title>vultr搭建SS/SSR服务</title>
-        <pubTime>2018-08-17T14:24:45.000Z</pubTime>
-        
-        <tag>Vultr</tag>
-         
-        <tag>VPS</tag>
-         
-        <tag>Shadowsocks</tag>
-         
-         
-           
-             
-              <breadCrumb title="Life" url="http://yucklys.com/categories/Life/"/>
           
         </display>
     </data>
