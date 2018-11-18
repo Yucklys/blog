@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yucklys.com/about/index.html</loc>
+    
+    <lastmod>2018-11-18T11:33:02.038Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yucklys.com/2018/07/15/win10-UltraUXThemePatcher/</loc>
     
     <lastmod>2018-11-06T06:17:44.263Z</lastmod>
@@ -44,6 +51,13 @@
   </url>
   
   <url>
+    <loc>http://yucklys.com/live2d/model/nep/model.json</loc>
+    
+    <lastmod>2018-07-25T11:36:18.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yucklys.com/live2d/message.json</loc>
     
     <lastmod>2018-07-25T11:36:18.000Z</lastmod>
@@ -52,13 +66,6 @@
   
   <url>
     <loc>http://yucklys.com/live2d/model/histoire/model.json</loc>
-    
-    <lastmod>2018-07-25T11:36:18.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yucklys.com/live2d/model/nep/model.json</loc>
     
     <lastmod>2018-07-25T11:36:18.000Z</lastmod>
     
