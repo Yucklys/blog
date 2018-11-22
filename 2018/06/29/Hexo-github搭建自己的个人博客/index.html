@@ -131,7 +131,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     
 
 
-</head>
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 <body class="is-3-column">
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5T53ZV2" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -235,8 +235,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>​    hexo安装前置要求是<a href="http://nodejs.org/" target="_blank" rel="noopener">Node.js</a>和<a href="http://git-scm.com/" target="_blank" rel="noopener">git</a>, 需要先安装这两个才能安装hexo. 检测是否安装可以打开终端, 输入<code>node -v</code>和<code>git --version</code>, 如果没有报错则可以安装hexo了. 在终端输入<code>npm install -g hexo-cli</code>即可安装hexo, 输入<code>hexo -v</code>检测是否安装成功, 没有报错就可以开始初始化了.</p>
 <p><img src="/images/check_install.png" alt=""></p>
 <h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>​    在任意位置新建一个文件夹用来存放博客文件, 然后在终端界面打开文件夹, 输入<code>hexo init</code>即可完成初始化 , 当看到<code>INFO  Start blogging with Hexo!</code>时表明初始化完成, 此时的项目结构如下:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml #项目配置文件</span><br><span class="line">├── package.json</span><br><span class="line">├── node_modules</span><br><span class="line">├── package-lock.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   └── _posts #文章存放</span><br><span class="line">└── themes #存放主题</span><br></pre></td></tr></table></figure>
-<p>​    运行<code>npm install</code>安装依赖, 然后就可以开始配置了.</p>
+<pre><code>.
+├── _config.yml #项目配置文件
+├── package.json
+├── node_modules
+├── package-lock.json
+├── scaffolds
+├── source
+|   └── _posts #文章存放
+└── themes #存放主题
+</code></pre><p>​    运行<code>npm install</code>安装依赖, 然后就可以开始配置了.</p>
 <h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>​    项目的配置在_config.yml中进行, 用任意文本编辑器打开后, 需要自己根据自己的情况更新以下版块(每一部分可以通过搜索找到):</p>
 <ul>
 <li>site</li>
@@ -246,18 +254,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
 <li>Deployment<br><code>type</code>填写git, 然后填写repository和branch如下</li>
 </ul>
-<figure class="highlight yaml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">deploy:</span></span><br><span class="line"><span class="hljs-attr">  type:</span> <span class="hljs-string">git</span></span><br><span class="line"><span class="hljs-attr">  repository:</span> <span class="hljs-string">git@github.com:Yucklys/yucklys.github.io.git</span></span><br><span class="line"><span class="hljs-attr">  branch:</span> <span class="hljs-string">master</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">deploy</span><span class="token punctuation">:</span>
+  <span class="token key atrule">type</span><span class="token punctuation">:</span> git
+  <span class="token key atrule">repository</span><span class="token punctuation">:</span> git@github.com<span class="token punctuation">:</span>Yucklys/yucklys.github.io.git
+  <span class="token key atrule">branch</span><span class="token punctuation">:</span> master
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>​    repository填写项目库SSH链接, 从项目库的clone or download选项中复制SSH链接然后粘贴, branch填写master.</p>
 <h4 id="hello-world"><a href="#hello-world" class="headerlink" title="hello world"></a>hello world</h4><p>​    终端输入<code>hexo g</code>生成页面, 结束后输入<code>hexo s</code>在本地服务器上显示页面, 默认端口是4000, 显示<code>INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</code>时打开浏览器, 输入localhost:4000并跳转即可看到自己的博客页以及初始的一个文章. </p>
 <h3 id="上传repository"><a href="#上传repository" class="headerlink" title="上传repository"></a>上传repository</h3><p>​    首先全局声明自己身份, 在终端输入:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;Your Name&quot;</span><br><span class="line">$ git config --global user.email &quot;email@example.com&quot;</span><br></pre></td></tr></table></figure>
-<p>​    在终端输入<code>cd ~/.ssh</code>, 如果返回”… No such file or directory ”, 则直接输入<code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code>(<strong>邮箱换成你的邮箱</strong>). 如果能进入ssh文件夹的话则输入<code>mkdir key_backup mv id_isa* key_backup</code>备份, 然后再输入<code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code>.</p>
+<pre><code>$ git config --global user.name &quot;Your Name&quot;
+$ git config --global user.email &quot;email@example.com&quot;
+</code></pre><p>​    在终端输入<code>cd ~/.ssh</code>, 如果返回”… No such file or directory ”, 则直接输入<code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code>(<strong>邮箱换成你的邮箱</strong>). 如果能进入ssh文件夹的话则输入<code>mkdir key_backup mv id_isa* key_backup</code>备份, 然后再输入<code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code>.</p>
 <p>​    可以一路回车, 如果想要每次输入密码的话, 也可以设置密码.</p>
 <p>​    然后依次输入以下命令:</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent -s</span><br><span class="line">ssh-add ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
-<p>​    如果出错显示<code>Could not open a connection to your authentication agent</code>, 就输入</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">eval `ssh-agent -s`</span><br><span class="line">ssh-add</span><br></pre></td></tr></table></figure>
-<p>​    之后输入<code>clip &lt; ~/.ssh/id_rsa.pub</code>复制ssh key到剪切板. 在github用户设置界面可以看到<strong>SSH and GPG keys</strong>选项, 在该项下选择New SSH key, 随便写个名字, 然后将key粘贴到key中并保存. 之后在终端中输入<code>ssh -T git@github.com</code>查看是否成功添加, 有警告就一路yes, 出现<code>Hi username! You&#39;ve successfully authenticated, but Github does not provide shell access</code>说明添加成功.</p>
+<pre><code>ssh-agent -s
+ssh-add ~/.ssh/id_rsa
+</code></pre><p>​    如果出错显示<code>Could not open a connection to your authentication agent</code>, 就输入</p>
+<pre><code>eval `ssh-agent -s`
+ssh-add
+</code></pre><p>​    之后输入<code>clip &lt; ~/.ssh/id_rsa.pub</code>复制ssh key到剪切板. 在github用户设置界面可以看到<strong>SSH and GPG keys</strong>选项, 在该项下选择New SSH key, 随便写个名字, 然后将key粘贴到key中并保存. 之后在终端中输入<code>ssh -T git@github.com</code>查看是否成功添加, 有警告就一路yes, 出现<code>Hi username! You&#39;ve successfully authenticated, but Github does not provide shell access</code>说明添加成功.</p>
 <h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>​    终端切换到博客文件夹, 输入<code>hexo d</code>部署, 显示<code>INFO  Deploy done: git</code>表明部署完成. 在浏览器中输入yucklys.github.io即可进入到博客界面了.</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>​    hexo的next主题最大的优点就是它的用户广泛, 所以大部分的功能都可以在<code>主题配置文件</code>中找到, 包含有完整的帮助文件以及众多next主题的大神用户自定义的方案, 可以说只需要<del>cv</del>简单模仿就可以做出一个不错的博客页. 当然写作的质量还是很关键的, 会用markdown是必不可少的一项技能, 这里可以去看一下hexo的<a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="noopener">官方写作教程</a>, markdown的教程网上有许多, 善用google或百度.</p>
 <p>​    <em>2018.11.4更新</em></p>
@@ -367,7 +382,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        7
                     </p>
                 </div>
             </div>
@@ -377,7 +392,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        7
                     </p>
                 </div>
             </div>
@@ -387,7 +402,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        10
+                        11
                     </p>
                 </div>
             </div>
@@ -506,6 +521,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
+        <a class="level is-marginless" href="/categories/Front-End/">
+            <span class="level-start">
+                <span class="level-item">Front-End</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
         <a class="level is-marginless" href="/categories/Life/">
             <span class="level-start">
                 <span class="level-item">Life</span>
@@ -549,7 +572,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Build/" style="font-size: 10px;">Build</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Road-mark/" style="font-size: 10px;">Road mark</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Themes/" style="font-size: 10px;">Themes</a> <a href="/tags/Vultr/" style="font-size: 20px;">Vultr</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a>
+        <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Build/" style="font-size: 10px;">Build</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Road-mark/" style="font-size: 10px;">Road-mark</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Themes/" style="font-size: 10px;">Themes</a> <a href="/tags/Vultr/" style="font-size: 20px;">Vultr</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a>
     </div>
 </div>
 
@@ -563,6 +586,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h3 class="menu-label">
             最新文章
         </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-19T03:55:12.000Z">2018-11-19</time></div>
+                    <a href="/2018/11/19/react-scroll/" class="has-link-black-ter is-size-6">React滚动事件监听</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Front-End/">Front-End</a>
+                    </p>
+                </div>
+            </div>
+        </article>
         
         <article class="media">
             
@@ -616,19 +652,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-06-29T13:34:29.000Z">2018-06-29</time></div>
-                    <a href="/2018/06/29/Hexo-github搭建自己的个人博客/" class="has-link-black-ter is-size-6">Hexo+github搭建自己的个人博客</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Life/">Life</a> / <a class="has-link-grey -link" href="/categories/Life/Blog/">Blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -647,7 +670,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -743,9 +766,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/React/">
+                        <span class="level-start">
+                            <span class="level-item">React</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/Road-mark/">
                         <span class="level-start">
-                            <span class="level-item">Road mark</span>
+                            <span class="level-item">Road-mark</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -834,6 +868,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-19T03:55:12.000Z">2018-11-19</time></div>
+                    <a href="/2018/11/19/react-scroll/" class="has-link-black-ter is-size-6">React滚动事件监听</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Front-End/">Front-End</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-05T04:17:33.000Z">2018-11-05</time></div>
                     <a href="/2018/11/05/搬家！GitHub-page关联域名/" class="has-link-black-ter is-size-6">搬家！GitHub-Page关联域名</a>
                     <p class="is-size-7 is-uppercase">
@@ -882,19 +929,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-06-29T13:34:29.000Z">2018-06-29</time></div>
-                    <a href="/2018/06/29/Hexo-github搭建自己的个人博客/" class="has-link-black-ter is-size-6">Hexo+github搭建自己的个人博客</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Life/">Life</a> / <a class="has-link-grey -link" href="/categories/Life/Blog/">Blog</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -913,7 +947,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
-                    <span class="level-item tag">1</span>
+                    <span class="level-item tag">2</span>
                 </span>
             </a>
         </li>
@@ -1009,9 +1043,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 </li>
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/React/">
+                        <span class="level-start">
+                            <span class="level-item">React</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/Road-mark/">
                         <span class="level-start">
-                            <span class="level-item">Road mark</span>
+                            <span class="level-item">Road-mark</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
