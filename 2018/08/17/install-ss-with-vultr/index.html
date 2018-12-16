@@ -8,7 +8,7 @@
 
 
     <meta name="description" content="前言 本文介绍一种使用vultr的服务器搭建SS服务的简便方法.  什么是shadowsocks? Shadowsocks 可以指：一种基于 Socks5 代理方式的加密传输协议，也可以指实现这个协议的各种传输包。 Shadowsocks 分为服务器端和客户端，在使用之前，需要先将服务器端部署到服务器上面，然后通过客户端连接并创建本地代理。  摘自 维基百科">
-<meta name="keywords" content="Vultr,Shadowsocks">
+<meta name="keywords" content="Shadowsocks">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vultr搭建SS&#x2F;SSR服务">
 <meta property="og:url" content="http://yucklys.com/2018/08/17/install-ss-with-vultr/index.html">
@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://i.loli.net/2018/08/19/5b79819f3cb5c.jpg">
 <meta property="og:image" content="https://i.loli.net/2018/08/19/5b7989881e4b4.jpg">
 <meta property="og:image" content="https://i.loli.net/2018/08/19/5b798aa7c597f.jpg">
-<meta property="og:updated_time" content="2018-11-05T12:04:11.417Z">
+<meta property="og:updated_time" content="2018-12-16T05:47:49.004Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vultr搭建SS&#x2F;SSR服务">
 <meta name="twitter:description" content="前言 本文介绍一种使用vultr的服务器搭建SS服务的简便方法.  什么是shadowsocks? Shadowsocks 可以指：一种基于 Socks5 代理方式的加密传输协议，也可以指实现这个协议的各种传输包。 Shadowsocks 分为服务器端和客户端，在使用之前，需要先将服务器端部署到服务器上面，然后通过客户端连接并创建本地代理。  摘自 维基百科">
@@ -302,27 +302,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ol>
 <h4 id="搭建ss服务"><a href="#搭建ss服务" class="headerlink" title="搭建ss服务"></a>搭建ss服务</h4><ol>
 <li><p>下载一键搭建ss服务脚本, 直接复制粘贴就行了.</p>
-<pre class="line-numbers language-shell"><code class="language-shell">git clone https://github.com/flyzy2005/ss-fly
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/flyzy2005/ss-fly</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>运行搭建ss代码</p>
-<pre class="line-numbers language-shell"><code class="language-shell">ss-fly/ss-fly.sh -i yourpassword 1024
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ss-fly/ss-fly.sh -i yourpassword 1024</span><br></pre></td></tr></table></figure>
 <p>这里把<strong>yourpassword</strong>替换为你想要设置的密码就行了, 随意设定, 以后使用ss客户端就用这个密码. 后面的<strong>1024</strong>是服务的端口号, 默认是1024.</p>
 </li>
 <li><p>等待一会后出现成功提示就可以了.</p>
 </li>
 <li><p>启动服务:</p>
-<pre class="line-numbers language-shell"><code class="language-shell">/etc/init.d/ss-fly start
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/ss-fly start</span><br></pre></td></tr></table></figure>
 <p>其他相关操作:</p>
-<pre class="line-numbers language-shell"><code class="language-shell">启动：/etc/init.d/ss-fly start
-停止：/etc/init.d/ss-fly stop
-重启：/etc/init.d/ss-fly restart
-状态：/etc/init.d/ss-fly status
-
-修改配置文件：vim /etc/shadowsocks.json
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight shell hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">启动：/etc/init.d/ss-fly start</span><br><span class="line">停止：/etc/init.d/ss-fly stop</span><br><span class="line">重启：/etc/init.d/ss-fly restart</span><br><span class="line">状态：/etc/init.d/ss-fly status</span><br><span class="line"> </span><br><span class="line">修改配置文件：vim /etc/shadowsocks.json</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>ss服务启动之后一般情况下不需要调整服务端了, 服务器常开就行.</p>
@@ -351,7 +342,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Shadowsocks/">Shadowsocks</a>, <a class="has-link-grey -link" href="/tags/Vultr/">Vultr</a>
+                    <a class="has-link-grey -link" href="/tags/Shadowsocks/">Shadowsocks</a>
                 </div>
             </div>
         </div>
@@ -469,7 +460,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        11
+                        6
                     </p>
                 </div>
             </div>
@@ -639,7 +630,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Build/" style="font-size: 10px;">Build</a> <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Road-mark/" style="font-size: 10px;">Road-mark</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Themes/" style="font-size: 10px;">Themes</a> <a href="/tags/Vultr/" style="font-size: 20px;">Vultr</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a>
+        <a href="/tags/Github/" style="font-size: 20px;">Github</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Road-mark/" style="font-size: 10px;">Road-mark</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Themes/" style="font-size: 10px;">Themes</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a>
     </div>
 </div>
 
@@ -789,45 +780,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <ul class="menu-list">
                 
                 <li>
-                    <a class="level is-marginless" href="/tags/Blog/">
-                        <span class="level-start">
-                            <span class="level-item">Blog</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Build/">
-                        <span class="level-start">
-                            <span class="level-item">Build</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
                     <a class="level is-marginless" href="/tags/Github/">
                         <span class="level-start">
                             <span class="level-item">Github</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Hexo/">
-                        <span class="level-start">
-                            <span class="level-item">Hexo</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -869,28 +827,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <a class="level is-marginless" href="/tags/Themes/">
                         <span class="level-start">
                             <span class="level-item">Themes</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Vultr/">
-                        <span class="level-start">
-                            <span class="level-item">Vultr</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Web/">
-                        <span class="level-start">
-                            <span class="level-item">Web</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
@@ -1066,45 +1002,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <ul class="menu-list">
                 
                 <li>
-                    <a class="level is-marginless" href="/tags/Blog/">
-                        <span class="level-start">
-                            <span class="level-item">Blog</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Build/">
-                        <span class="level-start">
-                            <span class="level-item">Build</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
                     <a class="level is-marginless" href="/tags/Github/">
                         <span class="level-start">
                             <span class="level-item">Github</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Hexo/">
-                        <span class="level-start">
-                            <span class="level-item">Hexo</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -1146,28 +1049,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <a class="level is-marginless" href="/tags/Themes/">
                         <span class="level-start">
                             <span class="level-item">Themes</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">1</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Vultr/">
-                        <span class="level-start">
-                            <span class="level-item">Vultr</span>
-                        </span>
-                        <span class="level-end">
-                            <span class="level-item tag">2</span>
-                        </span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a class="level is-marginless" href="/tags/Web/">
-                        <span class="level-start">
-                            <span class="level-item">Web</span>
                         </span>
                         <span class="level-end">
                             <span class="level-item tag">1</span>
