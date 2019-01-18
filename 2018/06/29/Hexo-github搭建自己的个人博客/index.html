@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="「逐渐」">
 <meta property="og:description" content="前言​    现在各种个人博客的搭建方式层出不穷, 尤其是Github Pages的出现, 使得个人博客的搭建有了一种方便而又快捷的方式. 不过这里我想介绍的不是Jekyll, 而是hexo. 这里选择hexo的原因就是因为它极致的博客部署速度, 只需要小半天的时间, 一个不懂前端的人也可以照猫画虎地做出自己的个人博客.我才不会说主要是因为它有官方中文文档 ​    一个个人博客应该是什么样子的?">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yucklys.com/2018/06/29/Hexo-github搭建自己的个人博客/images/Github_new_repo.png">
-<meta property="og:image" content="http://yucklys.com/images/check_install.png">
-<meta property="og:updated_time" content="2018-12-16T05:48:19.833Z">
+<meta property="og:image" content="https://i.loli.net/2019/01/05/5c30424ba3950.png">
+<meta property="og:image" content="https://i.loli.net/2019/01/05/5c30424b85682.png">
+<meta property="og:updated_time" content="2019-01-18T12:09:18.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+github搭建自己的个人博客">
 <meta name="twitter:description" content="前言​    现在各种个人博客的搭建方式层出不穷, 尤其是Github Pages的出现, 使得个人博客的搭建有了一种方便而又快捷的方式. 不过这里我想介绍的不是Jekyll, 而是hexo. 这里选择hexo的原因就是因为它极致的博客部署速度, 只需要小半天的时间, 一个不懂前端的人也可以照猫画虎地做出自己的个人博客.我才不会说主要是因为它有官方中文文档 ​    一个个人博客应该是什么样子的?">
-<meta name="twitter:image" content="http://yucklys.com/2018/06/29/Hexo-github搭建自己的个人博客/images/Github_new_repo.png">
+<meta name="twitter:image" content="https://i.loli.net/2019/01/05/5c30424ba3950.png">
 
 
 <!-- Google Tag Manager -->
@@ -206,7 +206,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <span class="level-item has-text-grey">
                     
                     
-                    10 分钟 读完 (大约 1553 个字)
+                    10 分钟 读完 (大约 1565 个字)
                 </span>
                 
             </div>
@@ -231,9 +231,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <li><del>评论人数统计(leancloud)</del></li>
 </ul>
 <h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><p>​    首先在<a href="https://github.com/" target="_blank" rel="noopener">github</a>上需要一个自己的项目库, 如果没有帐号的需要自己先注册一个. 新建一个repository, 项目名为<code>whatever.github.io</code>, 选择生成默认README.md. 这样一个保存博客文件的项目库就做好了.</p>
-<p>​    <img src="images/Github_new_repo.png" alt=""></p>
+<p>​<img src="https://i.loli.net/2019/01/05/5c30424ba3950.png" alt="新建Repo"></p>
 <h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>​    hexo安装前置要求是<a href="http://nodejs.org/" target="_blank" rel="noopener">Node.js</a>和<a href="http://git-scm.com/" target="_blank" rel="noopener">git</a>, 需要先安装这两个才能安装hexo. 检测是否安装可以打开终端, 输入<code>node -v</code>和<code>git --version</code>, 如果没有报错则可以安装hexo了. 在终端输入<code>npm install -g hexo-cli</code>即可安装hexo, 输入<code>hexo -v</code>检测是否安装成功, 没有报错就可以开始初始化了.</p>
-<p><img src="/images/check_install.png" alt=""></p>
+<p><img src="https://i.loli.net/2019/01/05/5c30424b85682.png" alt="检查安装"></p>
 <h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>​    在任意位置新建一个文件夹用来存放博客文件, 然后在终端界面打开文件夹, 输入<code>hexo init</code>即可完成初始化 , 当看到<code>INFO  Start blogging with Hexo!</code>时表明初始化完成, 此时的项目结构如下:</p>
 <figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml #项目配置文件</span><br><span class="line">├── package.json</span><br><span class="line">├── node_modules</span><br><span class="line">├── package-lock.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   └── _posts #文章存放</span><br><span class="line">└── themes #存放主题</span><br></pre></td></tr></table></figure>
 <p>​    运行<code>npm install</code>安装依赖, 然后就可以开始配置了.</p>
@@ -260,6 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>​    之后输入<code>clip &lt; ~/.ssh/id_rsa.pub</code>复制ssh key到剪切板. 在github用户设置界面可以看到<strong>SSH and GPG keys</strong>选项, 在该项下选择New SSH key, 随便写个名字, 然后将key粘贴到key中并保存. 之后在终端中输入<code>ssh -T git@github.com</code>查看是否成功添加, 有警告就一路yes, 出现<code>Hi username! You&#39;ve successfully authenticated, but Github does not provide shell access</code>说明添加成功.</p>
 <h4 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h4><p>​    终端切换到博客文件夹, 输入<code>hexo d</code>部署, 显示<code>INFO  Deploy done: git</code>表明部署完成. 在浏览器中输入yucklys.github.io即可进入到博客界面了.</p>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>​    hexo的next主题最大的优点就是它的用户广泛, 所以大部分的功能都可以在<code>主题配置文件</code>中找到, 包含有完整的帮助文件以及众多next主题的大神用户自定义的方案, 可以说只需要<del>cv</del>简单模仿就可以做出一个不错的博客页. 当然写作的质量还是很关键的, 会用markdown是必不可少的一项技能, 这里可以去看一下hexo的<a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="noopener">官方写作教程</a>, markdown的教程网上有许多, 善用google或百度.</p>
+<hr>
 <p>​    <em>2018.11.4更新</em></p>
 <p>现在使用的是<a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">icarus</a>主题，换主题有两方面原因，一是<strong>icarus</strong>的确是一款很优秀的主题，二是<strong>next</strong>用的人实在是太多了，每次看别人的博客都有种撞衫的不爽感……</p>
 
@@ -367,7 +368,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         文章
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        8
                     </p>
                 </div>
             </div>
@@ -377,7 +378,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         分类
                     </p>
                     <p class="title has-text-weight-normal">
-                        7
+                        8
                     </p>
                 </div>
             </div>
@@ -387,7 +388,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         标签
                     </p>
                     <p class="title has-text-weight-normal">
-                        6
+                        7
                     </p>
                 </div>
             </div>
@@ -506,12 +507,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/Front-End/">
+        <a class="level is-marginless" href="/categories/Front-end/">
             <span class="level-start">
-                <span class="level-item">Front-End</span>
+                <span class="level-item">Front-end</span>
             </span>
             <span class="level-end">
-                <span class="level-item tag">1</span>
+                <span class="level-item tag">2</span>
             </span>
         </a></li><li>
         <a class="level is-marginless" href="/categories/Life/">
@@ -528,6 +529,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </span>
             <span class="level-end">
                 <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/Life/shadowsocs/">
+            <span class="level-start">
+                <span class="level-item">shadowsocs</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
             </span>
         </a></li></ul></li><li>
         <a class="level is-marginless" href="/categories/Programming/">
@@ -557,7 +566,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <h3 class="menu-label">
             标签云
         </h3>
-        <a href="/tags/Github/" style="font-size: 20px;">Github</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Road-mark/" style="font-size: 10px;">Road-mark</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Themes/" style="font-size: 10px;">Themes</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a>
+        <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Github/" style="font-size: 20px;">Github</a> <a href="/tags/React/" style="font-size: 20px;">React</a> <a href="/tags/Road-mark/" style="font-size: 10px;">Road-mark</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Themes/" style="font-size: 10px;">Themes</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a>
     </div>
 </div>
 
@@ -576,10 +585,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-16T11:12:46.000Z">2018-12-16</time></div>
+                    <a href="/2018/12/16/Electron与React结合/" class="has-link-black-ter is-size-6">Electron组件在React中的引用问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Front-end/">Front-end</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-19T03:55:12.000Z">2018-11-19</time></div>
                     <a href="/2018/11/19/react-scroll/" class="has-link-black-ter is-size-6">React滚动事件监听</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Front-End/">Front-End</a>
+                        <a class="has-link-grey -link" href="/categories/Front-end/">Front-end</a>
                     </p>
                 </div>
             </div>
@@ -605,7 +627,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-17T14:24:45.000Z">2018-08-17</time></div>
                     <a href="/2018/08/17/install-ss-with-vultr/" class="has-link-black-ter is-size-6">vultr搭建SS/SSR服务</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Life/">Life</a>
+                        <a class="has-link-grey -link" href="/categories/Life/">Life</a> / <a class="has-link-grey -link" href="/categories/Life/shadowsocs/">shadowsocs</a>
                     </p>
                 </div>
             </div>
@@ -624,19 +646,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-15T11:18:27.000Z">2018-07-15</time></div>
-                    <a href="/2018/07/15/win10-UltraUXThemePatcher/" class="has-link-black-ter is-size-6">win10 第三方主题</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Customization/">Customization</a> / <a class="has-link-grey -link" href="/categories/Customization/Beautify/">Beautify</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -648,6 +657,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             文档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2018/11/">
@@ -707,6 +727,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <ul class="menu-list">
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/Electron/">
+                        <span class="level-start">
+                            <span class="level-item">Electron</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/Github/">
                         <span class="level-start">
                             <span class="level-item">Github</span>
@@ -723,7 +754,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="level-item">React</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -798,10 +829,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             
             <div class="media-content">
                 <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-12-16T11:12:46.000Z">2018-12-16</time></div>
+                    <a href="/2018/12/16/Electron与React结合/" class="has-link-black-ter is-size-6">Electron组件在React中的引用问题</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/Front-end/">Front-end</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-11-19T03:55:12.000Z">2018-11-19</time></div>
                     <a href="/2018/11/19/react-scroll/" class="has-link-black-ter is-size-6">React滚动事件监听</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Front-End/">Front-End</a>
+                        <a class="has-link-grey -link" href="/categories/Front-end/">Front-end</a>
                     </p>
                 </div>
             </div>
@@ -827,7 +871,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-08-17T14:24:45.000Z">2018-08-17</time></div>
                     <a href="/2018/08/17/install-ss-with-vultr/" class="has-link-black-ter is-size-6">vultr搭建SS/SSR服务</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Life/">Life</a>
+                        <a class="has-link-grey -link" href="/categories/Life/">Life</a> / <a class="has-link-grey -link" href="/categories/Life/shadowsocs/">shadowsocs</a>
                     </p>
                 </div>
             </div>
@@ -846,19 +890,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             </div>
         </article>
         
-        <article class="media">
-            
-            <div class="media-content">
-                <div class="content">
-                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2018-07-15T11:18:27.000Z">2018-07-15</time></div>
-                    <a href="/2018/07/15/win10-UltraUXThemePatcher/" class="has-link-black-ter is-size-6">win10 第三方主题</a>
-                    <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/Customization/">Customization</a> / <a class="has-link-grey -link" href="/categories/Customization/Beautify/">Beautify</a>
-                    </p>
-                </div>
-            </div>
-        </article>
-        
     </div>
 </div>
 
@@ -870,6 +901,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             文档
         </h3>
         <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
         
         <li>
             <a class="level is-marginless" href="/archives/2018/11/">
@@ -929,6 +971,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <ul class="menu-list">
                 
                 <li>
+                    <a class="level is-marginless" href="/tags/Electron/">
+                        <span class="level-start">
+                            <span class="level-item">Electron</span>
+                        </span>
+                        <span class="level-end">
+                            <span class="level-item tag">1</span>
+                        </span>
+                    </a>
+                </li>
+                
+                <li>
                     <a class="level is-marginless" href="/tags/Github/">
                         <span class="level-start">
                             <span class="level-item">Github</span>
@@ -945,7 +998,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                             <span class="level-item">React</span>
                         </span>
                         <span class="level-end">
-                            <span class="level-item tag">1</span>
+                            <span class="level-item tag">2</span>
                         </span>
                     </a>
                 </li>
@@ -1015,7 +1068,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2018 Yucklys&nbsp;
+                &copy; 2019 Yucklys&nbsp;
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
                         href="http://github.com/ppoffice/hexo-theme-icarus">Icarus</a>
                 </p>

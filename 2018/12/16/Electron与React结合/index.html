@@ -2,22 +2,23 @@
 <html  lang="zh">
 <head>
     <meta charset="utf-8">
-<title>hello_world - 「逐渐」</title>
+<title>Electron组件在React中的引用问题 - 「逐渐」</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="梦想是成为全栈工程师! 目标是成为乖乖好学生!">
+    <meta name="description" content="虽然说Electron官方使用的是最基本的html + css的方法展示的各种API，但是作为9102年的前端程序猿，使用Electron这样的框架当然是要搭配着三大框架来用啊。但是如果使用require直接在React中引用Electron的话，会报错TypeError: fs.existsSync is not a function。这里就讲一下我搜集的几种解决方法，能够在React中直接引用">
+<meta name="keywords" content="React,Electron">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello_world">
-<meta property="og:url" content="http://yucklys.com/2018/06/29/hello-world/index.html">
+<meta property="og:title" content="Electron组件在React中的引用问题">
+<meta property="og:url" content="http://yucklys.com/2018/12/16/Electron与React结合/index.html">
 <meta property="og:site_name" content="「逐渐」">
-<meta property="og:description" content="梦想是成为全栈工程师! 目标是成为乖乖好学生!">
+<meta property="og:description" content="虽然说Electron官方使用的是最基本的html + css的方法展示的各种API，但是作为9102年的前端程序猿，使用Electron这样的框架当然是要搭配着三大框架来用啊。但是如果使用require直接在React中引用Electron的话，会报错TypeError: fs.existsSync is not a function。这里就讲一下我搜集的几种解决方法，能够在React中直接引用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-05T05:27:00.264Z">
+<meta property="og:updated_time" content="2019-01-18T12:08:19.597Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello_world">
-<meta name="twitter:description" content="梦想是成为全栈工程师! 目标是成为乖乖好学生!">
+<meta name="twitter:title" content="Electron组件在React中的引用问题">
+<meta name="twitter:description" content="虽然说Electron官方使用的是最基本的html + css的方法展示的各种API，但是作为9102年的前端程序猿，使用Electron这样的框架当然是要搭配着三大框架来用啊。但是如果使用require直接在React中引用Electron的话，会报错TypeError: fs.existsSync is not a function。这里就讲一下我搜集的几种解决方法，能够在React中直接引用">
 
 
 <!-- Google Tag Manager -->
@@ -29,7 +30,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 
-<link rel="alternative" href="/atom.xml" title="hello_world" type="application/atom+xml">
+<link rel="alternative" href="/atom.xml" title="Electron组件在React中的引用问题" type="application/atom+xml">
 
 
 
@@ -192,13 +193,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2018-06-29T04:34:33.000Z">2018-06-29</time>
+                <time class="level-item has-text-grey" datetime="2018-12-16T11:12:46.000Z">2018-12-16</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/Front-end/">Front-end</a>
+                </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    几秒 读完 (大约 0 个字)
+                    10 分钟 读完 (大约 1544 个字)
                 </span>
                 
             </div>
@@ -206,11 +211,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                hello_world
+                Electron组件在React中的引用问题
             
         </h1>
         <div class="content">
-            
+            <p>虽然说Electron官方使用的是最基本的html + css的方法展示的各种API，但是作为9102年的前端程序猿，使用Electron这样的框架当然是要搭配着三大框架来用啊。但是如果使用require直接在React中引用Electron的话，会报错<code>TypeError: fs.existsSync is not a function</code>。这里就讲一下我搜集的几种解决方法，能够在React中直接引用Electron。<br><a id="more"></a></p>
+<h2 id="Webpack-target属性"><a href="#Webpack-target属性" class="headerlink" title="Webpack target属性"></a>Webpack target属性</h2><p>首先这个问题早已有人想到了，webpack的<code>target: electron-renderer</code>属性就是为此而来的。这里展示的是改造<code>create-react-app</code>的方法，其他脚手架诸如此类。</p>
+<p>项目新建好后，首先一发<code>yarn eject</code>展开所有配置，在多出来的config文件夹下就有我们需要更改的<code>webpack.config.js</code>文件。<code>create-react-app</code>在基础的webpack配置上添加了很多内容，比如说环境检测以及sass，不过我们这里直接在return里添加target属性，如果想要根据develop或product环境切换target的话可以自行添加。</p>
+<figure class="highlight javascript hljs"><figcaption><span>config/webpack.config.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// other configs...</span></span><br><span class="line"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">webpackEnv</span>) </span>&#123;</span><br><span class="line"><span class="hljs-comment">// some configs</span></span><br><span class="line">    <span class="hljs-keyword">return</span> &#123;</span><br><span class="line">        target: <span class="hljs-string">'electron-renderer'</span>, <span class="hljs-comment">// 添加target</span></span><br><span class="line">        <span class="hljs-comment">// other configs</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>OK，现在我们再运行<code>yarn start</code>的话，会发现通过浏览器无法打开<code>localhost:3000</code>了。接下来在根目录新建Electron主程序入口<code>main.js</code>。</p>
+<figure class="highlight javascript hljs"><figcaption><span>main.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> &#123; app, BrowserWindow &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">'electron'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 保持对window对象的全局引用，如果不这么做的话，当JavaScript对象被</span></span><br><span class="line"><span class="hljs-comment">// 垃圾回收的时候，window对象将会自动的关闭</span></span><br><span class="line"><span class="hljs-keyword">let</span> win;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createWindow</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">	<span class="hljs-comment">// 创建浏览器窗口。</span></span><br><span class="line">	win = <span class="hljs-keyword">new</span> BrowserWindow(&#123; <span class="hljs-attr">width</span>: <span class="hljs-number">800</span>, <span class="hljs-attr">height</span>: <span class="hljs-number">600</span> &#125;);</span><br><span class="line"></span><br><span class="line">	<span class="hljs-comment">// 然后加载应用的 index.html。</span></span><br><span class="line">	<span class="hljs-comment">// win.loadFile('index.html');</span></span><br><span class="line">	<span class="hljs-comment">// 这里没有选择官方的从文件加载的方法，而是选择从localhost加载</span></span><br><span class="line">	win.loadURL(<span class="hljs-string">'http://localhost:3000'</span>);</span><br><span class="line"></span><br><span class="line">	<span class="hljs-comment">// 打开开发者工具</span></span><br><span class="line">	win.webContents.openDevTools();</span><br><span class="line"></span><br><span class="line">	<span class="hljs-comment">// 当 window 被关闭，这个事件会被触发。</span></span><br><span class="line">	win.on(<span class="hljs-string">'closed'</span>, () =&gt; &#123;</span><br><span class="line">		<span class="hljs-comment">// 取消引用 window 对象，如果你的应用支持多窗口的话，</span></span><br><span class="line">		<span class="hljs-comment">// 通常会把多个 window 对象存放在一个数组里面，</span></span><br><span class="line">		<span class="hljs-comment">// 与此同时，你应该删除相应的元素。</span></span><br><span class="line">		win = <span class="hljs-literal">null</span>;</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// Electron 会在初始化后并准备</span></span><br><span class="line"><span class="hljs-comment">// 创建浏览器窗口时，调用这个函数。</span></span><br><span class="line"><span class="hljs-comment">// 部分 API 在 ready 事件触发后才能使用。</span></span><br><span class="line">app.on(<span class="hljs-string">'ready'</span>, createWindow);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 当全部窗口关闭时退出。</span></span><br><span class="line">app.on(<span class="hljs-string">'window-all-closed'</span>, () =&gt; &#123;</span><br><span class="line">	<span class="hljs-comment">// 在 macOS 上，除非用户用 Cmd + Q 确定地退出，</span></span><br><span class="line">	<span class="hljs-comment">// 否则绝大部分应用及其菜单栏会保持激活。</span></span><br><span class="line">	<span class="hljs-keyword">if</span> (process.platform !== <span class="hljs-string">'darwin'</span>) &#123;</span><br><span class="line">		app.quit();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.on(<span class="hljs-string">'activate'</span>, () =&gt; &#123;</span><br><span class="line">	<span class="hljs-comment">// 在macOS上，当单击dock图标并且没有其他窗口打开时，</span></span><br><span class="line">	<span class="hljs-comment">// 通常在应用程序中重新创建一个窗口。</span></span><br><span class="line">	<span class="hljs-keyword">if</span> (win === <span class="hljs-literal">null</span>) &#123;</span><br><span class="line">		createWindow();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">// 在这个文件中，你可以续写应用剩下主进程代码。</span></span><br><span class="line"><span class="hljs-comment">// 也可以拆分成几个文件，然后用 require 导入。</span></span><br></pre></td></tr></table></figure>
+<p>同时更改<code>package.json</code>，加入<code>main: &quot;main.js&quot;</code>，<code>homepage: &quot;./&quot;</code>，同时在scripts中添加<code>&quot;electron&quot;: &quot;electron .&quot;</code>，不要忘记<code>yarn add electron</code>。</p>
+<p>准备工作完成之后，可以写一个小例子来测试一下渲染进程以及主进程的通信。</p>
+<figure class="highlight javascript hljs"><figcaption><span>main.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 在这个文件中，你可以续写应用剩下主进程代码。</span></span><br><span class="line"><span class="hljs-comment">// 也可以拆分成几个文件，然后用 require 导入。</span></span><br><span class="line"><span class="hljs-keyword">const</span> &#123; ipcMain &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">'electron'</span>);</span><br><span class="line"></span><br><span class="line">ipcMain.on(<span class="hljs-string">'react-test'</span>, (event, arg) =&gt; &#123;</span><br><span class="line">	<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`get <span class="hljs-subst">$&#123;arg&#125;</span> from Renderer process.`</span>);</span><br><span class="line">	event.sender.send(<span class="hljs-string">'main-process-reply'</span>, <span class="hljs-string">'world'</span>);</span><br><span class="line">&#125;); <span class="hljs-comment">// 接收到react-test信号后返回main-process-reply并打印'get $&#123;arg&#125; from Renderer process'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript hljs"><figcaption><span>src/App.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> &#123; ipcRenderer &#125; = <span class="hljs-built_in">require</span>(<span class="hljs-string">'electron'</span>);</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> </span>&#123;</span><br><span class="line">    componentDidMount() &#123;</span><br><span class="line">        ipcRenderer.send(<span class="hljs-string">'react-test'</span>, <span class="hljs-string">'Hello'</span>); <span class="hljs-comment">// 发送react-test信号，同时arg为'Hello'</span></span><br><span class="line"></span><br><span class="line">        ipcRenderer.on(<span class="hljs-string">'main-process-reply'</span>, (_event, arg) =&gt; &#123;</span><br><span class="line">            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hello <span class="hljs-subst">$&#123;arg&#125;</span>`</span>);</span><br><span class="line">        &#125;); <span class="hljs-comment">// 接收main-process-reply并打印arg</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="hljs-comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接下来依次运行<code>yarn start</code>以及<code>yarn electron</code>，在终端以及electron应用的控制台应该都可以看到打印出的信息，通信成功！</p>
+<h2 id="Preload提前引入electron"><a href="#Preload提前引入electron" class="headerlink" title="Preload提前引入electron"></a>Preload提前引入electron</h2><p>利用webpack的target属性确实是最稳妥，最官方的解决方案了，但是对于一些高度封装webpack并且没有eject选项的脚手架来说，就无法通过target属性来简单解决了。这里使用的是<code>dva new --demo</code>新建的一个项目，我们会在主进程中提前引入我们需要的包以达到在渲染进程中使用的目的。</p>
+<p>首先开始的步骤同上，安装electron并且新建main.js，在主进程文件main.js中写入我们之前用过的测试例子，同时做一些修改。</p>
+<figure class="highlight javascript hljs"><figcaption><span>main.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createWindow</span>(<span class="hljs-params"></span>) </span>&#123;</span><br><span class="line">  win = <span class="hljs-keyword">new</span> BrowserWindow(&#123;</span><br><span class="line">    width: <span class="hljs-number">800</span>,</span><br><span class="line">    height: <span class="hljs-number">600</span>,</span><br><span class="line">    webPreferences: &#123;</span><br><span class="line">      preload: __dirname + <span class="hljs-string">'/preload.js'</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  win.loadURL(<span class="hljs-string">'http://localhost:8000'</span>); <span class="hljs-comment">// Roadhog默认的localhost端口为8000</span></span><br><span class="line">  <span class="hljs-comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里我们在preload选项中引用了根目录下在preload.js文件，在该文件中写入：</p>
+<figure class="highlight javascript hljs"><figcaption><span>preload.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">global.electron = <span class="hljs-built_in">require</span>(<span class="hljs-string">'electron'</span>);</span><br></pre></td></tr></table></figure>
+<p>OK，现在我们修改<code>src/index.js</code>文件，就可以实现进程间通讯了。</p>
+<figure class="highlight javascript hljs"><figcaption><span>src/index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// ...</span></span><br><span class="line"><span class="hljs-comment">// 3. Router</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HomePage</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">React</span>.<span class="hljs-title">Component</span> </span>&#123;</span><br><span class="line">  componentDidMount() &#123;</span><br><span class="line">    <span class="hljs-keyword">const</span> &#123; ipcRenderer &#125; = <span class="hljs-built_in">window</span>.electron;</span><br><span class="line">    ipcRenderer.send(<span class="hljs-string">'react-test'</span>, <span class="hljs-string">'Hello'</span>);</span><br><span class="line">    ipcRenderer.on(<span class="hljs-string">'main-process-reply'</span>, (_event, arg) =&gt; &#123;</span><br><span class="line">      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`Hello, <span class="hljs-subst">$&#123;arg&#125;</span>`</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> &lt;div&gt;Hello, world!&lt;/div&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// ...</span></span><br></pre></td></tr></table></figure>
+<p>通过这种方式，在浏览器中打开的话会报错，无法引用ipcRenderer，但是如果通过electron打开的话就可以正常地进行通讯了。而且通过<code>preload: &#39;file&#39;</code>这种方式，我们还可以很方便地把一些设置全局共享，比如：</p>
+<figure class="highlight javascript hljs"><figcaption><span>preload.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">const</span> os = <span class="hljs-built_in">require</span>(<span class="hljs-string">'os'</span>);</span><br><span class="line"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);</span><br><span class="line"></span><br><span class="line">global.path = path.join(os.homedir(), <span class="hljs-string">'.config'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>除开这两种自己动手的方法以外，在GitHub上还有各种xxx-electron-boilerplate可供使用，不过有些年代比较久远，并且年久失修，issue没人处理，很多依赖都落后几个版本了，反而不是很好用。当然，<a href="https://github.com/electron-react-boilerplate/electron-react-boilerplate" target="_blank" rel="noopener">electron-react-boilerplate</a>这个1w star项目现在还是很活跃的，比起自己这样凑活着搭起来的框架更成体系。具体是怎么样的结合就看自己项目的需求了。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Electron/">Electron</a>, <a class="has-link-grey -link" href="/tags/React/">React</a>
+                </div>
+            </div>
         </div>
         
         
@@ -226,13 +261,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="card card-transparent">
     <div class="level post-navigation is-flex-wrap is-mobile">
         
-        <div class="level-start">
-            <a class="level level-item has-link-grey  article-nav-prev" href="/2018/06/29/Hexo-github搭建自己的个人博客/">
-                <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">Hexo+github搭建自己的个人博客</span>
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2018/11/19/react-scroll/">
+                <span class="level-item">React滚动事件监听</span>
+                <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
-        
         
     </div>
 </div>

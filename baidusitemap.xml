@@ -4,37 +4,14 @@
 
     
   <url>
-    <loc>http://yucklys.com/2018/07/17/Python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2018-12-16T05:49:01.394Z</lastmod>
+    <loc>http://yucklys.com/2018/08/17/install-ss-with-vultr/</loc>
+    <lastmod>2019-01-18T12:10:47.315Z</lastmod>
     <data>
         <display>
-        <title>Python文件打包与包内数据读写</title>
-        <pubTime>2018-07-17T02:58:03.000Z</pubTime>
+        <title>vultr搭建SS/SSR服务</title>
+        <pubTime>2018-08-17T14:24:45.000Z</pubTime>
         
-        <tag>Road-mark</tag>
-         
-         
-           
-             
-              <breadCrumb title="Programming" url="http://yucklys.com/categories/Programming/"/>
-          
-             
-              <breadCrumb title="Python" url="http://yucklys.com/categories/Programming/Python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yucklys.com/2018/11/05/%E6%90%AC%E5%AE%B6%EF%BC%81GitHub-page%E5%85%B3%E8%81%94%E5%9F%9F%E5%90%8D/</loc>
-    <lastmod>2018-12-16T05:48:40.218Z</lastmod>
-    <data>
-        <display>
-        <title>搬家！GitHub-Page关联域名</title>
-        <pubTime>2018-11-05T04:17:33.000Z</pubTime>
-        
-        <tag>Github</tag>
+        <tag>Shadowsocks</tag>
          
          
            
@@ -42,7 +19,7 @@
               <breadCrumb title="Life" url="http://yucklys.com/categories/Life/"/>
           
              
-              <breadCrumb title="Blog" url="http://yucklys.com/categories/Life/Blog/"/>
+              <breadCrumb title="shadowsocs" url="http://yucklys.com/categories/Life/shadowsocs/"/>
           
         </display>
     </data>
@@ -51,7 +28,7 @@
     
   <url>
     <loc>http://yucklys.com/2018/06/29/Hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2018-12-16T05:48:19.833Z</lastmod>
+    <lastmod>2019-01-18T12:09:18.085Z</lastmod>
     <data>
         <display>
         <title>Hexo+github搭建自己的个人博客</title>
@@ -73,19 +50,21 @@
 
     
   <url>
-    <loc>http://yucklys.com/2018/08/17/install-ss-with-vultr/</loc>
-    <lastmod>2018-12-16T05:47:49.004Z</lastmod>
+    <loc>http://yucklys.com/2018/12/16/Electron%E4%B8%8EReact%E7%BB%93%E5%90%88/</loc>
+    <lastmod>2019-01-18T12:08:19.597Z</lastmod>
     <data>
         <display>
-        <title>vultr搭建SS/SSR服务</title>
-        <pubTime>2018-08-17T14:24:45.000Z</pubTime>
+        <title>Electron组件在React中的引用问题</title>
+        <pubTime>2018-12-16T11:12:46.000Z</pubTime>
         
-        <tag>Shadowsocks</tag>
+        <tag>React</tag>
+         
+        <tag>Electron</tag>
          
          
            
              
-              <breadCrumb title="Life" url="http://yucklys.com/categories/Life/"/>
+              <breadCrumb title="Front-end" url="http://yucklys.com/categories/Front-end/"/>
           
         </display>
     </data>
@@ -94,7 +73,7 @@
     
   <url>
     <loc>http://yucklys.com/2018/11/19/react-scroll/</loc>
-    <lastmod>2018-11-22T13:28:56.093Z</lastmod>
+    <lastmod>2019-01-18T12:03:34.207Z</lastmod>
     <data>
         <display>
         <title>React滚动事件监听</title>
@@ -105,17 +84,62 @@
          
            
              
-              <breadCrumb title="Front-End" url="http://yucklys.com/categories/Front-End/"/>
+              <breadCrumb title="Front-end" url="http://yucklys.com/categories/Front-end/"/>
           
         </display>
     </data>
     </url>
 
     
+  <url>
+    <loc>http://yucklys.com/2018/11/05/%E6%90%AC%E5%AE%B6%EF%BC%81GitHub-page%E5%85%B3%E8%81%94%E5%9F%9F%E5%90%8D/</loc>
+    <lastmod>2019-01-05T05:54:36.353Z</lastmod>
+    <data>
+        <display>
+        <title>搬家！GitHub-Page关联域名</title>
+        <pubTime>2018-11-05T04:17:33.000Z</pubTime>
+        
+        <tag>Github</tag>
+         
+         
+           
+             
+              <breadCrumb title="Life" url="http://yucklys.com/categories/Life/"/>
+          
+             
+              <breadCrumb title="Blog" url="http://yucklys.com/categories/Life/Blog/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yucklys.com/2018/07/17/Python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2019-01-05T05:27:00.268Z</lastmod>
+    <data>
+        <display>
+        <title>Python文件打包与包内数据读写</title>
+        <pubTime>2018-07-17T02:58:03.000Z</pubTime>
+        
+        <tag>Road-mark</tag>
+         
+         
+           
+             
+              <breadCrumb title="Programming" url="http://yucklys.com/categories/Programming/"/>
+          
+             
+              <breadCrumb title="Python" url="http://yucklys.com/categories/Programming/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://yucklys.com/2018/07/15/win10-UltraUXThemePatcher/</loc>
-    <lastmod>2018-11-06T06:17:44.263Z</lastmod>
+    <lastmod>2019-01-05T05:27:00.268Z</lastmod>
     <data>
         <display>
         <title>win10 第三方主题</title>
@@ -138,19 +162,9 @@
     </url>
 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
   <url>
     <loc>http://yucklys.com/2018/06/29/hello-world/</loc>
-    <lastmod>2018-06-30T13:45:20.000Z</lastmod>
+    <lastmod>2019-01-05T05:27:00.264Z</lastmod>
     <data>
         <display>
         <title>hello_world</title>
@@ -162,6 +176,16 @@
     </data>
     </url>
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 </urlset>
