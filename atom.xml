@@ -5,9 +5,9 @@
   <subtitle>从这里走向那里</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.yucklys.com/"/>
+  <link href="http://yucklys.com/"/>
   <updated>2019-01-18T12:08:19.597Z</updated>
-  <id>http://www.yucklys.com/</id>
+  <id>http://yucklys.com/</id>
   
   <author>
     <name>Yucklys</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Electron组件在React中的引用问题</title>
-    <link href="http://www.yucklys.com/2018/12/16/Electron%E4%B8%8EReact%E7%BB%93%E5%90%88/"/>
-    <id>http://www.yucklys.com/2018/12/16/Electron与React结合/</id>
+    <link href="http://yucklys.com/2018/12/16/Electron%E4%B8%8EReact%E7%BB%93%E5%90%88/"/>
+    <id>http://yucklys.com/2018/12/16/Electron与React结合/</id>
     <published>2018-12-16T11:12:46.000Z</published>
     <updated>2019-01-18T12:08:19.597Z</updated>
     
@@ -31,19 +31,19 @@
     
     </summary>
     
-      <category term="Front-end" scheme="http://www.yucklys.com/categories/Front-end/"/>
+      <category term="Front-end" scheme="http://yucklys.com/categories/Front-end/"/>
     
     
-      <category term="React" scheme="http://www.yucklys.com/tags/React/"/>
+      <category term="React" scheme="http://yucklys.com/tags/React/"/>
     
-      <category term="Electron" scheme="http://www.yucklys.com/tags/Electron/"/>
+      <category term="Electron" scheme="http://yucklys.com/tags/Electron/"/>
     
   </entry>
   
   <entry>
     <title>React滚动事件监听</title>
-    <link href="http://www.yucklys.com/2018/11/19/react-scroll/"/>
-    <id>http://www.yucklys.com/2018/11/19/react-scroll/</id>
+    <link href="http://yucklys.com/2018/11/19/react-scroll/"/>
+    <id>http://yucklys.com/2018/11/19/react-scroll/</id>
     <published>2018-11-19T03:55:12.000Z</published>
     <updated>2019-01-18T12:03:34.207Z</updated>
     
@@ -56,17 +56,17 @@
     
     </summary>
     
-      <category term="Front-end" scheme="http://www.yucklys.com/categories/Front-end/"/>
+      <category term="Front-end" scheme="http://yucklys.com/categories/Front-end/"/>
     
     
-      <category term="React" scheme="http://www.yucklys.com/tags/React/"/>
+      <category term="React" scheme="http://yucklys.com/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>搬家！GitHub-Page关联域名</title>
-    <link href="http://www.yucklys.com/2018/11/05/%E6%90%AC%E5%AE%B6%EF%BC%81GitHub-page%E5%85%B3%E8%81%94%E5%9F%9F%E5%90%8D/"/>
-    <id>http://www.yucklys.com/2018/11/05/搬家！GitHub-page关联域名/</id>
+    <link href="http://yucklys.com/2018/11/05/%E6%90%AC%E5%AE%B6%EF%BC%81GitHub-page%E5%85%B3%E8%81%94%E5%9F%9F%E5%90%8D/"/>
+    <id>http://yucklys.com/2018/11/05/搬家！GitHub-page关联域名/</id>
     <published>2018-11-05T04:17:33.000Z</published>
     <updated>2019-01-05T05:54:36.353Z</updated>
     
@@ -78,19 +78,19 @@
     
     </summary>
     
-      <category term="Life" scheme="http://www.yucklys.com/categories/Life/"/>
+      <category term="Life" scheme="http://yucklys.com/categories/Life/"/>
     
-      <category term="Blog" scheme="http://www.yucklys.com/categories/Life/Blog/"/>
+      <category term="Blog" scheme="http://yucklys.com/categories/Life/Blog/"/>
     
     
-      <category term="Github" scheme="http://www.yucklys.com/tags/Github/"/>
+      <category term="Github" scheme="http://yucklys.com/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>vultr搭建SS/SSR服务</title>
-    <link href="http://www.yucklys.com/2018/08/17/install-ss-with-vultr/"/>
-    <id>http://www.yucklys.com/2018/08/17/install-ss-with-vultr/</id>
+    <link href="http://yucklys.com/2018/08/17/install-ss-with-vultr/"/>
+    <id>http://yucklys.com/2018/08/17/install-ss-with-vultr/</id>
     <published>2018-08-17T14:24:45.000Z</published>
     <updated>2019-01-18T12:10:47.315Z</updated>
     
@@ -108,19 +108,19 @@
     
     </summary>
     
-      <category term="Life" scheme="http://www.yucklys.com/categories/Life/"/>
+      <category term="Life" scheme="http://yucklys.com/categories/Life/"/>
     
-      <category term="shadowsocs" scheme="http://www.yucklys.com/categories/Life/shadowsocs/"/>
+      <category term="shadowsocs" scheme="http://yucklys.com/categories/Life/shadowsocs/"/>
     
     
-      <category term="Shadowsocks" scheme="http://www.yucklys.com/tags/Shadowsocks/"/>
+      <category term="Shadowsocks" scheme="http://yucklys.com/tags/Shadowsocks/"/>
     
   </entry>
   
   <entry>
     <title>Python文件打包与包内数据读写</title>
-    <link href="http://www.yucklys.com/2018/07/17/Python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/"/>
-    <id>http://www.yucklys.com/2018/07/17/Python包内文件/</id>
+    <link href="http://yucklys.com/2018/07/17/Python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/"/>
+    <id>http://yucklys.com/2018/07/17/Python包内文件/</id>
     <published>2018-07-17T02:58:03.000Z</published>
     <updated>2019-01-05T05:27:00.268Z</updated>
     
@@ -132,19 +132,19 @@
     
     </summary>
     
-      <category term="Programming" scheme="http://www.yucklys.com/categories/Programming/"/>
+      <category term="Programming" scheme="http://yucklys.com/categories/Programming/"/>
     
-      <category term="Python" scheme="http://www.yucklys.com/categories/Programming/Python/"/>
+      <category term="Python" scheme="http://yucklys.com/categories/Programming/Python/"/>
     
     
-      <category term="Road-mark" scheme="http://www.yucklys.com/tags/Road-mark/"/>
+      <category term="Road-mark" scheme="http://yucklys.com/tags/Road-mark/"/>
     
   </entry>
   
   <entry>
     <title>win10 第三方主题</title>
-    <link href="http://www.yucklys.com/2018/07/15/win10-UltraUXThemePatcher/"/>
-    <id>http://www.yucklys.com/2018/07/15/win10-UltraUXThemePatcher/</id>
+    <link href="http://yucklys.com/2018/07/15/win10-UltraUXThemePatcher/"/>
+    <id>http://yucklys.com/2018/07/15/win10-UltraUXThemePatcher/</id>
     <published>2018-07-15T11:18:27.000Z</published>
     <updated>2019-01-05T05:27:00.268Z</updated>
     
@@ -157,21 +157,21 @@
     
     </summary>
     
-      <category term="Customization" scheme="http://www.yucklys.com/categories/Customization/"/>
+      <category term="Customization" scheme="http://yucklys.com/categories/Customization/"/>
     
-      <category term="Beautify" scheme="http://www.yucklys.com/categories/Customization/Beautify/"/>
+      <category term="Beautify" scheme="http://yucklys.com/categories/Customization/Beautify/"/>
     
     
-      <category term="Windows" scheme="http://www.yucklys.com/tags/Windows/"/>
+      <category term="Windows" scheme="http://yucklys.com/tags/Windows/"/>
     
-      <category term="Themes" scheme="http://www.yucklys.com/tags/Themes/"/>
+      <category term="Themes" scheme="http://yucklys.com/tags/Themes/"/>
     
   </entry>
   
   <entry>
     <title>Hexo+github搭建自己的个人博客</title>
-    <link href="http://www.yucklys.com/2018/06/29/Hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://www.yucklys.com/2018/06/29/Hexo-github搭建自己的个人博客/</id>
+    <link href="http://yucklys.com/2018/06/29/Hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yucklys.com/2018/06/29/Hexo-github搭建自己的个人博客/</id>
     <published>2018-06-29T13:34:29.000Z</published>
     <updated>2019-01-18T12:09:18.085Z</updated>
     
@@ -184,19 +184,19 @@
     
     </summary>
     
-      <category term="Life" scheme="http://www.yucklys.com/categories/Life/"/>
+      <category term="Life" scheme="http://yucklys.com/categories/Life/"/>
     
-      <category term="Blog" scheme="http://www.yucklys.com/categories/Life/Blog/"/>
+      <category term="Blog" scheme="http://yucklys.com/categories/Life/Blog/"/>
     
     
-      <category term="Github" scheme="http://www.yucklys.com/tags/Github/"/>
+      <category term="Github" scheme="http://yucklys.com/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>hello_world</title>
-    <link href="http://www.yucklys.com/2018/06/29/hello-world/"/>
-    <id>http://www.yucklys.com/2018/06/29/hello-world/</id>
+    <link href="http://yucklys.com/2018/06/29/hello-world/"/>
+    <id>http://yucklys.com/2018/06/29/hello-world/</id>
     <published>2018-06-29T04:34:33.000Z</published>
     <updated>2019-01-05T05:27:00.264Z</updated>
     
