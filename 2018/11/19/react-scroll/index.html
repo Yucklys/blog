@@ -12,7 +12,7 @@
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React滚动事件监听">
-<meta property="og:url" content="http://yucklys.com/2018/11/19/react-scroll/index.html">
+<meta property="og:url" content="http://www.yucklys.com/2018/11/19/react-scroll/index.html">
 <meta property="og:site_name" content="「逐渐」">
 <meta property="og:description" content="对于多页面的网站来说，一个导航栏是必不可少的。现在常用的一些64px高度的导航栏占用的空间对于一些展示型网站来说就有点过于大了。为了能够节省下这部分空间益达到完美的图像展示空间，我们需要在适当的时候隐藏导航栏。">
 <meta property="og:locale" content="zh-CN">
@@ -1323,5 +1323,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-z16@1.0.5/assets/z16.model.json"},"display":{"position":"left","width":75,"height":150,"vOffset":-20,"hOffset":-10},"mobile":{"show":false},"log":false});</script></body>
 </html>

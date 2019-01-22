@@ -12,7 +12,7 @@
 <meta name="keywords" content="Road-mark">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python文件打包与包内数据读写">
-<meta property="og:url" content="http://yucklys.com/2018/07/17/Python包内文件/index.html">
+<meta property="og:url" content="http://www.yucklys.com/2018/07/17/Python包内文件/index.html">
 <meta property="og:site_name" content="「逐渐」">
 <meta property="og:description" content="前言编写好的Python程序想要发表或者安装到自己的电脑上，就需要打包了。打包的方式有很多种，现在常用的是引用setuptools写一个setup.py来描述打包内容，然后通过python setup.py install安装。在默认情况下，setup.py不识别数据文件或者图片，而这些数据往往是程序运行所必备的，于是就要通过一些改进来把数据文件加入包内。我在网上查找到的方法有很多，但总是无法令我">
 <meta property="og:locale" content="zh-CN">
@@ -1308,5 +1308,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-z16@1.0.5/assets/z16.model.json"},"display":{"position":"left","width":75,"height":150,"vOffset":-20,"hOffset":-10},"mobile":{"show":false},"log":false});</script></body>
 </html>

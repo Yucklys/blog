@@ -12,7 +12,7 @@
 <meta name="keywords" content="React,Electron">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Electron组件在React中的引用问题">
-<meta property="og:url" content="http://yucklys.com/2018/12/16/Electron与React结合/index.html">
+<meta property="og:url" content="http://www.yucklys.com/2018/12/16/Electron与React结合/index.html">
 <meta property="og:site_name" content="「逐渐」">
 <meta property="og:description" content="虽然说Electron官方使用的是最基本的html + css的方法展示的各种API，但是作为9102年的前端程序猿，使用Electron这样的框架当然是要搭配着三大框架来用啊。但是如果使用require直接在React中引用Electron的话，会报错TypeError: fs.existsSync is not a function。这里就讲一下我搜集的几种解决方法，能够在React中直接引用">
 <meta property="og:locale" content="zh-CN">
@@ -1262,5 +1262,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="/css/search.css">
 <link rel="stylesheet" href="/css/insight.css">
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"https://cdn.jsdelivr.net/npm/live2d-widget-model-z16@1.0.5/assets/z16.model.json"},"display":{"position":"left","width":75,"height":150,"vOffset":-20,"hOffset":-10},"mobile":{"show":false},"log":false});</script></body>
 </html>
