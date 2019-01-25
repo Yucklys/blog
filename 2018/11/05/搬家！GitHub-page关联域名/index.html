@@ -56,7 +56,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-<link rel="icon" href="/images/favicon.png">
+<link rel="icon" href="/images/favicon-48x48.png">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
@@ -160,7 +160,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/logo.jpg" alt="" height="28">
+                <img src="/images/favicon-48x48.png" alt="" height="28">
             
             </a>
         </div>
@@ -262,7 +262,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>注意，如果想给自己的博客加上小绿锁的话，这里的IP地址是<strong>GitHu Page的HTTPS地址</strong>。总共有四个IP地址可选，随便选择一个就好了。<a href="https://help.github.com/articles/setting-up-an-apex-domain/" target="_blank" rel="noopener">官方文档</a>已经给出了颇为详细的介绍。四个IP如下：</p>
 </li>
 </ol>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="code"><pre><span class="line">185.199.108.153</span><br><span class="line">185.199.109.153</span><br><span class="line">185.199.110.153</span><br><span class="line">185.199.111.153</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li><p>添加一个CNAME记录，把yourname.github.io添加进去。</p>
 <p>这一步没什么需要注意的，如图填写即可。</p>
@@ -279,7 +279,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p>然后我先删除了我的<strong>Custom Domain</strong>设置，保存，然后再重新添加，保存，然后<strong>Enforce HTTPS</strong>就可以使用了。不是很清楚是什么原理，不过这样做确实是解决了我的问题。</p>
 <p>等待一段时间后，就可以看到自己的Https博客了:smile: 。</p>
 <h3 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h3><p>但是需要注意的是，GitHub Page的CNAME选项只是在项目文件夹下新建了一个CNAME(无后缀)文件，如果在本地的git项目中没有这个文件的话，下一次deploy就会把这个文件删除，导致我们需要重新配置一遍。所以在本地上的源文件内需要也新建一个CNAME文件，内容仿照GitHub中生成的CNAME文件就行。</p>
-<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">domainname.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="code"><pre><span class="line">domainname.com</span><br></pre></td></tr></table></figure>
 
         </div>
         
@@ -1116,7 +1116,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/logo.jpg" alt="" height="28">
+                    <img src="/images/favicon-48x48.png" alt="" height="28">
                 
                 </a>
                 <p class="is-size-7">
