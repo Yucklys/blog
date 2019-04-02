@@ -4,6 +4,9 @@ title = "Yucklys的小站"
 theme = "paper"
 googleAnalytics = "UA-122649646-1"
 
+[permalinks]
+  posts = "/:year/:month/:day/:title"
+
 [menu]
   [[menu.main]]
     identifier = "main"
