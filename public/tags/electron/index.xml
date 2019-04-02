@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Electron on Yucklys的小站</title>
+    <link>https://www.yucklys.com/tags/electron/</link>
+    <description>Recent content in Electron on Yucklys的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 16 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.yucklys.com/tags/electron/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在 React 中引入 Electron</title>
+      <link>https://www.yucklys.com/posts/electron%E4%B8%8Ereact%E7%BB%93%E5%90%88/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/posts/electron%E4%B8%8Ereact%E7%BB%93%E5%90%88/</guid>
+      <description>&lt;p&gt;最近体验了一下 Electron，迫不及待的换上了我心爱的 React，仿佛看见了新世界，但是当我试图&lt;code&gt;import { ipcRenderer } from &#39;electron&#39;&lt;/code&gt;会报错 &lt;code&gt;TypeError: fs.existsSync is not a function&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

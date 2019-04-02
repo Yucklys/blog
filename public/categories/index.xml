@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Yucklys的小站</title>
+    <link>https://www.yucklys.com/categories/</link>
+    <description>Recent content in Categories on Yucklys的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 15 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.yucklys.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Beautify</title>
+      <link>https://www.yucklys.com/categories/beautify/</link>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/categories/beautify/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://www.yucklys.com/categories/blog/</link>
+      <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Customization</title>
+      <link>https://www.yucklys.com/categories/customization/</link>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/categories/customization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Front End</title>
+      <link>https://www.yucklys.com/categories/front-end/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/categories/front-end/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Life</title>
+      <link>https://www.yucklys.com/categories/life/</link>
+      <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/categories/life/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>https://www.yucklys.com/categories/programming/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://www.yucklys.com/categories/python/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shadowsocs</title>
+      <link>https://www.yucklys.com/categories/shadowsocs/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/categories/shadowsocs/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

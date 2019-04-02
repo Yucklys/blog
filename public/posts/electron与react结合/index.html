@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>在 React 中引入 Electron - Yucklys的小站</title>
+    
+    <meta name="description" content="最近体验了一下 Electron，迫不及待的换上了我心爱的 React，仿佛看见了新世界，但是当我试图import { ipcRenderer } from &#39;electron&#39;会报错 TypeError: fs.existsSync is not a function。">
+    <meta name="author" content="">
+    
+    <link href="https://www.yucklys.com/css/github-gist.min.css" rel="stylesheet">
+    <link href="https://www.yucklys.com/css/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://www.yucklys.com/img/apple-touch-icon.png">
+    <link rel="icon" href="https://www.yucklys.com/img/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.54.0" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://www.yucklys.com/index.xml" title="Yucklys的小站">
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+  </head>
+  <body class="single">
+    <header class="header">
+      <div class="wrap">
+        
+        <p class="logo"><a href="https://www.yucklys.com/">Yucklys的小站 </a></p>
+        
+        <button class="menu-toggle" type="button"></button>
+      </div>
+    </header>
+    <nav class="nav">
+    <ul class="menu">
+      
+      
+      <li class="">
+        <a href="/">HOME</a>
+      </li>
+      
+      
+      <li class="">
+        <a href="/tags/">TAGS</a>
+      </li>
+      
+      
+      <li class="">
+        <a href="/categories/">CATEGORIES</a>
+      </li>
+      
+      
+      <li class="">
+        <a href="/about/">ABOUT</a>
+      </li>
+      
+    </ul>
+    </nav>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">在 React 中引入 Electron</h1>
+    <div class="post-meta">2018.12.16</div>
+  </header>
+  <div class="post-content"><p>最近体验了一下 Electron，迫不及待的换上了我心爱的 React，仿佛看见了新世界，但是当我试图<code>import { ipcRenderer } from 'electron'</code>会报错 <code>TypeError: fs.existsSync is not a function</code>。</p>
+
+<h2 id="webpack-target属性">Webpack target属性</h2>
+
+<p>首先这个问题早已有人想到了，webpack的<code>target: electron-renderer</code>属性就是为此而来的。这里展示的是改造<code>create-react-app</code>的方法，其他脚手架诸如此类。</p>
+
+<p>项目新建好后，首先一发<code>yarn eject</code>展开所有配置，在多出来的config文件夹下就有我们需要更改的<code>webpack.config.js</code>文件。<code>create-react-app</code>在基础的webpack配置上添加了很多内容，比如说环境检测以及sass，不过我们这里直接在return里添加target属性，如果想要根据develop或product环境切换target的话可以自行添加。</p>
+
+<pre><code class="language-javascript">// other configs...
+module.exports = function(webpackEnv) {
+// some configs
+    return {
+        target: 'electron-renderer', // 添加target
+        // other configs
+    }
+}
+</code></pre>
+
+<p>OK，现在我们再运行<code>yarn start</code>的话，会发现通过浏览器无法打开<code>localhost:3000</code>了。接下来在根目录新建Electron主程序入口<code>main.js</code>。</p>
+
+<pre><code class="language-javascript">const { app, BrowserWindow } = require('electron');
+
+// 保持对window对象的全局引用，如果不这么做的话，当JavaScript对象被
+// 垃圾回收的时候，window对象将会自动的关闭
+let win;
+
+function createWindow() {
+	// 创建浏览器窗口。
+	win = new BrowserWindow({ width: 800, height: 600 });
+
+	// 然后加载应用的 index.html。
+	// win.loadFile('index.html');
+	// 这里没有选择官方的从文件加载的方法，而是选择从localhost加载
+	win.loadURL('http://localhost:3000');
+
+	// 打开开发者工具
+	win.webContents.openDevTools();
+
+	// 当 window 被关闭，这个事件会被触发。
+	win.on('closed', () =&gt; {
+		// 取消引用 window 对象，如果你的应用支持多窗口的话，
+		// 通常会把多个 window 对象存放在一个数组里面，
+		// 与此同时，你应该删除相应的元素。
+		win = null;
+	});
+}
+
+// Electron 会在初始化后并准备
+// 创建浏览器窗口时，调用这个函数。
+// 部分 API 在 ready 事件触发后才能使用。
+app.on('ready', createWindow);
+
+// 当全部窗口关闭时退出。
+app.on('window-all-closed', () =&gt; {
+	// 在 macOS 上，除非用户用 Cmd + Q 确定地退出，
+	// 否则绝大部分应用及其菜单栏会保持激活。
+	if (process.platform !== 'darwin') {
+		app.quit();
+	}
+});
+
+app.on('activate', () =&gt; {
+	// 在macOS上，当单击dock图标并且没有其他窗口打开时，
+	// 通常在应用程序中重新创建一个窗口。
+	if (win === null) {
+		createWindow();
+	}
+});
+
+// 在这个文件中，你可以续写应用剩下主进程代码。
+// 也可以拆分成几个文件，然后用 require 导入。
+</code></pre>
+
+<p>同时更改<code>package.json</code>，加入<code>main: &quot;main.js&quot;</code>，<code>homepage: &quot;./&quot;</code>，同时在scripts中添加<code>&quot;electron&quot;: &quot;electron .&quot;</code>，不要忘记<code>yarn add electron</code>。</p>
+
+<p>准备工作完成之后，可以写一个小例子来测试一下渲染进程以及主进程的通信。</p>
+
+<pre><code class="language-javascript">// 在这个文件中，你可以续写应用剩下主进程代码。
+// 也可以拆分成几个文件，然后用 require 导入。
+const { ipcMain } = require('electron');
+
+ipcMain.on('react-test', (event, arg) =&gt; {
+	console.log(`get ${arg} from Renderer process.`);
+	event.sender.send('main-process-reply', 'world');
+}); // 接收到react-test信号后返回main-process-reply并打印'get ${arg} from Renderer process'
+</code></pre>
+
+<pre><code class="language-javascript">const { ipcRenderer } = require('electron');
+
+class App extends {
+    componentDidMount() {
+        ipcRenderer.send('react-test', 'Hello'); // 发送react-test信号，同时arg为'Hello'
+
+        ipcRenderer.on('main-process-reply', (_event, arg) =&gt; {
+            console.log(`Hello ${arg}`);
+        }); // 接收main-process-reply并打印arg
+    }
+
+    render() {
+        // ...
+    }
+}
+</code></pre>
+
+<p>接下来依次运行<code>yarn start</code>以及<code>yarn electron</code>，在终端以及electron应用的控制台应该都可以看到打印出的信息，通信成功！</p>
+
+<h2 id="preload提前引入electron">Preload提前引入electron</h2>
+
+<p>利用webpack的target属性确实是最稳妥，最官方的解决方案了，但是对于一些高度封装webpack并且没有eject选项的脚手架来说，就无法通过target属性来简单解决了。这里使用的是<code>dva new --demo</code>新建的一个项目，我们会在主进程中提前引入我们需要的包以达到在渲染进程中使用的目的。</p>
+
+<p>首先开始的步骤同上，安装electron并且新建main.js，在主进程文件main.js中写入我们之前用过的测试例子，同时做一些修改。</p>
+
+<pre><code class="language-javascript">function createWindow() {
+  win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      preload: __dirname + '/preload.js'
+    }
+  });
+
+  win.loadURL('http://localhost:8000'); // Roadhog默认的localhost端口为8000
+  // ...
+}
+</code></pre>
+
+<p>这里我们在preload选项中引用了根目录下在preload.js文件，在该文件中写入：</p>
+
+<pre><code class="language-javascript">global.electron = require('electron');
+</code></pre>
+
+<p>OK，现在我们修改<code>src/index.js</code>文件，就可以实现进程间通讯了。</p>
+
+<pre><code class="language-javascript">// ...
+// 3. Router
+class HomePage extends React.Component {
+  componentDidMount() {
+    const { ipcRenderer } = window.electron;
+    ipcRenderer.send('react-test', 'Hello');
+    ipcRenderer.on('main-process-reply', (_event, arg) =&gt; {
+      console.log(`Hello, ${arg}`);
+    });
+  }
+
+  render() {
+    return &lt;div&gt;Hello, world!&lt;/div&gt;;
+  }
+}
+// ...
+</code></pre>
+
+<p>通过这种方式，在浏览器中打开的话会报错，无法引用ipcRenderer，但是如果通过electron打开的话就可以正常地进行通讯了。而且通过<code>preload: 'file'</code>这种方式，我们还可以很方便地把一些设置全局共享，比如：</p>
+
+<pre><code class="language-javascript">const os = require('os');
+const path = require('path');
+
+global.path = path.join(os.homedir(), '.config');
+</code></pre>
+
+<h2 id="总结">总结</h2>
+
+<p>除开这两种自己动手的方法以外，在 GitHub 上还有各种xxx-electron-boilerplate可供使用，不过有些年代比较久远，并且年久失修，issue 没人处理，很多依赖都落后几个版本了，反而不是很好用。当然，<a href="https://github.com/electron-react-boilerplate/electron-react-boilerplate">electron-react-boilerplate</a>这个1w star项目现在还是很活跃的，比起自己这样凑活着搭起来的框架更成体系。具体是怎么样的结合就看自己项目的需求了。</p></div>
+  <footer class="post-footer">
+    
+    <ul class="post-tags">
+      
+      <li><a href="https://www.yucklys.com/tags/react/">React</a></li>
+      
+      <li><a href="https://www.yucklys.com/tags/electron/">Electron</a></li>
+      
+    </ul>
+    
+  </footer>
+  
+  
+  
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_shortname = 'yucklys';
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+  </noscript>
+  
+  
+  
+    <div id="vcomments"></div>
+    <script type="text/javascript">
+      new Valine({
+          el: '#vcomments' ,
+          appId: 'KUblOPKlq50rTW3lTrMNovfT-gzGzoHsz',
+          appKey: 'gi4gkH2uAcjg12ua1Hg5DPAj',
+          notify:  true , 
+          verify:  false , 
+          avatar:'mm', 
+          placeholder: '喵喵喵?',
+          visitor:  true 
+      });
+    </script>
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2018 - 2019 Yucklys的小站</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span><a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 3.0</a>️</span>
+</footer>
+<script src="https://www.yucklys.com/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://www.yucklys.com/js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  hljs.initHighlightingOnLoad();
+  setMenuListener();
+
+  InstantClick.on('change', function() {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+    setMenuListener();
+  });
+
+  function setMenuListener() {
+    var menuToggle = document.querySelector('.menu-toggle');
+    var body = document.querySelector('body');
+    menuToggle.addEventListener('click', function() {
+      body.classList.toggle('no-scroll');
+    }, false);
+  }
+</script>
+</body>
+</html>
+

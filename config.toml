@@ -1,0 +1,40 @@
+baseURL = "https://www.yucklys.com/"
+languageCode = "zh-cn"
+title = "Yucklys的小站"
+theme = "paper"
+googleAnalytics = "UA-122649646-1"
+
+[menu]
+  [[menu.main]]
+    identifier = "main"
+    name = "HOME"
+    title = "Home"
+    url = "/"
+    weight = -110
+  [[menu.about]]
+    identifier = "about"
+    name = "ABOUT"
+    title = "About"
+    url = "/about/"
+    weight = -110
+  [[menu.tags]]
+    identifier = "tags"
+    name = "TAGS"
+    title = "Tags"
+    url = "/tags/"
+    weight = -110
+  [[menu.categories]]
+    identifier = "categories"
+    name = "CATEGORIES"
+    title = "Categories"
+    url = "/categories/"
+    weight = -110
+[params.valine]
+  enable = true
+  appId = 'KUblOPKlq50rTW3lTrMNovfT-gzGzoHsz'
+  appKey = 'gi4gkH2uAcjg12ua1Hg5DPAj'
+  notify = true  # mail notifier , https://github.com/xCss/Valine/wiki
+  verify = false # Verification code
+  avatar = 'mm' 
+  placeholder = '喵喵喵?'
+  visitor = true
