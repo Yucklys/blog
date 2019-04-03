@@ -24,14 +24,6 @@
   </section>
   <footer class="entry-footer">
     <time >{{ .Date.Format "2006.1.2" }}</time>
-    {{ if .Site.Params.valine.enable }}
-    <!-- id 将作为查询条件 -->
-    <span id="{{ .URL | relURL }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
-      <span class="post-meta-item-text">文章阅读量 </span>
-      <span class="leancloud-visitors-count">0</span>
-      <p></p>
-    </span>
-    {{ end }}
   </footer>
   <a class="entry-link" href="{{ .Permalink }}"></a>
 </article>

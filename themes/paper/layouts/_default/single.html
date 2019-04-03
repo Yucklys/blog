@@ -7,6 +7,11 @@
       {{- if or .Params.author .Site.Params.author -}}
       {{ .Params.author | default .Site.Params.author }} · {{ end }}
       {{- .Date.Format "2006.1.2" -}}
+      <span id="{{ .URL | relURL }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
+        <span class="post-meta-item-text">文章阅读量 </span>
+        <span class="leancloud-visitors-count">0</span>
+        <p></p>
+      </span>
     </div>
   </header>
   <div class="post-content">{{ .Content }}</div>
