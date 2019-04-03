@@ -7,7 +7,7 @@
       {{- if or .Params.author .Site.Params.author -}}
       {{ .Params.author | default .Site.Params.author }} · {{ end }}
       {{- .Date.Format "2006.1.2" -}}
-      <span id="{{ .URL | relURL }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
+      <span id="{{ .Permalink | relURL }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
         <span class="post-meta-item-text">文章阅读量 </span>
         <span class="leancloud-visitors-count">0</span>
         <p></p>
@@ -43,18 +43,14 @@
   </noscript>
   <!-- Comments area end -->
   {{ end }}
-  <script type="text/javascript">
-  </script>
   {{ if .Site.Params.valine.enable }}
     <div id="vcomments"></div>
     <script type="text/javascript">
-      var permalink = "{{ .Page.Permalink }}"
-      var baseUrl = "{{ .Site.BaseURL }}"
       new Valine({
           el: '#vcomments' ,
           appId: '{{ .Site.Params.valine.appId }}',
           appKey: '{{ .Site.Params.valine.appKey }}',
-          path: permalink.slice(baseUrl.length - 1),
+	  path: '{{ .Page.Permalink | relURL }}',
           notify: {{ .Site.Params.valine.notify }}, 
           verify: {{ .Site.Params.valine.verify }}, 
           avatar:'{{ .Site.Params.valine.avatar }}', 
