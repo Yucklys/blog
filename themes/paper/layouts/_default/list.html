@@ -26,7 +26,7 @@
     <time >{{ .Date.Format "2006.1.2" }}</time>
     <span id="{{ .Permalink | relURL }}" class="leancloud_visitors" data-flag-title="{{ .Title }}">
       <span class="post-meta-item-text">文章阅读量 </span>
-      <span class="leancloud-visitors-count">0</span>
+      <span class="leancloud-visitors-count"></span>
       <p></p>
     </span>
   </footer>
@@ -46,6 +46,17 @@
     {{ end }}
   </nav>
 </footer>
+{{ end }}
+  
+{{ if .Site.Params.valine.enable }}
+<script>
+  new Valine({
+        el: '#vcomments' ,
+        appId: '{{ .Site.Params.valine.appId }}',
+        appKey: '{{ .Site.Params.valine.appKey }}',
+        visitor: {{ .Site.Params.valine.visitor }}
+  })
+</script>
 {{ end }}
 
 {{ partial "footer.html" . }}
