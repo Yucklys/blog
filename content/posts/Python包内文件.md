@@ -2,13 +2,12 @@
 title: Python文件打包与包内数据读写
 date: 2018-07-17
 categories:
-- Programming
 - Python
 tags:
 - Road-mark
 ---
 
-Python 写起来是很方便，不过需要发布的时候却总是有很多的麻烦事。
+​	Python 写起来是很方便，不过需要发布的时候却总是有很多的麻烦事。
 
 <!--more-->
 

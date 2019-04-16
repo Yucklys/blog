@@ -13,7 +13,7 @@ tags:
 <!--more-->
 
 ## Webpack target属性
-首先这个问题早已有人想到了，webpack的`target: electron-renderer`属性就是为此而来的。这里展示的是改造`create-react-app`的方法，其他脚手架诸如此类。
+webpack 的`target: electron-renderer`属性能够很好的解决这个问题。这里展示的是改造`create-react-app`的方法，其他脚手架诸如此类。
 
 项目新建好后，首先一发`yarn eject`展开所有配置，在多出来的config文件夹下就有我们需要更改的`webpack.config.js`文件。`create-react-app`在基础的webpack配置上添加了很多内容，比如说环境检测以及sass，不过我们这里直接在return里添加target属性，如果想要根据develop或product环境切换target的话可以自行添加。
 

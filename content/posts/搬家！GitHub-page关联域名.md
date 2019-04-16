@@ -5,7 +5,7 @@ categories:
 - Life
 - Blog
 tags:
-- Github
+- GitHub
 toc: true
 ---
 

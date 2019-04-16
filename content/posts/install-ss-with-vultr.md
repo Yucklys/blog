@@ -3,7 +3,6 @@ title: Vultr 与小飞机
 date: 2018-08-17
 categories:
 - Life
-- shadowsocs
 tags:
 - Shadowsocks
 ---

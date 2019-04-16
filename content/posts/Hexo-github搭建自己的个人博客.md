@@ -5,7 +5,7 @@ categories:
 - Life
 - Blog
 tags: 
-- Github
+- GitHub
 ---
 
 ​	最近想搭一个个人博客，搜了一下之后找到了 Hexo 这个工具，正好借着 GitHub Pages 这个平台搭一个看看效果。

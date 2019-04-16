@@ -3,9 +3,7 @@ title: Windows 10 更换第三方主题
 date: 2018-07-15
 categories:
 - Customization
-- Beautify
 tags:
-- Windows
 - Themes
 toc: true
 ---
