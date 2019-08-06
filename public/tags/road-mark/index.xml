@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Road Mark on Yucklys的小站</title>
+    <title>Road-mark on Yucklys的小站</title>
     <link>https://www.yucklys.com/tags/road-mark/</link>
-    <description>Recent content in Road Mark on Yucklys的小站</description>
+    <description>Recent content in Road-mark on Yucklys的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 17 Jul 2018 00:00:00 +0000</lastBuildDate>
@@ -13,11 +13,11 @@
     
     <item>
       <title>Python文件打包与包内数据读写</title>
-      <link>https://www.yucklys.com/posts/python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/</link>
+      <link>https://www.yucklys.com/2018/07/17/python%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E4%B8%8E%E5%8C%85%E5%86%85%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.yucklys.com/posts/python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/</guid>
-      <description>&lt;p&gt;Python 写起来是很方便，不过需要发布的时候却总是有很多的麻烦事。&lt;/p&gt;</description>
+      <guid>https://www.yucklys.com/2018/07/17/python%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E4%B8%8E%E5%8C%85%E5%86%85%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99/</guid>
+      <description>&lt;p&gt;​   Python 写起来是很方便，不过需要发布的时候却总是有很多的麻烦事。&lt;/p&gt;</description>
     </item>
     
   </channel>

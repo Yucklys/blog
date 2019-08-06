@@ -13,10 +13,10 @@
     
     <item>
       <title>在 React 中引入 Electron</title>
-      <link>https://www.yucklys.com/posts/electron%E4%B8%8Ereact%E7%BB%93%E5%90%88/</link>
+      <link>https://www.yucklys.com/2018/12/16/%E5%9C%A8-react-%E4%B8%AD%E5%BC%95%E5%85%A5-electron/</link>
       <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.yucklys.com/posts/electron%E4%B8%8Ereact%E7%BB%93%E5%90%88/</guid>
+      <guid>https://www.yucklys.com/2018/12/16/%E5%9C%A8-react-%E4%B8%AD%E5%BC%95%E5%85%A5-electron/</guid>
       <description>&lt;p&gt;最近体验了一下 Electron，迫不及待的换上了我心爱的 React，仿佛看见了新世界，但是当我试图&lt;code&gt;import { ipcRenderer } from &#39;electron&#39;&lt;/code&gt;会报错 &lt;code&gt;TypeError: fs.existsSync is not a function&lt;/code&gt;。&lt;/p&gt;</description>
     </item>
     

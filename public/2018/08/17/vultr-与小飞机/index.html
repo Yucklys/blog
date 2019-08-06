@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Vultr 与小飞机 - Yucklys的小站</title>
+    
+    <meta name="description" content="多的不说了，标题已经不言而喻。">
+    <meta name="author" content="">
+    
+    <link href="https://www.yucklys.com/css/github-gist.min.css" rel="stylesheet">
+    <link href="https://www.yucklys.com/css/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://www.yucklys.com/img/apple-touch-icon.png">
+    <link rel="icon" href="https://www.yucklys.com/img/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://www.yucklys.com/index.xml" title="Yucklys的小站">
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+  </head>
+  <body class="single">
+    <header class="header">
+      <div class="wrap">
+        
+        <p class="logo"><a href="https://www.yucklys.com/">Yucklys的小站 </a></p>
+        
+        <button class="menu-toggle" type="button"></button>
+      </div>
+    </header>
+    <nav class="nav">
+    <ul class="menu">
+      
+      
+      <li class="">
+        <a href="/">HOME</a>
+      </li>
+      
+      
+      <li class="">
+        <a href="/tags/">TAGS</a>
+      </li>
+      
+      
+      <li class="">
+        <a href="/categories/">CATEGORIES</a>
+      </li>
+      
+      
+      <li class="">
+        <a href="/about/">ABOUT</a>
+      </li>
+      
+    </ul>
+    </nav>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Vultr 与小飞机</h1>
+    <div class="post-meta">2018.8.17<span id="/2018/08/17/vultr-%E4%B8%8E%E5%B0%8F%E9%A3%9E%E6%9C%BA/" class="leancloud_visitors" data-flag-title="Vultr 与小飞机">
+        <span class="post-meta-item-text">文章阅读量 </span>
+        <span class="leancloud-visitors-count"></span>
+        <p></p>
+      </span>
+    </div>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+				(adsbygoogle = window.adsbygoogle || []).push({
+						google_ad_client: "ca-pub-8383164891462758",
+						enable_page_level_ads: true
+				});
+		</script>
+  </header>
+  <div class="post-content"><p>多的不说了，标题已经不言而喻。</p>
+
+<h2 id="什么是shadowsocks">什么是shadowsocks?</h2>
+
+<blockquote>
+<p><strong>Shadowsocks</strong> 可以指：一种基于 <a href="https://zh.wikipedia.org/wiki/SOCKS#SOCK5">Socks5</a> 代理方式的加密传输协议，也可以指实现这个协议的各种传输包。 Shadowsocks 分为服务器端和客户端，在使用之前，需要先将服务器端部署到服务器上面，然后通过客户端连接并创建本地代理。</p>
+
+<p>摘自 <a href="https://zh.wikipedia.org/wiki/Shadowsocks">维基百科</a></p>
+</blockquote>
+
+<p>需要注意的一点是shadowsocks<strong>不是</strong>vpn, 它只是一种基于<strong>SOCKS5协议</strong>的对于网络请求的加密/解密方法, 以达到科学上网的目的.</p>
+
+<h3 id="shadowsocks原理">shadowsocks原理</h3>
+
+<p>一般情况下, 如果在本机上想要访问<strong>外网</strong>(Google/Twitter/Youtube)是直接与远程服务建立连接并传输数据. 但在受限的网络环境下传输的数据会先经过<strong>防火墙(GFW)</strong>的检查, 如果检查出传输内容包含受限内容的话, 就会阻止此次传输, 导致无法获取远程服务数据.</p>
+
+<p>而shadowsocks则是根据<strong>SOCKS5</strong>协议封装的一种数据传输的方法.</p>
+
+<ol>
+<li>从主机上发出的请求会先经过本地的<strong>ss客户端(ss-local)</strong>, ss客户端会根据配置的加密方法与密码对原数据进行加密, 再将加密过的数据发送给GFW.</li>
+<li>由于数据经过了加密, GFW无法识别出该请求是否受限, 于是通过此次请求.</li>
+<li>按照用户配置的内容, 该被加密的数据会先发送到<strong>境外的ss服务端(ss-server)</strong>, 通过同样的算法解密后得到真正的请求数据, 然后从指定的服务器获取返回数据.</li>
+<li>最后通过类似的过程, 受限网络的返回数据就会被主机接收到了.</li>
+</ol>
+
+<h3 id="为什么选择shadowsocks">为什么选择shadowsocks?</h3>
+
+<blockquote>
+<p>现在网上这么多vpn服务, 为什么要使用shadowsocks呢?</p>
+</blockquote>
+
+<p>现在一个能够使用的VPN也比较难找, 毕竟因为众所周知的原因, VPN很容易就被封. 就性价比来说, 买来的VPN也不如自己租的服务器.</p>
+
+<p>最关键的是, 用自己的能力科学上网是非常爽的.</p>
+
+<h3 id="准备步骤">准备步骤</h3>
+
+<p>现在知道原理了之后, 就明白实现shadowsocks有三个关键点:</p>
+
+<ul>
+<li>一台在防火墙之外的服务器</li>
+<li>本地安装的 shadowsocks 客户端, 用于加密以及传输数据</li>
+<li>安装在服务器的 shadowsocks 服务端, 用于解密以及数据的中转</li>
+</ul>
+
+<p>就像开头所说的, 这篇教程使用的是 <strong>Vultr</strong> 的服务器, 最便宜的一种是<em>2.5美元/月</em>, 500G流量/月, 实际上一般人连100G都用不到. Vultr 的服务器是按<strong>小时计费</strong>的, 只要账户里有钱, 就会每小时自动扣除, <strong>即使关机也会计费</strong>. 另外, Vultr 支持<strong>支付宝</strong>（UPDATE 2019: 现在也支持微信了 ）.</p>
+
+<blockquote>
+<p>点击这个<a href="https://www.vultr.com/">Vultr链接</a>注册帐号并部署服务器</p>
+</blockquote>
+
+<p>对了, 本机的系统是 Windows/Mac/Linux 甚至手机都没关系。使用 SSH 连接服务器的话 Windows 推荐安装 <a href="https://pc.qq.com/detail/4/detail_2644.html">Xshell</a>，Mac 和 Linux 上直接使用<strong>Terminal</strong> 就可以了。</p>
+
+<p>好了, 这就开始吧!</p>
+
+<h1 id="部署">部署</h1>
+
+<h2 id="vultr服务器部署">Vultr服务器部署</h2>
+
+<p>注册完Vultr帐号了并且向账户内存入足够的钱后就可以开始服务器的部署了. 点击<strong>Deploy now</strong>或者<a href="https://my.vultr.com/deploy/">部署服务器</a>进入服务器部署页面. 一次对以下内容修改:</p>
+
+<ol>
+<li><p>选择服务器位置. 这里的位置可以随意, 速度差距不大, 不过建议<strong>不要选择日本</strong>的服务器, 因为虽然日本的服务器速度最快, 但是ip常常被封, 需要经常换ip. 如果想要<a href="https://www.vultrvps.com/test-server">测试服务器速度</a>的话可以从这个网站测试, 或者ping一下也可以.</p></li>
+
+<li><p>选择服务器系统. <strong>CentOS 6+，Debian 7+，Ubuntu 12+</strong>都可以支持的, 这里建议选择 <strong>Ubuntu 18.04 64bits</strong> 的版本, 因为这可以方便之后用<strong>锐速</strong>或者 <strong>BBR</strong> 加速.</p></li>
+</ol>
+
+<p><img src="https://i.loli.net/2018/08/18/5b7829bc76e37.jpg" alt="选择服务器系统" /></p>
+
+<ol>
+<li>选择价位. 值得高兴的是最近(2018.8.19)Vultr推出了全部服务器<strong>$2.5/mo</strong>的价位, 以前的话只有一些特定服务器才会有这价位, 所以机会难得. 这里选择随意, 虽然高价位提升了带宽和流量, 但说实话如果只是单人使用的话<strong>$2.5/mo</strong>就足够了.</li>
+</ol>
+
+<p><img src="https://i.loli.net/2018/08/18/5b782bcfe904a.jpg" alt="优惠" /></p>
+
+<ol>
+<li>额外选项. 这里选择第一个<strong>Enable IPv6</strong>就可以了.</li>
+</ol>
+
+<p><img src="https://i.loli.net/2018/08/18/5b782b53ca373.jpg" alt="Vultr额外选项" /></p>
+
+<ol>
+<li>其他选项保持默认, 点击右下<strong>Deploy Now</strong>就开始自动部署了.</li>
+</ol>
+
+<p>新建的服务器需要几分钟的时间部署, 这段时间可以用来下载<strong>Xshell</strong>(windows)或者吃瓜, 部署结束后在个人页面就可以看到<strong>Status</strong>显示部署完成.</p>
+
+<p>点击新建的服务器, 在<strong>Overview</strong>标签下可以看到<strong>IP Address</strong>, <strong>Username</strong>, 以及<strong>Password</strong>,这三行就是之后连接服务器的关键.</p>
+
+<p><img src="https://i.loli.net/2018/08/18/5b78320edfa18.png" alt="Overview" /></p>
+
+<h2 id="服务端ss服务搭建">服务端ss服务搭建</h2>
+
+<h3 id="windows">Windows</h3>
+
+<h4 id="连接到服务器">连接到服务器</h4>
+
+<p>首先需要安装有<a href="https://pc.qq.com/detail/4/detail_2644.html">Xshell</a>, 可以通过链接或百度搜索下载.</p>
+
+<ol>
+<li>打开<em>File-New(Alt+N)</em></li>
+</ol>
+
+<p><img src="https://i.loli.net/2018/08/19/5b797bce861fc.jpg" alt="Xshell新建服务器设置" /></p>
+
+<ol>
+<li>如图设置服务器的信息, <strong>Name</strong>是服务器的名字, 可以随便填. <strong>Host</strong>填写在Vultr注册的服务器的<strong>IP Address</strong>, 其他选项保持默认就行.</li>
+</ol>
+
+<p><img src="https://i.loli.net/2018/08/19/5b797cc506ef6.jpg" alt="Xshell服务器IP" /></p>
+
+<ol>
+<li><p>接着设置用户名和密码, 用户名和密码分别是在 Vultr 上的 <strong>Username</strong> 和 <strong>Password</strong>, 填写完后勾上记住用户和密码就行了.</p></li>
+
+<li><p>如果如下图所示, 则表明已经连接成功了. 注意连接的服务器必须是已经部署好的. 如果没有连接成功的话就多试几次, 还不行的话就ping一下ip, 看一下是不是被墙了. 如果ping不上的话就重新再部署一个服务器吧.</p></li>
+</ol>
+
+<p><img src="https://i.loli.net/2018/08/19/5b79819f3cb5c.jpg" alt="Xshell连接成功" /></p>
+
+<h4 id="搭建ss服务">搭建ss服务</h4>
+
+<ol>
+<li>下载一键搭建ss服务脚本, 直接复制粘贴就行了.</li>
+</ol>
+
+<pre><code class="language-shell">   git clone https://github.com/flyzy2005/ss-fly
+</code></pre>
+
+<ol>
+<li>运行搭建ss代码</li>
+</ol>
+
+<pre><code class="language-shell">   ss-fly/ss-fly.sh -i yourpassword 1024
+</code></pre>
+
+<p>这里把<strong>yourpassword</strong>替换为你想要设置的密码就行了, 随意设定, 以后使用ss客户端就用这个密码. 后面的<strong>1024</strong>是服务的端口号, 默认是1024.</p>
+
+<ol>
+<li><p>等待一会后出现成功提示就可以了.</p></li>
+
+<li><p>启动服务:</p></li>
+</ol>
+
+<pre><code class="language-shell">   /etc/init.d/ss-fly start
+</code></pre>
+
+<p>其他相关操作:</p>
+
+<pre><code class="language-shell">   启动：/etc/init.d/ss-fly start
+   停止：/etc/init.d/ss-fly stop
+   重启：/etc/init.d/ss-fly restart
+   状态：/etc/init.d/ss-fly status
+    
+   修改配置文件：vim /etc/shadowsocks.json
+</code></pre>
+
+<p>ss服务启动之后一般情况下不需要调整服务端了, 服务器常开就行.</p>
+
+<h4 id="ss客户端">ss客户端</h4>
+
+<p>shadowsocks的官方client地址是<a href="https://shadowsocks.org/en/download/clients.html">shadowsocks clients</a>, 但似乎是被墙了. windows的GUI Client可以从Github上下载.</p>
+
+<ul>
+<li><a href="https://github.com/shadowsocks/shadowsocks-windows/releases">shadowsocks-win</a></li>
+<li><a href="https://github.com/shadowsocks/shadowsocks-windows/releases">shadowsocks-Qt5</a></li>
+</ul>
+
+<p>下载后解压启动shadowsocks, 会在右下角显示一个<img src="https://i.loli.net/2018/08/19/5b7989881e4b4.jpg" alt="" />的图标,右击即可打开选项.  服务器添加窗口打开后填写服务器相关数据即可.</p>
+
+<p><img src="https://i.loli.net/2018/08/19/5b798aa7c597f.jpg" alt="客户端设置" /></p>
+
+<p>服务器添加成功后, 右键图标选择启动服务即可启动shadowsocks, 其他选项例如开机自启动,自动更新之类的看自己需求.</p>
+
+<h1 id="参考文章">参考文章</h1>
+
+<p>[<a href="https://www.flyzy2005.win/fan-qiang/shadowsocks/install-shadowsocks-in-one-command/">一键脚本搭建SS/搭建SSR服务并开启BBR加速 | flyzy小站</a>]</p></div>
+  <footer class="post-footer">
+    
+    <ul class="post-tags">
+      
+      <li><a href="https://www.yucklys.com/tags/shadowsocks/">Shadowsocks</a></li>
+      
+    </ul>
+    
+  </footer>
+  
+  
+  
+  
+  <div id="vcomments" />
+  <script>
+  new Valine({
+        el: '#vcomments' ,
+        appId: 'KUblOPKlq50rTW3lTrMNovfT-gzGzoHsz',
+        appKey: 'gi4gkH2uAcjg12ua1Hg5DPAj',
+	path: '\/2018\/08\/17\/vultr-%E4%B8%8E%E5%B0%8F%E9%A3%9E%E6%9C%BA\/',
+        notify:  false , 
+        verify:  false , 
+        avatar:'mm', 
+        placeholder: '喵喵喵?',
+        visitor:  true 
+  })
+  </script>
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2018 - 2019 Yucklys的小站</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span><a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 3.0</a>️</span>
+</footer>
+<script src="https://www.yucklys.com/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://www.yucklys.com/js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  hljs.initHighlightingOnLoad();
+  setMenuListener();
+
+  InstantClick.on('change', function() {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+    setMenuListener();
+  });
+
+  function setMenuListener() {
+    var menuToggle = document.querySelector('.menu-toggle');
+    var body = document.querySelector('body');
+    menuToggle.addEventListener('click', function() {
+      body.classList.toggle('no-scroll');
+    }, false);
+  }
+</script>
+</body>
+</html>
+

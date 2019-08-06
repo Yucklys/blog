@@ -8,61 +8,14 @@
   </url>
   
   <url>
-    <loc>https://www.yucklys.com/posts/electron%E4%B8%8Ereact%E7%BB%93%E5%90%88/</loc>
-    <lastmod>2018-12-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/posts/react-scroll/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/posts/%E6%90%AC%E5%AE%B6github-page%E5%85%B3%E8%81%94%E5%9F%9F%E5%90%8D/</loc>
-    <lastmod>2018-11-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/posts/install-ss-with-vultr/</loc>
-    <lastmod>2018-08-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/posts/python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/posts/win10-ultrauxthemepatcher/</loc>
-    <lastmod>2018-07-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/posts/hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2018-06-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/categories/beautify/</loc>
-    <lastmod>2018-07-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/categories/blog/</loc>
-    <lastmod>2018-11-05T00:00:00+00:00</lastmod>
+    <loc>https://www.yucklys.com/</loc>
+    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.yucklys.com/categories/</loc>
-    <lastmod>2018-07-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/categories/customization/</loc>
-    <lastmod>2018-07-15T00:00:00+00:00</lastmod>
+    <lastmod>2018-12-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -79,6 +32,40 @@
   </url>
   
   <url>
+    <loc>https://www.yucklys.com/posts/</loc>
+    <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yucklys.com/tags/react/</loc>
+    <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yucklys.com/tags/</loc>
+    <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yucklys.com/2018/12/16/%E5%9C%A8-react-%E4%B8%AD%E5%BC%95%E5%85%A5-electron/</loc>
+    <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yucklys.com/2018/11/19/react-%E6%BB%9A%E5%8A%A8%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yucklys.com/categories/blog/</loc>
+    <lastmod>2018-11-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.yucklys.com/tags/github/</loc>
     <lastmod>2018-11-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -91,33 +78,8 @@
   </url>
   
   <url>
-    <loc>https://www.yucklys.com/posts/</loc>
-    <lastmod>2018-12-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/categories/programming/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/categories/python/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/tags/react/</loc>
-    <lastmod>2018-12-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yucklys.com/tags/road-mark/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://www.yucklys.com/2018/11/05/%E6%90%AC%E5%AE%B6github-pages-%E5%85%B3%E8%81%94%E5%9F%9F%E5%90%8D/</loc>
+    <lastmod>2018-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -127,14 +89,30 @@
   </url>
   
   <url>
-    <loc>https://www.yucklys.com/categories/shadowsocs/</loc>
+    <loc>https://www.yucklys.com/2018/08/17/vultr-%E4%B8%8E%E5%B0%8F%E9%A3%9E%E6%9C%BA/</loc>
     <lastmod>2018-08-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yucklys.com/categories/python/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.yucklys.com/tags/</loc>
-    <lastmod>2018-12-16T00:00:00+00:00</lastmod>
+    <loc>https://www.yucklys.com/2018/07/17/python%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85%E4%B8%8E%E5%8C%85%E5%86%85%E6%95%B0%E6%8D%AE%E8%AF%BB%E5%86%99/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.yucklys.com/tags/road-mark/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yucklys.com/categories/customization/</loc>
+    <lastmod>2018-07-15T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -145,15 +123,13 @@
   </url>
   
   <url>
-    <loc>https://www.yucklys.com/tags/windows/</loc>
+    <loc>https://www.yucklys.com/2018/07/15/windows-10-%E6%9B%B4%E6%8D%A2%E7%AC%AC%E4%B8%89%E6%96%B9%E4%B8%BB%E9%A2%98/</loc>
     <lastmod>2018-07-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.yucklys.com/</loc>
-    <lastmod>2019-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://www.yucklys.com/2018/06/29/hexo-github-%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2018-06-29T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

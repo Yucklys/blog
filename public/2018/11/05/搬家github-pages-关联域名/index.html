@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>搬家！GitHub Pages 关联域名 - Yucklys的小站</title>
+    
+    <meta name="description" content="最近有时间上 Godaddy 购进了一个新域名，yucklys.com，一番折腾之后总算是摆脱了 github.io ，特此做一个记录。">
+    <meta name="author" content="">
+    
+    <link href="https://www.yucklys.com/css/github-gist.min.css" rel="stylesheet">
+    <link href="https://www.yucklys.com/css/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="https://www.yucklys.com/img/apple-touch-icon.png">
+    <link rel="icon" href="https://www.yucklys.com/img/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <link rel="alternate" type="application/atom+xml" href="https://www.yucklys.com/index.xml" title="Yucklys的小站">
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+
+  </head>
+  <body class="single">
+    <header class="header">
+      <div class="wrap">
+        
+        <p class="logo"><a href="https://www.yucklys.com/">Yucklys的小站 </a></p>
+        
+        <button class="menu-toggle" type="button"></button>
+      </div>
+    </header>
+    <nav class="nav">
+    <ul class="menu">
+      
+      
+      <li class="">
+        <a href="/">HOME</a>
+      </li>
+      
+      
+      <li class="">
+        <a href="/tags/">TAGS</a>
+      </li>
+      
+      
+      <li class="">
+        <a href="/categories/">CATEGORIES</a>
+      </li>
+      
+      
+      <li class="">
+        <a href="/about/">ABOUT</a>
+      </li>
+      
+    </ul>
+    </nav>
+    <main class="main">
+
+
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">搬家！GitHub Pages 关联域名</h1>
+    <div class="post-meta">2018.11.5<span id="/2018/11/05/%E6%90%AC%E5%AE%B6github-pages-%E5%85%B3%E8%81%94%E5%9F%9F%E5%90%8D/" class="leancloud_visitors" data-flag-title="搬家！GitHub Pages 关联域名">
+        <span class="post-meta-item-text">文章阅读量 </span>
+        <span class="leancloud-visitors-count"></span>
+        <p></p>
+      </span>
+    </div>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+				(adsbygoogle = window.adsbygoogle || []).push({
+						google_ad_client: "ca-pub-8383164891462758",
+						enable_page_level_ads: true
+				});
+		</script>
+  </header>
+  <div class="post-content"><p>最近有时间上 <a href="https://www.godaddy.com/">Godaddy</a> 购进了一个新域名，<a href="https://yucklys.com/">yucklys.com</a>，一番折腾之后总算是摆脱了 github.io ，特此做一个记录。</p>
+
+<h2 id="服务选择">服务选择</h2>
+
+<p>由于不想去备案，并且实际上这个博客也没多少人看，所以选择了<strong>狗爹</strong>的域名。狗爹的<code>.com</code>域名还是很良心的，因为我们的https通过GitHub就可以开启，所以不用额外购买服务，而且还不需要实名认证，所以相对起来还是选择了狗爹。</p>
+
+<p>具体域名怎么购买我就不赘述了，点击上方Godaddy的链接即可进入主界面，注册帐号，搜索域名，找到心仪的域名就收入囊中吧！</p>
+
+<blockquote>
+<p>喝一杯咖啡，休息一下:coffee:。</p>
+</blockquote>
+
+<p>一切都准备就绪了的话，开始搬家吧！</p>
+
+<h2 id="搬家">搬家</h2>
+
+<h3 id="github-cname配置">GitHub CNAME配置</h3>
+
+<p>首先打开博客在GitHub上的地址，比如<a href="https://github.com/Yucklys/yucklys.github.io。在setting-GitHub">https://github.com/Yucklys/yucklys.github.io。在setting-GitHub</a> Pages选项下面可以看到如下的提示：</p>
+
+<blockquote>
+<p>Your site is published at <a href="https://yourname.github.io/">https://yourname.github.io/</a></p>
+</blockquote>
+
+<p>这表明你的博客现在在yourname.github.io域名下运行着呢，现在我们需要做的就是设置一个cname记录把我们的新域名，yourname.com，添加进去。</p>
+
+<p>在GitHub Pages相关选项中有一个<strong>Custom Domain</strong>选项，填写我们的域名，然后点击旁边的<strong>Save</strong>。如果一切顺利的话，在刷新后GitHub Pages下方的提示应该变成了：</p>
+
+<blockquote>
+<p>Your site is published at <a href="http://yourname.com/">http://yourname.com/</a></p>
+</blockquote>
+
+<h3 id="godaddy域名解析">Godaddy域名解析</h3>
+
+<p>现在让我们转移到我们的域名控制台上进行域名的解析操作。</p>
+
+<p><img src="https://i.loli.net/2018/11/06/5be10e1559b33.png" alt="domain_name.png" /></p>
+
+<p>在Godaddy的域名管理台下需要修改的只有两处：</p>
+
+<ol>
+<li>修改A记录，记录值改为GitHub Page的IP地址。</li>
+</ol>
+
+<p>注意，如果想给自己的博客加上小绿锁的话，这里的IP地址是<strong>GitHu Page的HTTPS地址</strong>。总共有四个IP地址可选，随便选择一个就好了。<a href="https://help.github.com/articles/setting-up-an-apex-domain/">官方文档</a>已经给出了颇为详细的介绍。四个IP如下：</p>
+
+<pre><code>185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+</code></pre>
+
+<ol>
+<li>添加一个CNAME记录，把yourname.github.io添加进去。</li>
+</ol>
+
+<p>这一步没什么需要注意的，如图填写即可。</p>
+
+<p>好了，现在输入你的域名，应该就可以访问你放在GitHub上的博客内容了。</p>
+
+<h3 id="开启https">开启HTTPS</h3>
+
+<p>眼尖的同学就发现了，现在我们的网站只开启了http，如果是用chrome浏览的话还会被标上恼人的「不安全」。要想开启Https的话其实很简单，眼尖的同学可能也发现了，在第一步修改GitHub Page的设置的时候，有一个选项叫做<strong>Enforce HTTPS</strong>。</p>
+
+<p><img src="https://blog.github.com/assets/img/2018-05-01-github-pages-custom-domains-enforce-https.png" alt="Enforce HTTPS" /></p>
+
+<p>只需要简单地选中选项，页面刷新后就可以看到上方的提示变为：</p>
+
+<blockquote>
+<p>Your site is published at <a href="https://yourname.com/">https://yourname.com/</a></p>
+</blockquote>
+
+<p>但是也有可能发生一些莫名的报错，我的HTTPS无法正常使用，经过多方调查，我在GitHub文档上看到了这样一句话：<img src="https://i.loli.net/2018/11/06/5be114e1ef53e.png" alt="resolve http.png" /></p>
+
+<p>然后我先删除了我的<strong>Custom Domain</strong>设置，保存，然后再重新添加，保存，然后<strong>Enforce HTTPS</strong>就可以使用了。不是很清楚是什么原理，不过这样做确实是解决了我的问题。</p>
+
+<p>等待一段时间后，就可以看到自己的Https博客了:smile: 。</p>
+
+<h3 id="本地配置">本地配置</h3>
+
+<p>但是需要注意的是，GitHub Page的CNAME选项只是在项目文件夹下新建了一个CNAME(无后缀)文件，如果在本地的git项目中没有这个文件的话，下一次deploy就会把这个文件删除，导致我们需要重新配置一遍。所以在本地上的源文件内需要也新建一个CNAME文件，内容仿照GitHub中生成的CNAME文件就行。</p>
+
+<pre><code>domainname.com
+</code></pre></div>
+  <footer class="post-footer">
+    
+    <ul class="post-tags">
+      
+      <li><a href="https://www.yucklys.com/tags/github/">GitHub</a></li>
+      
+    </ul>
+    
+  </footer>
+  
+  
+  
+  
+  <div id="vcomments" />
+  <script>
+  new Valine({
+        el: '#vcomments' ,
+        appId: 'KUblOPKlq50rTW3lTrMNovfT-gzGzoHsz',
+        appKey: 'gi4gkH2uAcjg12ua1Hg5DPAj',
+	path: '\/2018\/11\/05\/%E6%90%AC%E5%AE%B6github-pages-%E5%85%B3%E8%81%94%E5%9F%9F%E5%90%8D\/',
+        notify:  false , 
+        verify:  false , 
+        avatar:'mm', 
+        placeholder: '喵喵喵?',
+        visitor:  true 
+  })
+  </script>
+  
+  
+</article>
+
+</main>
+<footer class="footer">
+  <span>&copy; 2018 - 2019 Yucklys的小站</span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span><a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 3.0</a>️</span>
+</footer>
+<script src="https://www.yucklys.com/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="https://www.yucklys.com/js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  hljs.initHighlightingOnLoad();
+  setMenuListener();
+
+  InstantClick.on('change', function() {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+    setMenuListener();
+  });
+
+  function setMenuListener() {
+    var menuToggle = document.querySelector('.menu-toggle');
+    var body = document.querySelector('body');
+    menuToggle.addEventListener('click', function() {
+      body.classList.toggle('no-scroll');
+    }, false);
+  }
+</script>
+</body>
+</html>
+
