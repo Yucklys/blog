@@ -32,6 +32,7 @@ googleAnalytics = "UA-122649646-1"
     title = "Categories"
     url = "/categories/"
     weight = -110
+
 [params.valine]
   enable = true
   appId = 'KUblOPKlq50rTW3lTrMNovfT-gzGzoHsz'

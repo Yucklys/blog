@@ -49,7 +49,7 @@ tags:
 2. Dunst （notify 组件显示历史通知需要）
 3. redshift （backlight 开关 redshift 功能）
 
-配置放在了 [GitHub](https://github.com/Yucklys/polybar-nord-theme) 上，clone 到自己的 Polybar 配置文件夹下替换即可，建议提前做好备份。
+配置放在了 [GitHub](https://github.com/Yucklys/polybar-nord-theme) 上，clone 到自己的 Polybar 配置文件夹下替换即可，建议提前做好备份。`
 
 前排提示，配合[官方wiki](https://github.com/polybar/polybar/wiki)食用口味更佳。
 
