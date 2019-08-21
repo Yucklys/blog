@@ -1,37 +1,54 @@
 baseURL = "https://www.yucklys.com/"
 languageCode = "zh-cn"
 title = "Yucklys的小站"
-theme = "paper"
+theme = "jane"
 googleAnalytics = "UA-122649646-1"
+hasCJKLanguage = true
+enableRobotsTXT = true
+enableEmoji = true
+paginate = 3
+defaultContentLanguage = "zh-cn"
 
-[permalinks]
-  posts = "/:year/:month/:day/:title"
+[author]
+  name = "Yucklys"
 
-[menu]
-  [[menu.main]]
-    identifier = "main"
-    name = "HOME"
-    title = "Home"
-    url = "/"
-    weight = -110
-  [[menu.about]]
-    identifier = "about"
-    name = "ABOUT"
-    title = "About"
-    url = "/about/"
-    weight = -110
-  [[menu.tags]]
-    identifier = "tags"
-    name = "TAGS"
-    title = "Tags"
-    url = "/tags/"
-    weight = -110
-  [[menu.categories]]
-    identifier = "categories"
-    name = "CATEGORIES"
-    title = "Categories"
-    url = "/categories/"
-    weight = -110
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[[menu.main]]
+  name = "主页"
+  weight = 10
+  identifier = "home"
+  url = "/"
+[[menu.main]]
+  name = "归档"
+  weight = 20
+  identifier = "archives"
+  url = "/post/"
+[[menu.main]]
+  name = "标签"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+[[menu.main]]
+  name = "分类"
+  weight = 40
+  identifier = "categories"
+  url = "/categories/"
+
+[params]
+  since = "2018"
+  homeFullContent = false
+  rssFullContent = true
+  keywords = ["yucklys", "blog", "rust"]
+  dateFormatToUse = "2006-01-02"
+  toc = true
+
+[params.social]
+  a-email = "mailto:yucklys687@gmail.com"
+  b-github = "https://github.com/Yucklys"
 
 [params.valine]
   enable = true
