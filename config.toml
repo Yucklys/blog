@@ -12,6 +12,9 @@ defaultContentLanguage = "zh-cn"
 [author]
   name = "Yucklys"
 
+[languages.zh-cn]
+  languageCode = "zh-cn"
+
 [sitemap]
   changefreq = "weekly"
   priority = 0.5
