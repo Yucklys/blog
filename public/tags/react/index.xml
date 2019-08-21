@@ -13,19 +13,19 @@
     
     <item>
       <title>在 React 中引入 Electron</title>
-      <link>https://www.yucklys.com/2018/12/16/%E5%9C%A8-react-%E4%B8%AD%E5%BC%95%E5%85%A5-electron/</link>
+      <link>https://www.yucklys.com/post/electron%E4%B8%8Ereact%E7%BB%93%E5%90%88/</link>
       <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.yucklys.com/2018/12/16/%E5%9C%A8-react-%E4%B8%AD%E5%BC%95%E5%85%A5-electron/</guid>
+      <guid>https://www.yucklys.com/post/electron%E4%B8%8Ereact%E7%BB%93%E5%90%88/</guid>
       <description>&lt;p&gt;最近体验了一下 Electron，迫不及待的换上了我心爱的 React，仿佛看见了新世界，但是当我试图&lt;code&gt;import { ipcRenderer } from &#39;electron&#39;&lt;/code&gt;会报错 &lt;code&gt;TypeError: fs.existsSync is not a function&lt;/code&gt;。&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>React 滚动事件监听</title>
-      <link>https://www.yucklys.com/2018/11/19/react-%E6%BB%9A%E5%8A%A8%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/</link>
+      <link>https://www.yucklys.com/post/react-scroll/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.yucklys.com/2018/11/19/react-%E6%BB%9A%E5%8A%A8%E4%BA%8B%E4%BB%B6%E7%9B%91%E5%90%AC/</guid>
+      <guid>https://www.yucklys.com/post/react-scroll/</guid>
       <description>&lt;p&gt;对于多页面的网站来说，一个导航栏是必不可少的。现在常用的一些 64 px 高度的导航栏占用的空间对于一些展示型网站来说就有点过于大了。为了能够节省下这部分空间益达到完美的图像展示空间，我们需要在适当的时候隐藏导航栏。&lt;/p&gt;</description>
     </item>
     

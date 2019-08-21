@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hexo &#43; github 搭建自己的个人博客 - Yucklys的小站</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Yucklys" />
+  <meta name="description" content="​ 最近想搭一个个人博客，搜了一下之后找到了 Hexo 这个工具，正好借着 GitHub Pages 这个平台搭一个看看效果。
+" />
+
+  <meta name="keywords" content="yucklys, blog, rust" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.3" />
+
+
+<link rel="canonical" href="https://www.yucklys.com/post/hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="Hexo &#43; github 搭建自己的个人博客" />
+<meta property="og:description" content="​   最近想搭一个个人博客，搜了一下之后找到了 Hexo 这个工具，正好借着 GitHub Pages 这个平台搭一个看看效果。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.yucklys.com/post/hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" />
+<meta property="article:published_time" content="2018-06-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-06-29T00:00:00+00:00" />
+<meta itemprop="name" content="Hexo &#43; github 搭建自己的个人博客">
+<meta itemprop="description" content="​   最近想搭一个个人博客，搜了一下之后找到了 Hexo 这个工具，正好借着 GitHub Pages 这个平台搭一个看看效果。">
+
+
+<meta itemprop="datePublished" content="2018-06-29T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-06-29T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1843">
+
+
+
+<meta itemprop="keywords" content="GitHub," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hexo &#43; github 搭建自己的个人博客"/>
+<meta name="twitter:description" content="​   最近想搭一个个人博客，搜了一下之后找到了 Hexo 这个工具，正好借着 GitHub Pages 这个平台搭一个看看效果。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-122649646-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Yucklys的小站</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/categories/">分类</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Yucklys的小站
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Hexo &#43; github 搭建自己的个人博客</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-06-29" class="post-time">
+          2018-06-29
+        </time>
+        <div class="post-category">
+            <a href="https://www.yucklys.com/categories/life/"> Life </a>
+            <a href="https://www.yucklys.com/categories/blog/"> Blog </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#steps">Steps</a>
+<ul>
+<li><a href="#开始">开始</a></li>
+<li><a href="#hexo">hexo</a>
+<ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#初始化">初始化</a></li>
+<li><a href="#配置">配置</a></li>
+<li><a href="#hello-world">hello world</a></li>
+</ul></li>
+<li><a href="#上传repository">上传repository</a>
+<ul>
+<li><a href="#部署">部署</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#结语">结语</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>​   最近想搭一个个人博客，搜了一下之后找到了 Hexo 这个工具，正好借着 GitHub Pages 这个平台搭一个看看效果。</p>
+
+<p>​   个人博客应该是什么样子的？这一点估计每个人都有自己的想法。这里仅提供一些参考，个人博客还是需要自己去折腾为好。</p>
+
+<p>​   经过小半天的折腾, 最终成品就是大家现在正在看着的博客了, 总共耗时1小时. 现在博客具备的功能如下:</p>
+
+<ul>
+<li>一个优秀的界面(by next)</li>
+<li>评论功能(by Valine)</li>
+<li>我的联系方式</li>
+<li>本地搜索系统(hexo-generator-search)</li>
+<li>标签及分类</li>
+<li>评论人数统计(leancloud)</li>
+</ul>
+
+<h2 id="steps">Steps</h2>
+
+<h3 id="开始">开始</h3>
+
+<p>​   首先在<a href="https://github.com/">github</a>上需要一个自己的项目库, 如果没有帐号的需要自己先注册一个. 新建一个repository, 项目名为<code>whatever.github.io</code>, 选择生成默认README.md. 这样一个保存博客文件的项目库就做好了.</p>
+
+<p><img src="https://i.loli.net/2019/01/05/5c30424ba3950.png" alt="新建Repo" /></p>
+
+<h3 id="hexo">hexo</h3>
+
+<h4 id="安装">安装</h4>
+
+<p>​   hexo安装前置要求是<a href="http://nodejs.org/">Node.js</a>和<a href="http://git-scm.com/">git</a>, 需要先安装这两个才能安装hexo. 检测是否安装可以打开终端, 输入<code>node -v</code>和<code>git --version</code>, 如果没有报错则可以安装hexo了. 在终端输入<code>npm install -g hexo-cli</code>即可安装hexo, 输入<code>hexo -v</code>检测是否安装成功, 没有报错就可以开始初始化了.</p>
+
+<p><img src="https://i.loli.net/2019/01/05/5c30424b85682.png" alt="检查安装" /></p>
+
+<h4 id="初始化">初始化</h4>
+
+<p>​   在任意位置新建一个文件夹用来存放博客文件, 然后在终端界面打开文件夹, 输入<code>hexo init</code>即可完成初始化 , 当看到<code>INFO  Start blogging with Hexo!</code>时表明初始化完成, 此时的项目结构如下:</p>
+
+<pre><code>.
+├── _config.yml #项目配置文件
+├── package.json
+├── node_modules
+├── package-lock.json
+├── scaffolds
+├── source
+|   └── _posts #文章存放
+└── themes #存放主题
+</code></pre>
+
+<p>​   运行<code>npm install</code>安装依赖, 然后就可以开始配置了.</p>
+
+<h4 id="配置">配置</h4>
+
+<p>​   项目的配置在_config.yml中进行, 用任意文本编辑器打开后, 需要自己根据自己的情况更新以下版块(每一部分可以通过搜索找到):</p>
+
+<ul>
+<li>site</li>
+<li>URL</li>
+</ul>
+
+<p><code>url</code>填写自己在github上新建的库名的github pages网址就行了(<a href="https://yourrepository">https://yourrepository</a>), 比如我的就是(<a href="https://yucklys.github.io">https://yucklys.github.io</a>).</p>
+
+<ul>
+<li><p>Deployment
+<code>type</code>填写git, 然后填写repository和branch如下</p>
+
+<pre><code class="language-yaml">deploy:
+type: git
+repository: git@github.com:Yucklys/yucklys.github.io.git
+branch: master
+</code></pre></li>
+</ul>
+
+<p>​   repository填写项目库SSH链接, 从项目库的clone or download选项中复制SSH链接然后粘贴, branch填写master.</p>
+
+<h4 id="hello-world">hello world</h4>
+
+<p>​   终端输入<code>hexo g</code>生成页面, 结束后输入<code>hexo s</code>在本地服务器上显示页面, 默认端口是4000, 显示<code>INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</code>时打开浏览器, 输入localhost:4000并跳转即可看到自己的博客页以及初始的一个文章.</p>
+
+<h3 id="上传repository">上传repository</h3>
+
+<p>​   首先全局声明自己身份, 在终端输入:</p>
+
+<pre><code>$ git config --global user.name &quot;Your Name&quot;
+$ git config --global user.email &quot;email@example.com&quot;
+</code></pre>
+
+<p>​   在终端输入<code>cd ~/.ssh</code>, 如果返回”… No such file or directory ”, 则直接输入<code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code>(<strong>邮箱换成你的邮箱</strong>). 如果能进入ssh文件夹的话则输入<code>mkdir key_backup mv id_isa* key_backup</code>备份, 然后再输入<code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code>.</p>
+
+<p>​   可以一路回车, 如果想要每次输入密码的话, 也可以设置密码.</p>
+
+<p>​   然后依次输入以下命令:</p>
+
+<pre><code>ssh-agent -s
+ssh-add ~/.ssh/id_rsa
+</code></pre>
+
+<p>​   如果出错显示<code>Could not open a connection to your authentication agent</code>, 就输入</p>
+
+<pre><code>eval `ssh-agent -s`
+ssh-add
+</code></pre>
+
+<p>​   之后输入<code>clip &lt; ~/.ssh/id_rsa.pub</code>复制ssh key到剪切板. 在github用户设置界面可以看到<strong>SSH and GPG keys</strong>选项, 在该项下选择New SSH key, 随便写个名字, 然后将key粘贴到key中并保存. 之后在终端中输入<code>ssh -T git@github.com</code>查看是否成功添加, 有警告就一路yes, 出现<code>Hi username! You've successfully authenticated, but Github does not provide shell access</code>说明添加成功.</p>
+
+<h4 id="部署">部署</h4>
+
+<p>​   终端切换到博客文件夹, 输入<code>hexo d</code>部署, 显示<code>INFO  Deploy done: git</code>表明部署完成. 在浏览器中输入yucklys.github.io即可进入到博客界面了.</p>
+
+<h2 id="结语">结语</h2>
+
+<p>​   hexo的next主题最大的优点就是它的用户广泛, 所以大部分的功能都可以在<code>主题配置文件</code>中找到, 包含有完整的帮助文件以及众多next主题的大神用户自定义的方案, 可以说只需要<del>cv</del>简单模仿就可以做出一个不错的博客页. 当然写作的质量还是很关键的, 会用markdown是必不可少的一项技能, 这里可以去看一下hexo的<a href="https://hexo.io/zh-cn/docs/writing.html">官方写作教程</a>, markdown的教程网上有许多, 善用google或百度.</p>
+
+<hr />
+
+<p>​   <em>2018.11.4更新</em></p>
+
+<p>现在使用的是<a href="https://github.com/ppoffice/hexo-theme-icarus">icarus</a>主题，换主题有两方面原因，一是<strong>icarus</strong>的确是一款很优秀的主题，二是<strong>next</strong>用的人实在是太多了，每次看别人的博客都有种撞衫的不爽感……</p>
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://www.yucklys.com/tags/github/">GitHub</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/win10-ultrauxthemepatcher/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">Windows 10 更换第三方主题</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:yucklys687@gmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/Yucklys" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://www.yucklys.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2018 -
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        Yucklys
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

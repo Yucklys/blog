@@ -6,17 +6,28 @@
     <description>Recent content in Customization on Yucklys的小站</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 15 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.yucklys.com/categories/customization/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Polybar Nord主题配置</title>
+      <link>https://www.yucklys.com/post/i3-nord-theme/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/post/i3-nord-theme/</guid>
+      <description>&lt;p&gt;最近迷上了 &lt;a href=&#34;https://www.nordtheme.com/&#34;&gt;Nord&lt;/a&gt; 配色，把我的终端、vim、以及 i3wm 的配色全部换成了Nord。不过 Polybar 我并没有找到合适的 Nord 配色，所以花了点时间，重新写了一遍配置，使用了 Nord 配色并且基本支持所有的官方 module 和一些社区以及本人写的 module。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tupp.xyz/2019/08/05/15650043555d481243502de.png&#34; alt=&#34;i3-nord.png&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Windows 10 更换第三方主题</title>
-      <link>https://www.yucklys.com/2018/07/15/windows-10-%E6%9B%B4%E6%8D%A2%E7%AC%AC%E4%B8%89%E6%96%B9%E4%B8%BB%E9%A2%98/</link>
+      <link>https://www.yucklys.com/post/win10-ultrauxthemepatcher/</link>
       <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.yucklys.com/2018/07/15/windows-10-%E6%9B%B4%E6%8D%A2%E7%AC%AC%E4%B8%89%E6%96%B9%E4%B8%BB%E9%A2%98/</guid>
+      <guid>https://www.yucklys.com/post/win10-ultrauxthemepatcher/</guid>
       <description>&lt;p&gt;​   Windows 10 系统在主题的定制功能上做了削减，导致主题只能做到更改窗口颜色等有限的改变。不过通过 UXThemePather 可以让我们在 Windows 10 上使用第三方主题。&lt;/p&gt;</description>
     </item>
     

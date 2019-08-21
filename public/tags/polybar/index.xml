@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>polybar on Yucklys的小站</title>
+    <link>https://www.yucklys.com/tags/polybar/</link>
+    <description>Recent content in polybar on Yucklys的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.yucklys.com/tags/polybar/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Polybar Nord主题配置</title>
+      <link>https://www.yucklys.com/post/i3-nord-theme/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/post/i3-nord-theme/</guid>
+      <description>&lt;p&gt;最近迷上了 &lt;a href=&#34;https://www.nordtheme.com/&#34;&gt;Nord&lt;/a&gt; 配色，把我的终端、vim、以及 i3wm 的配色全部换成了Nord。不过 Polybar 我并没有找到合适的 Nord 配色，所以花了点时间，重新写了一遍配置，使用了 Nord 配色并且基本支持所有的官方 module 和一些社区以及本人写的 module。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tupp.xyz/2019/08/05/15650043555d481243502de.png&#34; alt=&#34;i3-nord.png&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

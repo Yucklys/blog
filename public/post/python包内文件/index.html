@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-cn" itemscope itemtype="http://schema.org/WebPage">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Python文件打包与包内数据读写 - Yucklys的小站</title>
+  
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Yucklys" />
+  <meta name="description" content="​ Python 写起来是很方便，不过需要发布的时候却总是有很多的麻烦事。
+" />
+
+  <meta name="keywords" content="yucklys, blog, rust" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.56.3" />
+
+
+<link rel="canonical" href="https://www.yucklys.com/post/python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/" />
+
+
+
+<link rel="icon" href="/favicon.ico" />
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+
+
+
+
+
+<meta property="og:title" content="Python文件打包与包内数据读写" />
+<meta property="og:description" content="​   Python 写起来是很方便，不过需要发布的时候却总是有很多的麻烦事。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.yucklys.com/post/python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/" />
+<meta property="article:published_time" content="2018-07-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2018-07-17T00:00:00+00:00" />
+<meta itemprop="name" content="Python文件打包与包内数据读写">
+<meta itemprop="description" content="​   Python 写起来是很方便，不过需要发布的时候却总是有很多的麻烦事。">
+
+
+<meta itemprop="datePublished" content="2018-07-17T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-07-17T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1991">
+
+
+
+<meta itemprop="keywords" content="Road-mark," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python文件打包与包内数据读写"/>
+<meta name="twitter:description" content="​   Python 写起来是很方便，不过需要发布的时候却总是有很多的麻烦事。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-122649646-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Yucklys的小站</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/">主页</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/post/">归档</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/tags/">标签</a>
+          
+        
+      </li><li class="mobile-menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/categories/">分类</a>
+          
+        
+      </li>
+    
+
+    
+  </ul>
+</nav>
+
+
+  
+
+  
+
+  
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Yucklys的小站
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/">主页</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/post/">归档</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/tags/">标签</a>
+          
+
+        
+
+      </li>
+    
+        <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="https://www.yucklys.com/categories/">分类</a>
+          
+
+        
+
+      </li>
+    
+
+    
+    
+
+    
+  </ul>
+</nav>
+
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Python文件打包与包内数据读写</h1>
+      
+      <div class="post-meta">
+        <time datetime="2018-07-17" class="post-time">
+          2018-07-17
+        </time>
+        <div class="post-category">
+            <a href="https://www.yucklys.com/categories/python/"> Python </a>
+            
+          </div>
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#添加数据文件到包内">添加数据文件到包内</a>
+<ul>
+<li><a href="#项目结构">项目结构</a></li>
+<li><a href="#manifest-in">MANIFEST.in</a></li>
+<li><a href="#setup-py">setup.py</a></li>
+</ul></li>
+<li><a href="#读取包内文件">读取包内文件</a>
+<ul>
+<li><a href="#file">__file__</a></li>
+<li><a href="#pkg-resources">pkg_resources</a></li>
+<li><a href="#对比">对比</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>​   Python 写起来是很方便，不过需要发布的时候却总是有很多的麻烦事。</p>
+
+<h2 id="添加数据文件到包内">添加数据文件到包内</h2>
+
+<h3 id="项目结构">项目结构</h3>
+
+<blockquote>
+<p>在开始制作分发包之前，需要先对文件结构有一个清晰的认识，这里我用一个<code>funny_joke</code>的示例来说明一下。</p>
+</blockquote>
+
+<pre><code class="language-shell">E:.
+│  MANIFEST.in
+│  setup.py
+│  
+└─funny
+    │  main.py
+    │  __init__.py
+    │  
+    └─data
+            funny_joke.txt
+</code></pre>
+
+<p>这个项目的树状图如上所示，我们的主程序放在了<code>funny\main.py</code>内，而我们需要从<code>funny\data</code>中导入数据文件<code>funny_joke.txt</code>。在打包的时候我们也希望能够<strong>保持</strong>这个结构，也就是说在.egg包内数据文件的路径也是<code>funny\data\funny_joke.txt</code>。</p>
+
+<h3 id="manifest-in">MANIFEST.in</h3>
+
+<p><code>MANIFEST.in</code>文件包含Python在打包时读取的需要打包的附属文件的相对路径，当没有<code>MANIFEST.in</code>时，Python会依据<code>setup.py</code>中给出的打包文件进行打包，这种方法暂且不提。</p>
+
+<p>根据文件结构，我们需要的文件在<code>funny\data</code>中。在<code>MANIFEST.in</code>中，用<code>include</code>表明需要打包的文件。</p>
+
+<pre><code class="language-shell">include funny\data\*
+</code></pre>
+
+<p><code>*</code>表示导入所有文件，在文件路径和文件名之间有空格。</p>
+
+<h3 id="setup-py">setup.py</h3>
+
+<p><code>setup.py</code>中只需要一行<code>include_package_data=True</code>就可以了，完整的代码如下：</p>
+
+<pre><code class="language-python">from setuptools import setup, find_packages
+
+setup(
+    name='Tell a Joke',
+    version='1.0.0',
+    packages=find_packages(),
+    include_package_data=True,
+)
+</code></pre>
+
+<p><code>setup</code>函数还有很多其他的设置，可以<a href="https://docs.python.org/3.7/distutils/setupscript.html">查看文档</a>了解更多的配置，这里就不赘述了。</p>
+
+<h2 id="读取包内文件">读取包内文件</h2>
+
+<p>由于安装包时文件位置的不确定，所以需要先获得当前文件的路径，再进行文件的读写。获取当前路径的方式有两种，一是通过<code>__file__</code>获取，二是通过<code>import pkg_resources</code>获取。</p>
+
+<h3 id="file">__file__</h3>
+
+<pre><code class="language-python">import os
+this_dir, this_filename = os.path.split(__file__)
+DATA_PATH = os.path.join(this_dir, &quot;data&quot;, &quot;funny_joke.txt&quot;)
+</code></pre>
+
+<p>通过<code>os.path.spilt(__file__)</code>函数可以获得该文件的文件名和文件路径，这里我们不需要文件名，所以只关注文件路径就行了。获取了文件路径之后，通过<code>os.path.join(this_dir, &quot;path_to_the_file&quot;)</code>取得数据文件的路径，其中<code>this_dir</code>表示的是当前运行的py文件的路径，后面的<code>&quot;path_to_the_file&quot;</code>是<strong>数据文件相对于主程序的相对路径</strong>。对于示例的情况来说，代码如上。</p>
+
+<blockquote>
+<p>这个方法仅适用于数据文件的路径可以被表示的情况，在分发包（如egg）里的数据文件就无法通过这样的方式读取，其次<code>py2exe</code>打包的文件也无法读取，因为数据文件是以zip形式储存的。</p>
+</blockquote>
+
+<h3 id="pkg-resources">pkg_resources</h3>
+
+<pre><code class="language-python">import pkg_resources
+DATA_PATH = pkg_resources.resource_filename('funny.main', 'data/funny_joke.txt')
+</code></pre>
+
+<p><code>pke_resources.resource_filename(package_or_requirement, resource_name)</code>中，<code>package_or_requirement</code>填写的是库的名称，即<code>funny.main</code>。<code>resource_name</code>处填写数据文件相对于库文件所在路径的相对路径。</p>
+
+<p>当然，<code>package_or_requirement</code>处填<code>funny</code>和<code>funny.main</code>都是一样的效果，<code>funny</code>指向的是<code>funny\__init__.py</code>，而<code>funny.main</code>指向的是<code>funny\main.py</code>，实际上都在同一个文件夹，所以对后面的<code>resource_name</code>没有影响。如果你的项目比较复杂，需要根据<code>package_or_requirement</code>填写的文件路径补充相应的相对路径。</p>
+
+<p>看起来很复杂？<strong>实际上并不是!</strong><code>pkg_resources.resource_filename()</code>函数的处理方式只要理解了，就能很轻易地掌握这个方法：</p>
+
+<ol>
+<li><p>首先在包中寻找<code>funny\main.py</code>所在的文件夹。如果这个文件包含在文件夹内，那么就直接获得路径；如果这个文件被压缩成egg，那么它会解压egg文件到<code>...\Python-Eggs\Cache</code>内。这里我们的文件包含在egg文件里。</p>
+
+<pre><code class="language-shell">C:.
+└─Cache
+   └─tell_a_joke-1.0.0-py3.5.egg-tmp
+       └─funny
+# 先获得了这样的一个直达funny的路径
+</code></pre></li>
+
+<li><p>之后它将<code>resource_name</code>，也就是数据文件<strong>关于<code>funny</code>的相对路径</strong>，代入到1中得到的文件夹中，如果能够找到文件（或文件夹）的话，就返回整个路径。</p>
+
+<pre><code class="language-shell">C:.
+└─Cache
+   └─tell_a_joke-1.0.0-py3.5.egg-tmp
+       └─funny
+           └─data
+                   funny_joke.txt
+# 然后查找.\data\funny_joke.txt是否存在，存在则获得其路径
+</code></pre></li>
+</ol>
+
+<h3 id="对比">对比</h3>
+
+<p>这两种方法各有优劣，<code>__file__</code>无法从egg或zip中获得路径，而<code>pkg_resources</code>虽然能够从egg中获取文件路径，但是当对文件进行更改的时候，只会对复制在<code>Cache</code>下的数据文件进行更改，而egg中的源文件不变。如果不小心清理了临时文件，更改过的数据文件就没了。所以说除非是<strong>特别小</strong>的数据量，或者是<strong>对数据写入没要求</strong>的程序，最好还是放在文件夹内，方便保存。</p>
+
+<p>最后以一张对比表格结束战斗。</p>
+
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">__file__</th>
+<th align="center">pkg_resources</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">适用范围</td>
+<td align="center">文件夹内</td>
+<td align="center">文件夹内，压缩包内</td>
+</tr>
+
+<tr>
+<td align="center">方便程度</td>
+<td align="center">写起来不是那么费劲，不用写绝对路径</td>
+<td align="center">实际上获得的是一个绝对路径</td>
+</tr>
+
+<tr>
+<td align="center">文件读写</td>
+<td align="center">读，写（仅限文件夹）</td>
+<td align="center">读（全方位），写(仅限文件夹）</td>
+</tr>
+</tbody>
+</table>
+    </div>
+
+    
+    
+
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://www.yucklys.com/tags/road-mark/">Road-mark</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/install-ss-with-vultr/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">Vultr 与小飞机</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/win10-ultrauxthemepatcher/">
+            <span class="next-text nav-default">Windows 10 更换第三方主题</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+    
+
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="icon-links">
+  
+  
+    <a href="mailto:yucklys687@gmail.com" rel="me noopener" class="iconfont"
+      title="email" >
+      <svg class="icon" viewBox="0 0 1451 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M664.781909 681.472759 0 97.881301C0 3.997201 71.046997 0 71.046997 0L474.477909 0 961.649408 0 1361.641813 0C1361.641813 0 1432.688811 3.997201 1432.688811 97.881301L771.345323 681.472759C771.345323 681.472759 764.482731 685.154773 753.594283 688.65053L753.594283 688.664858C741.602731 693.493018 729.424896 695.068979 718.077952 694.839748 706.731093 695.068979 694.553173 693.493018 682.561621 688.664858L682.561621 688.65053C671.644501 685.140446 664.781909 681.472759 664.781909 681.472759L664.781909 681.472759ZM718.063616 811.603883C693.779541 811.016482 658.879232 802.205449 619.10784 767.734955 542.989056 701.759633 0 212.052267 0 212.052267L0 942.809523C0 942.809523 0 1024 83.726336 1024L682.532949 1024 753.579947 1024 1348.948139 1024C1432.688811 1024 1432.688811 942.809523 1432.688811 942.809523L1432.688811 212.052267C1432.688811 212.052267 893.138176 701.759633 817.019477 767.734955 777.248 802.205449 742.347691 811.03081 718.063616 811.603883L718.063616 811.603883Z"></path>
+</svg>
+
+    </a>
+  
+    <a href="https://github.com/Yucklys" rel="me noopener" class="iconfont"
+      title="github"  target="_blank"
+      >
+      <svg class="icon" style="" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="36" height="36">
+  <path d="M512 12.672c-282.88 0-512 229.248-512 512 0 226.261333 146.688 418.133333 350.08 485.76 25.6 4.821333 34.986667-11.008 34.986667-24.618667 0-12.16-0.426667-44.373333-0.64-87.04-142.421333 30.890667-172.458667-68.693333-172.458667-68.693333C188.672 770.986667 155.008 755.2 155.008 755.2c-46.378667-31.744 3.584-31.104 3.584-31.104 51.413333 3.584 78.421333 52.736 78.421333 52.736 45.653333 78.293333 119.850667 55.68 149.12 42.581333 4.608-33.109333 17.792-55.68 32.426667-68.48-113.706667-12.8-233.216-56.832-233.216-253.013333 0-55.893333 19.84-101.546667 52.693333-137.386667-5.76-12.928-23.04-64.981333 4.48-135.509333 0 0 42.88-13.738667 140.8 52.48 40.96-11.392 84.48-17.024 128-17.28 43.52 0.256 87.04 5.888 128 17.28 97.28-66.218667 140.16-52.48 140.16-52.48 27.52 70.528 10.24 122.581333 5.12 135.509333 32.64 35.84 52.48 81.493333 52.48 137.386667 0 196.693333-119.68 240-233.6 252.586667 17.92 15.36 34.56 46.762667 34.56 94.72 0 68.522667-0.64 123.562667-0.64 140.202666 0 13.44 8.96 29.44 35.2 24.32C877.44 942.592 1024 750.592 1024 524.672c0-282.752-229.248-512-512-512"></path>
+</svg>
+
+    </a>
+
+
+<a href="https://www.yucklys.com/index.xml" rel="noopener alternate" type="application/rss&#43;xml"
+    class="iconfont" title="rss" target="_blank">
+    <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="30" height="30">
+  <path d="M819.157333 1024C819.157333 574.592 449.408 204.8 0 204.8V0c561.706667 0 1024 462.293333 1024 1024h-204.842667zM140.416 743.04a140.8 140.8 0 0 1 140.501333 140.586667A140.928 140.928 0 0 1 140.074667 1024C62.72 1024 0 961.109333 0 883.626667s62.933333-140.544 140.416-140.586667zM678.784 1024h-199.04c0-263.210667-216.533333-479.786667-479.744-479.786667V345.173333c372.352 0 678.784 306.517333 678.784 678.826667z"></path>
+</svg>
+
+  </a>
+   
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    
+      2018 -
+    2019
+    <span class="heart">
+      
+      <i class="iconfont">
+        <svg class="icon" viewBox="0 0 1025 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="14" height="14">
+  <path d="M1000.1 247.9c-15.5-37.3-37.6-70.6-65.7-98.9-54.4-54.8-125.8-85-201-85-85.7 0-166 39-221.4 107.4C456.6 103 376.3 64 290.6 64c-75.1 0-146.5 30.4-201.1 85.6-28.2 28.5-50.4 61.9-65.8 99.3-16 38.8-24 79.9-23.6 122.2 0.7 91.7 40.1 177.2 108.1 234.8 3.1 2.6 6 5.1 8.9 7.8 14.9 13.4 58 52.8 112.6 102.7 93.5 85.5 209.9 191.9 257.5 234.2 7 6.1 15.8 9.5 24.9 9.5 9.2 0 18.1-3.4 24.9-9.5 34.5-30.7 105.8-95.9 181.4-165 74.2-67.8 150.9-138 195.8-178.2 69.5-57.9 109.6-144.4 109.9-237.3 0.1-42.5-8-83.6-24-122.2z"
+   fill="#8a8a8a"></path>
+</svg>
+
+      </i>
+    </span><span class="author">
+        Yucklys
+        
+      </span></span>
+
+  
+  
+
+  
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont">
+        
+        <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="35" height="35">
+  <path d="M510.866688 227.694839 95.449397 629.218702l235.761562 0-2.057869 328.796468 362.40389 0L691.55698 628.188232l241.942331-3.089361L510.866688 227.694839zM63.840492 63.962777l894.052392 0 0 131.813095L63.840492 195.775872 63.840492 63.962777 63.840492 63.962777zM63.840492 63.962777"></path>
+</svg>
+
+      </i>
+    </div>
+  </div>
+  
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

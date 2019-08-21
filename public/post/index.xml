@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Yucklys的小站</title>
+    <link>https://www.yucklys.com/post/</link>
+    <description>Recent content in Posts on Yucklys的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.yucklys.com/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Polybar Nord主题配置</title>
+      <link>https://www.yucklys.com/post/i3-nord-theme/</link>
+      <pubDate>Mon, 05 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/post/i3-nord-theme/</guid>
+      <description>&lt;p&gt;最近迷上了 &lt;a href=&#34;https://www.nordtheme.com/&#34;&gt;Nord&lt;/a&gt; 配色，把我的终端、vim、以及 i3wm 的配色全部换成了Nord。不过 Polybar 我并没有找到合适的 Nord 配色，所以花了点时间，重新写了一遍配置，使用了 Nord 配色并且基本支持所有的官方 module 和一些社区以及本人写的 module。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tupp.xyz/2019/08/05/15650043555d481243502de.png&#34; alt=&#34;i3-nord.png&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>在 React 中引入 Electron</title>
+      <link>https://www.yucklys.com/post/electron%E4%B8%8Ereact%E7%BB%93%E5%90%88/</link>
+      <pubDate>Sun, 16 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/post/electron%E4%B8%8Ereact%E7%BB%93%E5%90%88/</guid>
+      <description>&lt;p&gt;最近体验了一下 Electron，迫不及待的换上了我心爱的 React，仿佛看见了新世界，但是当我试图&lt;code&gt;import { ipcRenderer } from &#39;electron&#39;&lt;/code&gt;会报错 &lt;code&gt;TypeError: fs.existsSync is not a function&lt;/code&gt;。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>React 滚动事件监听</title>
+      <link>https://www.yucklys.com/post/react-scroll/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/post/react-scroll/</guid>
+      <description>&lt;p&gt;对于多页面的网站来说，一个导航栏是必不可少的。现在常用的一些 64 px 高度的导航栏占用的空间对于一些展示型网站来说就有点过于大了。为了能够节省下这部分空间益达到完美的图像展示空间，我们需要在适当的时候隐藏导航栏。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>搬家！GitHub Pages 关联域名</title>
+      <link>https://www.yucklys.com/post/%E6%90%AC%E5%AE%B6github-page%E5%85%B3%E8%81%94%E5%9F%9F%E5%90%8D/</link>
+      <pubDate>Mon, 05 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/post/%E6%90%AC%E5%AE%B6github-page%E5%85%B3%E8%81%94%E5%9F%9F%E5%90%8D/</guid>
+      <description>&lt;p&gt;最近有时间上 &lt;a href=&#34;https://www.godaddy.com/&#34;&gt;Godaddy&lt;/a&gt; 购进了一个新域名，&lt;a href=&#34;https://yucklys.com/&#34;&gt;yucklys.com&lt;/a&gt;，一番折腾之后总算是摆脱了 github.io ，特此做一个记录。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vultr 与小飞机</title>
+      <link>https://www.yucklys.com/post/install-ss-with-vultr/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/post/install-ss-with-vultr/</guid>
+      <description>&lt;p&gt;多的不说了，标题已经不言而喻。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python文件打包与包内数据读写</title>
+      <link>https://www.yucklys.com/post/python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/post/python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/</guid>
+      <description>&lt;p&gt;​   Python 写起来是很方便，不过需要发布的时候却总是有很多的麻烦事。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Windows 10 更换第三方主题</title>
+      <link>https://www.yucklys.com/post/win10-ultrauxthemepatcher/</link>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/post/win10-ultrauxthemepatcher/</guid>
+      <description>&lt;p&gt;​   Windows 10 系统在主题的定制功能上做了削减，导致主题只能做到更改窗口颜色等有限的改变。不过通过 UXThemePather 可以让我们在 Windows 10 上使用第三方主题。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hexo &#43; github 搭建自己的个人博客</title>
+      <link>https://www.yucklys.com/post/hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Fri, 29 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.yucklys.com/post/hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>&lt;p&gt;​   最近想搭一个个人博客，搜了一下之后找到了 Hexo 这个工具，正好借着 GitHub Pages 这个平台搭一个看看效果。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
