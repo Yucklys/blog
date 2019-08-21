@@ -1,7 +1,7 @@
 baseURL = "https://www.yucklys.com/"
 languageCode = "zh-cn"
 title = "Yucklys的小站"
-theme = "jane"
+theme = "hugo-theme-jane"
 googleAnalytics = "UA-122649646-1"
 hasCJKLanguage = true
 enableRobotsTXT = true
