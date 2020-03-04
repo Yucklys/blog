@@ -1,13 +1,23 @@
 baseURL = "https://www.yucklys.com/"
-languageCode = "zh-cn"
-title = "Yucklys的小站"
+title = "Yucklys' Blog"
 theme = "jane"
-googleAnalytics = "UA-122649646-1"
+paginate = 5
+
+# Language
 hasCJKLanguage = true
 enableRobotsTXT = true
 enableEmoji = true
-paginate = 3
 defaultContentLanguage = "zh-cn"
+[languages]
+[Languages.zh-cn]
+  title = "Yucklys' Blog"
+  weight = 1
+[Languages.en]
+  title = "Yucklys' Blog"
+  weight = 2
+
+# Google Analytics
+googleAnalytics = "UA-122649646-1"
 
 # Highlight options. 
 # See https://gohugo.io/content-management/syntax-highlighting/ 
@@ -55,6 +65,8 @@ PygmentsOptions = "linenos=table"
   keywords = ["yucklys", "blog", "rust"]
   dateFormatToUse = "2006-01-02"
   toc = true
+  moreMeta = true
+  showMenuLanguageChooser = true
 
 [params.social]
   a-email = "mailto:yucklys687@gmail.com"
@@ -68,4 +80,8 @@ PygmentsOptions = "linenos=table"
   verify = false # Verification code
   avatar = 'mm' 
   placeholder = '喵喵喵?'
-  visitor = true
+
+[params.counter.leancloud]
+  enable = true
+  appId = 'KUblOPKlq50rTW3lTrMNovfT-gzGzoHsz'
+  appKey = 'gi4gkH2uAcjg12ua1Hg5DPAj'
