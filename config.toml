@@ -8,13 +8,9 @@ hasCJKLanguage = true
 enableRobotsTXT = true
 enableEmoji = true
 defaultContentLanguage = "zh-cn"
-[languages]
 [Languages.zh-cn]
   title = "Yucklys' Blog"
   weight = 1
-[Languages.en]
-  title = "Yucklys' Blog"
-  weight = 2
 
 # Google Analytics
 googleAnalytics = "UA-122649646-1"
@@ -66,7 +62,6 @@ PygmentsOptions = "linenos=table"
   dateFormatToUse = "2006-01-02"
   toc = true
   moreMeta = true
-  showMenuLanguageChooser = true
 
 [params.social]
   a-email = "mailto:yucklys687@gmail.com"
