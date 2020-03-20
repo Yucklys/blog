@@ -10,7 +10,7 @@ tags:
 
 最近迷上了 [Nord](https://www.nordtheme.com/) 配色，把我的终端、vim、以及 i3wm 的配色全部换成了Nord。不过 Polybar 我并没有找到合适的 Nord 配色，所以花了点时间，重新写了一遍配置，使用了 Nord 配色并且基本支持所有的官方 module 和一些社区以及本人写的 module。
 
-![i3-nord.png](https://tupp.xyz/2019/08/05/15650043555d481243502de.png)
+![polybar-nord.png](https://github.com/Yucklys/polybar-nord-theme/raw/master/polybar-nord.png)
 
 <!--more-->
 

@@ -2,25 +2,15 @@ baseURL = "https://www.yucklys.com/"
 title = "Yucklys' Blog"
 theme = "jane"
 paginate = 5
+defaultContentLanguage = "zh-cn"
 
 # Language
 hasCJKLanguage = true
 enableRobotsTXT = true
 enableEmoji = true
-defaultContentLanguage = "zh-cn"
-[Languages.zh-cn]
-  title = "Yucklys' Blog"
-  weight = 1
 
 # Google Analytics
 googleAnalytics = "UA-122649646-1"
-
-# Highlight options. 
-# See https://gohugo.io/content-management/syntax-highlighting/ 
-PygmentsCodeFences = true # Enable syntax highlighting with GitHub flavoured code fences 
-PygmentsUseClasses = true # Use CSS classes to format highlighted code 
-PygmentsCodefencesGuessSyntax = true 
-PygmentsOptions = "linenos=table" 
 
 [author]
   name = "Yucklys"
