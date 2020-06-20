@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shadowsocks on Yucklys的小站</title>
+    <title>Shadowsocks on Yucklys&#39; Blog</title>
     <link>https://www.yucklys.com/tags/shadowsocks/</link>
-    <description>Recent content in Shadowsocks on Yucklys的小站</description>
+    <description>Recent content in Shadowsocks on Yucklys&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 17 Aug 2018 00:00:00 +0000</lastBuildDate>

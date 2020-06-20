@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>React 滚动事件监听 - Yucklys的小站</title>
+  <title>React 滚动事件监听 - Yucklys&#39; Blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -33,10 +33,12 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 
 <link rel="canonical" href="https://www.yucklys.com/post/react-scroll/" />
+
+
 
 
 
@@ -52,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -66,16 +68,13 @@
 <meta property="article:modified_time" content="2018-11-19T00:00:00+00:00" />
 <meta itemprop="name" content="React 滚动事件监听">
 <meta itemprop="description" content="对于多页面的网站来说，一个导航栏是必不可少的。现在常用的一些 64 px 高度的导航栏占用的空间对于一些展示型网站来说就有点过于大了。为了能够节省下这部分空间益达到完美的图像展示空间，我们需要在适当的时候隐藏导航栏。">
-
-
 <meta itemprop="datePublished" content="2018-11-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-11-19T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1561">
 
 
 
-<meta itemprop="keywords" content="React," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="React," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="React 滚动事件监听"/>
 <meta name="twitter:description" content="对于多页面的网站来说，一个导航栏是必不可少的。现在常用的一些 64 px 高度的导航栏占用的空间对于一些展示型网站来说就有点过于大了。为了能够节省下这部分空间益达到完美的图像展示空间，我们需要在适当的时候隐藏导航栏。"/>
 
@@ -100,13 +99,14 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+<script data-ad-client="ca-pub-8383164891462758" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 </head>
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yucklys的小站</a>
+    <a href="/" class="logo">Yucklys&#39; Blog</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -162,7 +162,7 @@ if (!doNotTrack) {
     <div class="logo-wrapper">
   <a href="/" class="logo">
     
-      Yucklys的小站
+      Yucklys&#39; Blog
     
   </a>
 </div>
@@ -242,12 +242,18 @@ if (!doNotTrack) {
             <a href="https://www.yucklys.com/categories/front-end/"> Front-end </a>
             
           </div>
-        
+        <span class="more-meta"> 约 1561 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
 
         
         
 
         
+        
+          <span id="/post/react-scroll/" class="leancloud_visitors" data-flag-title="React 滚动事件监听">
+            <span class="post-meta-item-text"> | 阅读 </span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
         
       </div>
     </header>
@@ -258,22 +264,15 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#自动隐藏header">自动隐藏Header</a>
-<ul>
-<li><a href="#初始化">初始化</a></li>
-<li><a href="#添加滚动事件监听及判断">添加滚动事件监听及判断</a>
-<ul>
-<li><a href="#滚动事件监听">滚动事件监听</a></li>
-<li><a href="#滚动事件判断">滚动事件判断</a></li>
-<li><a href="#一些优化">一些优化</a></li>
-</ul></li>
-<li><a href="#最后">最后</a></li>
-</ul></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#自动隐藏header">自动隐藏Header</a>
+      <ul>
+        <li><a href="#初始化">初始化</a></li>
+        <li><a href="#添加滚动事件监听及判断">添加滚动事件监听及判断</a></li>
+        <li><a href="#最后">最后</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -281,163 +280,126 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>对于多页面的网站来说，一个导航栏是必不可少的。现在常用的一些 64 px 高度的导航栏占用的空间对于一些展示型网站来说就有点过于大了。为了能够节省下这部分空间益达到完美的图像展示空间，我们需要在适当的时候隐藏导航栏。</p>
-
 <h2 id="自动隐藏header">自动隐藏Header</h2>
-
 <h3 id="初始化">初始化</h3>
-
 <p>首先还是以<code>create-react-app</code>作为框架，在终端下输入<code>create-react-app react-scroll</code>创建项目文件夹，创建完成后进入文件夹输入<code>npm start</code>，如果顺利的话此时已经可以在<code>localhost:3000</code>看见初始的应用界面了。</p>
-
 <p>首先先改一下源文件，修改header并且加上一个足够长的内容(2000px)，让页面可以滚动足够的距离。这里为了节约篇幅，只放上需要改动的部分。</p>
-
-<pre><code class="language-javascript">//......
-class App extends Component {
-  render() {
-    return (
-      &lt;div className=&quot;App&quot;&gt;
-        &lt;header className=&quot;App-header&quot;&gt;
-          Header1
-        &lt;/header&gt;
-        &lt;div className=&quot;App-container&quot; /&gt;
-      &lt;/div&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">//......
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App&#34;</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">header</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-header&#34;</span><span style="color:#f92672">&gt;</span>
+          <span style="color:#a6e22e">Header1</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/header&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;App-container&#34;</span> <span style="color:#f92672">/&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;</span>
     );
   }
 }
-//......
-</code></pre>
-
-<p>对应的css文件也需要改一下，同上，这里的代码只是需要改动的部分，未在这里贴出的代码不需要调整。</p>
-
-<pre><code class="language-css">.App-header {
-  position: fixed; /*固定header*/
-  top: 0px;
-  width: 100%;
-  min-height: 64px;
+<span style="color:#75715e">//......
+</span></code></pre></div><p>对应的css文件也需要改一下，同上，这里的代码只是需要改动的部分，未在这里贴出的代码不需要调整。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">App-header</span> {
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>; <span style="color:#75715e">/*固定header*/</span>
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#ae81ff">100</span><span style="color:#66d9ef">%</span>;
+  <span style="color:#66d9ef">min-height</span>: <span style="color:#ae81ff">64</span><span style="color:#66d9ef">px</span>;
 }
 
-.App-container {
-  margin: 70px;
-  width: auto;
-  height: 2000px;
-  border-radius: 10px;
-  background-color: rgba(126, 248, 238, 0.856);
+.<span style="color:#a6e22e">App-container</span> {
+  <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">70</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">width</span>: <span style="color:#66d9ef">auto</span>;
+  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">2000</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">border-radius</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+  <span style="color:#66d9ef">background-color</span>: rgba(<span style="color:#ae81ff">126</span>, <span style="color:#ae81ff">248</span>, <span style="color:#ae81ff">238</span>, <span style="color:#ae81ff">0.856</span>);
 }
-</code></pre>
-
-<p>现在的页面应该是这个样子，现在我们可以进行下一步的修改，让header能随着我们的滚动而消失或浮现。<img src="https://i.loli.net/2018/11/19/5bf2b0528ee57.gif" alt="初始化" /></p>
-
+</code></pre></div><p>现在的页面应该是这个样子，现在我们可以进行下一步的修改，让header能随着我们的滚动而消失或浮现。<img src="https://i.loli.net/2018/11/19/5bf2b0528ee57.gif" alt="初始化"></p>
 <h3 id="添加滚动事件监听及判断">添加滚动事件监听及判断</h3>
-
 <h4 id="滚动事件监听">滚动事件监听</h4>
-
 <p>现在我们需要加入对滚动事件的监控来获取滚动数据。在这个例子里使用的是<code>window.addEventLister('scroll', function() {})</code>方法，这个方法接受两个参数，<code>event</code>和<code>function</code>，针对我们这个例子的话分别是<code>scroll</code>事件并且绑定为<code>handleScroll</code>函数。</p>
-
-<pre><code class="language-javascript">class App extends Component {
-    componentDidMount() {
-        window.addEventLister('scroll', handleScroll);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+    <span style="color:#a6e22e">componentDidMount</span>() {
+        window.<span style="color:#a6e22e">addEventLister</span>(<span style="color:#e6db74">&#39;scroll&#39;</span>, <span style="color:#a6e22e">handleScroll</span>);
     }
     
-    handleScroll() {
-        console.log('scroll');
+    <span style="color:#a6e22e">handleScroll</span>() {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;scroll&#39;</span>);
     }
     
-    //...
-}
-</code></pre>
-
-<p><img src="https://i.loli.net/2018/11/22/5bf622abc976d.gif" alt="滚动初体验" /></p>
-
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p><img src="https://i.loli.net/2018/11/22/5bf622abc976d.gif" alt="滚动初体验"></p>
 <h4 id="滚动事件判断">滚动事件判断</h4>
-
-<p>现在知道了我们的页面什么时候滚动，那怎么判断我们滚动的方向呢？当添加<code>window.addEventListener</code>并把<code>scroll</code>事件绑定到<code>handleScroll</code>之后，就可以通过<code>window.scrollY</code>获取现在滚动的位置距离<strong>页面顶部</strong>有多远<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>。</p>
-
-<pre><code class="language-javascript">class App extends Component {
-    //...
-    handleScroll() {
-        console.log(window.scrollY)
+<p>现在知道了我们的页面什么时候滚动，那怎么判断我们滚动的方向呢？当添加<code>window.addEventListener</code>并把<code>scroll</code>事件绑定到<code>handleScroll</code>之后，就可以通过<code>window.scrollY</code>获取现在滚动的位置距离<strong>页面顶部</strong>有多远<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">handleScroll</span>() {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(window.<span style="color:#a6e22e">scrollY</span>)
     }
-    //...
-}
-</code></pre>
-
-<p><img src="https://i.loli.net/2018/11/22/5bf625cf80f86.gif" alt="Y轴座标" /></p>
-
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p><img src="https://i.loli.net/2018/11/22/5bf625cf80f86.gif" alt="Y轴座标"></p>
 <p>那如何通过这个参数判断滚动方向呢？假设说我们有一个<code>prevScroll</code>的变量，保存着我们之前页面所在的Y轴座标，那么我们通过<code>window.scrollY - prevScroll</code>就可以判断滚动方向了。如果这个数值为正，则为向下滚动；如果这个数值为负，则为向上滚动。</p>
-
-<p><img src="https://i.loli.net/2018/11/22/5bf6295d240f0.png" alt="滚动判断" /></p>
-
+<p><img src="https://i.loli.net/2018/11/22/5bf6295d240f0.png" alt="滚动判断"></p>
 <p>如果对React足够熟悉的话应该立马就想到了<code>this.state</code>。现在我们创建一个<code>this.state.prevScroll</code>用来储存上一次的页面滚动位置，然后在每一次<code>handleScroll</code>进行完判断之后更新<code>this.state.prevScroll</code>。</p>
-
-<pre><code class="language-javascript">class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            prevScroll: 0 //初始化prevScroll
-        }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+    <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+        <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+            <span style="color:#a6e22e">prevScroll</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> <span style="color:#75715e">//初始化prevScroll
+</span><span style="color:#75715e"></span>        }
     }
-    //...
-    //滚动判断
-    handleScroll() {
-        const { prevScroll } = this.state;
-        const changeY = window.scrollY;
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">//滚动判断
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">handleScroll</span>() {
+        <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">prevScroll</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>;
+        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">changeY</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">scrollY</span>;
         
-        if (changeY &gt;= 0) {
-            console.log('scroll downward')
-        } else {
-            console.log('scroll upward')
+        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">changeY</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span>) {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;scroll downward&#39;</span>)
+        } <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;scroll upward&#39;</span>)
         }
         
-        this.setState({ prevScroll: window.scrollY })
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">prevScroll</span><span style="color:#f92672">:</span> window.<span style="color:#a6e22e">scrollY</span> })
     }
-    //...
-}
-</code></pre>
-
-<p><img src="https://i.loli.net/2018/11/22/5bf63ee2a7bfa.gif" alt="滚动判断" /></p>
-
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p><img src="https://i.loli.net/2018/11/22/5bf63ee2a7bfa.gif" alt="滚动判断"></p>
 <p>现在通过同样的原理，把header的style属性指定为<code>this.state.headerStyle</code>，在滚动判断中添加适当的内容，就可以实现根据页面滚动显示或隐藏元素了。</p>
-
-<p><img src="https://i.loli.net/2018/11/22/5bf68cd4f4147.gif" alt="滚动显示/隐藏header" /></p>
-
+<p><img src="https://i.loli.net/2018/11/22/5bf68cd4f4147.gif" alt="滚动显示/隐藏header"></p>
 <h4 id="一些优化">一些优化</h4>
-
 <p>细心的人可能发现了，我们这个组件反复渲染了多次，如果在<code>render</code>函数下加入一个<code>console.log('render')</code>的话，就可以看到对于每一个scroll事件的变化，我们的组件都渲染了两次，而且同样是scroll downward，依然进行了渲染，这样子的话有可能对性能造成不必要的负担。所以这里加上<code>shouldComponentUpdate</code>函数来判断什么时候进行渲染。</p>
-
-<pre><code class="language-javascript">class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            prevScroll: 0,
-            currentDirection: 0,
-            headerStyle: {}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+    <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+        <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+            <span style="color:#a6e22e">prevScroll</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+            <span style="color:#a6e22e">currentDirection</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+            <span style="color:#a6e22e">headerStyle</span><span style="color:#f92672">:</span> {}
         };
     }
-    //...
-    shouldComponentUpdate(nextProps, nextState) {
-        return (nextState.currentDirection !== this.state.currentDirection)
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">shouldComponentUpdate</span>(<span style="color:#a6e22e">nextProps</span>, <span style="color:#a6e22e">nextState</span>) {
+        <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">nextState</span>.<span style="color:#a6e22e">currentDirection</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">currentDirection</span>)
     }
     
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll.bind(this));
+    <span style="color:#a6e22e">componentWillUnmount</span>() {
+        window.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#39;scroll&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleScroll</span>.<span style="color:#a6e22e">bind</span>(<span style="color:#66d9ef">this</span>));
     }
-    //...
-}
-</code></pre>
-
-<p><img src="https://i.loli.net/2018/11/22/5bf6ab0d794ca.gif" alt="优化滚动显示" /></p>
-
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p><img src="https://i.loli.net/2018/11/22/5bf6ab0d794ca.gif" alt="优化滚动显示"></p>
 <h3 id="最后">最后</h3>
-
 <p>当然，这里的demo只是一个最简单的版本，实际上在这个例子的基础上还可以添加更多的条件判断，并且<code>scroll</code>事件的函数也不止<code>scrollY</code>，善用这些事件监听可以让你的页面更加地灵活。</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1">当然与之相对还有<code>window.scrollX</code>，监控现在滚动位置距离页面左侧有多远。
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p>当然与之相对还有<code>window.scrollX</code>，监控现在滚动位置距离页面左侧有多远。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
     </div>
 
     
@@ -506,6 +468,32 @@ class App extends Component {
 
     
 
+  <div id="comments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 700);
+              clearInterval(checkExist);
+            }
+        }, 10);
+    }
+  </script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#comments' ,
+        appId: 'KUblOPKlq50rTW3lTrMNovfT-gzGzoHsz',
+        appKey: 'gi4gkH2uAcjg12ua1Hg5DPAj',
+        notify:  false , 
+        verify:  false , 
+        avatar:'mm', 
+        placeholder: '喵喵喵?',
+        visitor:  false 
+    });
+  </script>
+
         </div>
       </div>
     </main>
@@ -561,7 +549,7 @@ class App extends Component {
     &copy;
     
       2018 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">
@@ -605,7 +593,7 @@ class App extends Component {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 
@@ -617,6 +605,121 @@ class App extends Component {
 
 
 
+
+
+
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script type="text/javascript">
+    AV.initialize("KUblOPKlq50rTW3lTrMNovfT-gzGzoHsz", "gi4gkH2uAcjg12ua1Hg5DPAj");
+  </script>
+
+  <script>
+    function showHitCount(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push($(this).attr("id").trim());
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var hits = item.get('hits');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(hits);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function (results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("hits");
+            counter.save(null, {
+              success: function (counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('hits'));
+              },
+              error: function (counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+             
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+             
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("hits", 1);
+            newcounter.save(null, {
+              success: function (newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('hits'));
+              },
+              error: function (newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function (error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function () {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        
+        addCount(Counter);
+      } else if ($('.post-link').length > 1) {
+        
+        showHitCount(Counter);
+      }
+    });
+  </script>
 
 
 

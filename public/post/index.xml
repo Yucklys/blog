@@ -1,15 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Yucklys的小站</title>
+    <title>Posts on Yucklys&#39; Blog</title>
     <link>https://www.yucklys.com/post/</link>
-    <description>Recent content in Posts on Yucklys的小站</description>
+    <description>Recent content in Posts on Yucklys&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yucklys.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>fcitx Nord 皮肤分享</title>
+      <link>https://www.yucklys.com/post/fcitx-nord-%E7%9A%AE%E8%82%A4%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.yucklys.com/post/fcitx-nord-%E7%9A%AE%E8%82%A4%E5%88%86%E4%BA%AB/</guid>
+      <description>一直在 Linux 上使用 fcitx + rime 作为我的主力输入法，但是一直没有找到合适的皮肤。虽然有 fcitx-skin-material 这样的优质的主题，但是却不是我所用的 Nord 配色。所以我就自制了两个皮</description>
+    </item>
     
     <item>
       <title>Polybar Nord主题配置</title>
@@ -18,8 +27,7 @@
       
       <guid>https://www.yucklys.com/post/i3-nord-theme/</guid>
       <description>&lt;p&gt;最近迷上了 &lt;a href=&#34;https://www.nordtheme.com/&#34;&gt;Nord&lt;/a&gt; 配色，把我的终端、vim、以及 i3wm 的配色全部换成了Nord。不过 Polybar 我并没有找到合适的 Nord 配色，所以花了点时间，重新写了一遍配置，使用了 Nord 配色并且基本支持所有的官方 module 和一些社区以及本人写的 module。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://tupp.xyz/2019/08/05/15650043555d481243502de.png&#34; alt=&#34;i3-nord.png&#34; /&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;img src=&#34;https://github.com/Yucklys/polybar-nord-theme/raw/master/polybar-nord.png&#34; alt=&#34;polybar-nord.png&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -64,7 +72,7 @@
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.yucklys.com/post/python%E5%8C%85%E5%86%85%E6%96%87%E4%BB%B6/</guid>
-      <description>&lt;p&gt;​   Python 写起来是很方便，不过需要发布的时候却总是有很多的麻烦事。&lt;/p&gt;</description>
+      <description>&lt;p&gt;​	Python 写起来是很方便，不过需要发布的时候却总是有很多的麻烦事。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -73,7 +81,7 @@
       <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.yucklys.com/post/win10-ultrauxthemepatcher/</guid>
-      <description>&lt;p&gt;​   Windows 10 系统在主题的定制功能上做了削减，导致主题只能做到更改窗口颜色等有限的改变。不过通过 UXThemePather 可以让我们在 Windows 10 上使用第三方主题。&lt;/p&gt;</description>
+      <description>&lt;p&gt;​	Windows 10 系统在主题的定制功能上做了削减，导致主题只能做到更改窗口颜色等有限的改变。不过通过 UXThemePather 可以让我们在 Windows 10 上使用第三方主题。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -82,16 +90,7 @@
       <pubDate>Fri, 29 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>https://www.yucklys.com/post/hexo-github%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>&lt;p&gt;​   最近想搭一个个人博客，搜了一下之后找到了 Hexo 这个工具，正好借着 GitHub Pages 这个平台搭一个看看效果。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>测试</title>
-      <link>https://www.yucklys.com/post/%E6%B5%8B%E8%AF%95/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.yucklys.com/post/%E6%B5%8B%E8%AF%95/</guid>
-      <description>测试一下使用 ox-hugo 写博客</description>
+      <description>&lt;p&gt;​	最近想搭一个个人博客，搜了一下之后找到了 Hexo 这个工具，正好借着 GitHub Pages 这个平台搭一个看看效果。&lt;/p&gt;</description>
     </item>
     
   </channel>

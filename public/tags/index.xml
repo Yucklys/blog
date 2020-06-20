@@ -1,15 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Yucklys的小站</title>
+    <title>Tags on Yucklys&#39; Blog</title>
     <link>https://www.yucklys.com/tags/</link>
-    <description>Recent content in Tags on Yucklys的小站</description>
+    <description>Recent content in Tags on Yucklys&#39; Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 05 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://www.yucklys.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>input</title>
+      <link>https://www.yucklys.com/tags/input/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://www.yucklys.com/tags/input/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>polybar</title>
@@ -66,11 +75,11 @@
     </item>
     
     <item>
-      <title>Themes</title>
-      <link>https://www.yucklys.com/tags/themes/</link>
+      <title>windows</title>
+      <link>https://www.yucklys.com/tags/windows/</link>
       <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://www.yucklys.com/tags/themes/</guid>
+      <guid>https://www.yucklys.com/tags/windows/</guid>
       <description></description>
     </item>
     

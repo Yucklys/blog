@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>在 React 中引入 Electron - Yucklys的小站</title>
+  <title>在 React 中引入 Electron - Yucklys&#39; Blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -33,10 +33,12 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 
 <link rel="canonical" href="https://www.yucklys.com/post/electron%E4%B8%8Ereact%E7%BB%93%E5%90%88/" />
+
+
 
 
 
@@ -52,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -66,16 +68,13 @@
 <meta property="article:modified_time" content="2018-12-16T00:00:00+00:00" />
 <meta itemprop="name" content="在 React 中引入 Electron">
 <meta itemprop="description" content="最近体验了一下 Electron，迫不及待的换上了我心爱的 React，仿佛看见了新世界，但是当我试图import { ipcRenderer } from &#39;electron&#39;会报错 TypeError: fs.existsSync is not a function。">
-
-
 <meta itemprop="datePublished" content="2018-12-16T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-12-16T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2073">
+<meta itemprop="wordCount" content="2084">
 
 
 
-<meta itemprop="keywords" content="React,Electron," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="React,Electron," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="在 React 中引入 Electron"/>
 <meta name="twitter:description" content="最近体验了一下 Electron，迫不及待的换上了我心爱的 React，仿佛看见了新世界，但是当我试图import { ipcRenderer } from &#39;electron&#39;会报错 TypeError: fs.existsSync is not a function。"/>
 
@@ -100,13 +99,14 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+<script data-ad-client="ca-pub-8383164891462758" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 </head>
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yucklys的小站</a>
+    <a href="/" class="logo">Yucklys&#39; Blog</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -162,7 +162,7 @@ if (!doNotTrack) {
     <div class="logo-wrapper">
   <a href="/" class="logo">
     
-      Yucklys的小站
+      Yucklys&#39; Blog
     
   </a>
 </div>
@@ -242,12 +242,18 @@ if (!doNotTrack) {
             <a href="https://www.yucklys.com/categories/front-end/"> Front-end </a>
             
           </div>
-        
+        <span class="more-meta"> 约 2084 字 </span>
+          <span class="more-meta"> 预计阅读 5 分钟 </span>
 
         
         
 
         
+        
+          <span id="/post/electron%E4%B8%8Ereact%E7%BB%93%E5%90%88/" class="leancloud_visitors" data-flag-title="在 React 中引入 Electron">
+            <span class="post-meta-item-text"> | 阅读 </span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
         
       </div>
     </header>
@@ -258,14 +264,11 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#webpack-target属性">Webpack target属性</a></li>
-<li><a href="#preload提前引入electron">Preload提前引入electron</a></li>
-<li><a href="#总结">总结</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#webpack-target属性">Webpack target属性</a></li>
+    <li><a href="#preload提前引入electron">Preload提前引入electron</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -273,166 +276,135 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>最近体验了一下 Electron，迫不及待的换上了我心爱的 React，仿佛看见了新世界，但是当我试图<code>import { ipcRenderer } from 'electron'</code>会报错 <code>TypeError: fs.existsSync is not a function</code>。</p>
-
 <h2 id="webpack-target属性">Webpack target属性</h2>
-
 <p>webpack 的<code>target: electron-renderer</code>属性能够很好的解决这个问题。这里展示的是改造<code>create-react-app</code>的方法，其他脚手架诸如此类。</p>
-
 <p>项目新建好后，首先一发<code>yarn eject</code>展开所有配置，在多出来的config文件夹下就有我们需要更改的<code>webpack.config.js</code>文件。<code>create-react-app</code>在基础的webpack配置上添加了很多内容，比如说环境检测以及sass，不过我们这里直接在return里添加target属性，如果想要根据develop或product环境切换target的话可以自行添加。</p>
-
-<pre><code class="language-javascript">// other configs...
-module.exports = function(webpackEnv) {
-// some configs
-    return {
-        target: 'electron-renderer', // 添加target
-        // other configs
-    }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// other configs...
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">webpackEnv</span>) {
+<span style="color:#75715e">// some configs
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> {
+        <span style="color:#a6e22e">target</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;electron-renderer&#39;</span>, <span style="color:#75715e">// 添加target
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// other configs
+</span><span style="color:#75715e"></span>    }
 }
-</code></pre>
+</code></pre></div><p>OK，现在我们再运行<code>yarn start</code>的话，会发现通过浏览器无法打开<code>localhost:3000</code>了。接下来在根目录新建Electron主程序入口<code>main.js</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">app</span>, <span style="color:#a6e22e">BrowserWindow</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron&#39;</span>);
 
-<p>OK，现在我们再运行<code>yarn start</code>的话，会发现通过浏览器无法打开<code>localhost:3000</code>了。接下来在根目录新建Electron主程序入口<code>main.js</code>。</p>
+<span style="color:#75715e">// 保持对window对象的全局引用，如果不这么做的话，当JavaScript对象被
+</span><span style="color:#75715e">// 垃圾回收的时候，window对象将会自动的关闭
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">win</span>;
 
-<pre><code class="language-javascript">const { app, BrowserWindow } = require('electron');
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createWindow</span>() {
+	<span style="color:#75715e">// 创建浏览器窗口。
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">win</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">BrowserWindow</span>({ <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">800</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">600</span> });
 
-// 保持对window对象的全局引用，如果不这么做的话，当JavaScript对象被
-// 垃圾回收的时候，window对象将会自动的关闭
-let win;
+	<span style="color:#75715e">// 然后加载应用的 index.html。
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// win.loadFile(&#39;index.html&#39;);
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 这里没有选择官方的从文件加载的方法，而是选择从localhost加载
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">win</span>.<span style="color:#a6e22e">loadURL</span>(<span style="color:#e6db74">&#39;http://localhost:3000&#39;</span>);
 
-function createWindow() {
-	// 创建浏览器窗口。
-	win = new BrowserWindow({ width: 800, height: 600 });
+	<span style="color:#75715e">// 打开开发者工具
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">win</span>.<span style="color:#a6e22e">webContents</span>.<span style="color:#a6e22e">openDevTools</span>();
 
-	// 然后加载应用的 index.html。
-	// win.loadFile('index.html');
-	// 这里没有选择官方的从文件加载的方法，而是选择从localhost加载
-	win.loadURL('http://localhost:3000');
-
-	// 打开开发者工具
-	win.webContents.openDevTools();
-
-	// 当 window 被关闭，这个事件会被触发。
-	win.on('closed', () =&gt; {
-		// 取消引用 window 对象，如果你的应用支持多窗口的话，
-		// 通常会把多个 window 对象存放在一个数组里面，
-		// 与此同时，你应该删除相应的元素。
-		win = null;
+	<span style="color:#75715e">// 当 window 被关闭，这个事件会被触发。
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">win</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;closed&#39;</span>, () =&gt; {
+		<span style="color:#75715e">// 取消引用 window 对象，如果你的应用支持多窗口的话，
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 通常会把多个 window 对象存放在一个数组里面，
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">// 与此同时，你应该删除相应的元素。
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">win</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
 	});
 }
 
-// Electron 会在初始化后并准备
-// 创建浏览器窗口时，调用这个函数。
-// 部分 API 在 ready 事件触发后才能使用。
-app.on('ready', createWindow);
+<span style="color:#75715e">// Electron 会在初始化后并准备
+</span><span style="color:#75715e">// 创建浏览器窗口时，调用这个函数。
+</span><span style="color:#75715e">// 部分 API 在 ready 事件触发后才能使用。
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;ready&#39;</span>, <span style="color:#a6e22e">createWindow</span>);
 
-// 当全部窗口关闭时退出。
-app.on('window-all-closed', () =&gt; {
-	// 在 macOS 上，除非用户用 Cmd + Q 确定地退出，
-	// 否则绝大部分应用及其菜单栏会保持激活。
-	if (process.platform !== 'darwin') {
-		app.quit();
+<span style="color:#75715e">// 当全部窗口关闭时退出。
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;window-all-closed&#39;</span>, () =&gt; {
+	<span style="color:#75715e">// 在 macOS 上，除非用户用 Cmd + Q 确定地退出，
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 否则绝大部分应用及其菜单栏会保持激活。
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">platform</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;darwin&#39;</span>) {
+		<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">quit</span>();
 	}
 });
 
-app.on('activate', () =&gt; {
-	// 在macOS上，当单击dock图标并且没有其他窗口打开时，
-	// 通常在应用程序中重新创建一个窗口。
-	if (win === null) {
-		createWindow();
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;activate&#39;</span>, () =&gt; {
+	<span style="color:#75715e">// 在macOS上，当单击dock图标并且没有其他窗口打开时，
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// 通常在应用程序中重新创建一个窗口。
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">win</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>) {
+		<span style="color:#a6e22e">createWindow</span>();
 	}
 });
 
-// 在这个文件中，你可以续写应用剩下主进程代码。
-// 也可以拆分成几个文件，然后用 require 导入。
-</code></pre>
-
-<p>同时更改<code>package.json</code>，加入<code>main: &quot;main.js&quot;</code>，<code>homepage: &quot;./&quot;</code>，同时在scripts中添加<code>&quot;electron&quot;: &quot;electron .&quot;</code>，不要忘记<code>yarn add electron</code>。</p>
-
+<span style="color:#75715e">// 在这个文件中，你可以续写应用剩下主进程代码。
+</span><span style="color:#75715e">// 也可以拆分成几个文件，然后用 require 导入。
+</span></code></pre></div><p>同时更改<code>package.json</code>，加入<code>main: &quot;main.js&quot;</code>，<code>homepage: &quot;./&quot;</code>，同时在scripts中添加<code>&quot;electron&quot;: &quot;electron .&quot;</code>，不要忘记<code>yarn add electron</code>。</p>
 <p>准备工作完成之后，可以写一个小例子来测试一下渲染进程以及主进程的通信。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 在这个文件中，你可以续写应用剩下主进程代码。
+</span><span style="color:#75715e">// 也可以拆分成几个文件，然后用 require 导入。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ipcMain</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron&#39;</span>);
 
-<pre><code class="language-javascript">// 在这个文件中，你可以续写应用剩下主进程代码。
-// 也可以拆分成几个文件，然后用 require 导入。
-const { ipcMain } = require('electron');
+<span style="color:#a6e22e">ipcMain</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;react-test&#39;</span>, (<span style="color:#a6e22e">event</span>, <span style="color:#a6e22e">arg</span>) =&gt; {
+	<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`get </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">arg</span><span style="color:#e6db74">}</span><span style="color:#e6db74"> from Renderer process.`</span>);
+	<span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">sender</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;main-process-reply&#39;</span>, <span style="color:#e6db74">&#39;world&#39;</span>);
+}); <span style="color:#75715e">// 接收到react-test信号后返回main-process-reply并打印&#39;get ${arg} from Renderer process&#39;
+</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ipcRenderer</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron&#39;</span>);
 
-ipcMain.on('react-test', (event, arg) =&gt; {
-	console.log(`get ${arg} from Renderer process.`);
-	event.sender.send('main-process-reply', 'world');
-}); // 接收到react-test信号后返回main-process-reply并打印'get ${arg} from Renderer process'
-</code></pre>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> {
+    <span style="color:#a6e22e">componentDidMount</span>() {
+        <span style="color:#a6e22e">ipcRenderer</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;react-test&#39;</span>, <span style="color:#e6db74">&#39;Hello&#39;</span>); <span style="color:#75715e">// 发送react-test信号，同时arg为&#39;Hello&#39;
+</span><span style="color:#75715e"></span>
+        <span style="color:#a6e22e">ipcRenderer</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;main-process-reply&#39;</span>, (<span style="color:#a6e22e">_event</span>, <span style="color:#a6e22e">arg</span>) =&gt; {
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Hello </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">arg</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+        }); <span style="color:#75715e">// 接收main-process-reply并打印arg
+</span><span style="color:#75715e"></span>    }
 
-<pre><code class="language-javascript">const { ipcRenderer } = require('electron');
-
-class App extends {
-    componentDidMount() {
-        ipcRenderer.send('react-test', 'Hello'); // 发送react-test信号，同时arg为'Hello'
-
-        ipcRenderer.on('main-process-reply', (_event, arg) =&gt; {
-            console.log(`Hello ${arg}`);
-        }); // 接收main-process-reply并打印arg
-    }
-
-    render() {
-        // ...
-    }
+    <span style="color:#a6e22e">render</span>() {
+        <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>    }
 }
-</code></pre>
-
-<p>接下来依次运行<code>yarn start</code>以及<code>yarn electron</code>，在终端以及electron应用的控制台应该都可以看到打印出的信息，通信成功！</p>
-
+</code></pre></div><p>接下来依次运行<code>yarn start</code>以及<code>yarn electron</code>，在终端以及electron应用的控制台应该都可以看到打印出的信息，通信成功！</p>
 <h2 id="preload提前引入electron">Preload提前引入electron</h2>
-
 <p>利用webpack的target属性确实是最稳妥，最官方的解决方案了，但是对于一些高度封装webpack并且没有eject选项的脚手架来说，就无法通过target属性来简单解决了。这里使用的是<code>dva new --demo</code>新建的一个项目，我们会在主进程中提前引入我们需要的包以达到在渲染进程中使用的目的。</p>
-
 <p>首先开始的步骤同上，安装electron并且新建main.js，在主进程文件main.js中写入我们之前用过的测试例子，同时做一些修改。</p>
-
-<pre><code class="language-javascript">function createWindow() {
-  win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      preload: __dirname + '/preload.js'
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">createWindow</span>() {
+  <span style="color:#a6e22e">win</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">BrowserWindow</span>({
+    <span style="color:#a6e22e">width</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">800</span>,
+    <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">600</span>,
+    <span style="color:#a6e22e">webPreferences</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">preload</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">__dirname</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;/preload.js&#39;</span>
     }
   });
 
-  win.loadURL('http://localhost:8000'); // Roadhog默认的localhost端口为8000
-  // ...
-}
-</code></pre>
-
-<p>这里我们在preload选项中引用了根目录下在preload.js文件，在该文件中写入：</p>
-
-<pre><code class="language-javascript">global.electron = require('electron');
-</code></pre>
-
-<p>OK，现在我们修改<code>src/index.js</code>文件，就可以实现进程间通讯了。</p>
-
-<pre><code class="language-javascript">// ...
-// 3. Router
-class HomePage extends React.Component {
-  componentDidMount() {
-    const { ipcRenderer } = window.electron;
-    ipcRenderer.send('react-test', 'Hello');
-    ipcRenderer.on('main-process-reply', (_event, arg) =&gt; {
-      console.log(`Hello, ${arg}`);
+  <span style="color:#a6e22e">win</span>.<span style="color:#a6e22e">loadURL</span>(<span style="color:#e6db74">&#39;http://localhost:8000&#39;</span>); <span style="color:#75715e">// Roadhog默认的localhost端口为8000
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>这里我们在preload选项中引用了根目录下在preload.js文件，在该文件中写入：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">electron</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;electron&#39;</span>);
+</code></pre></div><p>OK，现在我们修改<code>src/index.js</code>文件，就可以实现进程间通讯了。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// ...
+</span><span style="color:#75715e">// 3. Router
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HomePage</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">React</span>.<span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">componentDidMount</span>() {
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">ipcRenderer</span> } <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">electron</span>;
+    <span style="color:#a6e22e">ipcRenderer</span>.<span style="color:#a6e22e">send</span>(<span style="color:#e6db74">&#39;react-test&#39;</span>, <span style="color:#e6db74">&#39;Hello&#39;</span>);
+    <span style="color:#a6e22e">ipcRenderer</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;main-process-reply&#39;</span>, (<span style="color:#a6e22e">_event</span>, <span style="color:#a6e22e">arg</span>) =&gt; {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Hello, </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">arg</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
     });
   }
 
-  render() {
-    return &lt;div&gt;Hello, world!&lt;/div&gt;;
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">div</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span>, <span style="color:#a6e22e">world</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/div&gt;;</span>
   }
 }
-// ...
-</code></pre>
+<span style="color:#75715e">// ...
+</span></code></pre></div><p>通过这种方式，在浏览器中打开的话会报错，无法引用ipcRenderer，但是如果通过electron打开的话就可以正常地进行通讯了。而且通过<code>preload: 'file'</code>这种方式，我们还可以很方便地把一些设置全局共享，比如：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">os</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;os&#39;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>);
 
-<p>通过这种方式，在浏览器中打开的话会报错，无法引用ipcRenderer，但是如果通过electron打开的话就可以正常地进行通讯了。而且通过<code>preload: 'file'</code>这种方式，我们还可以很方便地把一些设置全局共享，比如：</p>
-
-<pre><code class="language-javascript">const os = require('os');
-const path = require('path');
-
-global.path = path.join(os.homedir(), '.config');
-</code></pre>
-
-<h2 id="总结">总结</h2>
-
+<span style="color:#a6e22e">global</span>.<span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">join</span>(<span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">homedir</span>(), <span style="color:#e6db74">&#39;.config&#39;</span>);
+</code></pre></div><h2 id="总结">总结</h2>
 <p>除开这两种自己动手的方法以外，在 GitHub 上还有各种xxx-electron-boilerplate可供使用，不过有些年代比较久远，并且年久失修，issue 没人处理，很多依赖都落后几个版本了，反而不是很好用。当然，<a href="https://github.com/electron-react-boilerplate/electron-react-boilerplate">electron-react-boilerplate</a>这个1w star项目现在还是很活跃的，比起自己这样凑活着搭起来的框架更成体系。具体是怎么样的结合就看自己项目的需求了。</p>
     </div>
 
@@ -503,6 +475,32 @@ global.path = path.join(os.homedir(), '.config');
 
     
 
+  <div id="comments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 700);
+              clearInterval(checkExist);
+            }
+        }, 10);
+    }
+  </script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#comments' ,
+        appId: 'KUblOPKlq50rTW3lTrMNovfT-gzGzoHsz',
+        appKey: 'gi4gkH2uAcjg12ua1Hg5DPAj',
+        notify:  false , 
+        verify:  false , 
+        avatar:'mm', 
+        placeholder: '喵喵喵?',
+        visitor:  false 
+    });
+  </script>
+
         </div>
       </div>
     </main>
@@ -558,7 +556,7 @@ global.path = path.join(os.homedir(), '.config');
     &copy;
     
       2018 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">
@@ -602,7 +600,7 @@ global.path = path.join(os.homedir(), '.config');
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 
@@ -614,6 +612,121 @@ global.path = path.join(os.homedir(), '.config');
 
 
 
+
+
+
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script type="text/javascript">
+    AV.initialize("KUblOPKlq50rTW3lTrMNovfT-gzGzoHsz", "gi4gkH2uAcjg12ua1Hg5DPAj");
+  </script>
+
+  <script>
+    function showHitCount(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push($(this).attr("id").trim());
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var hits = item.get('hits');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(hits);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function (results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("hits");
+            counter.save(null, {
+              success: function (counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('hits'));
+              },
+              error: function (counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+             
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+             
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("hits", 1);
+            newcounter.save(null, {
+              success: function (newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('hits'));
+              },
+              error: function (newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function (error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function () {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        
+        addCount(Counter);
+      } else if ($('.post-link').length > 1) {
+        
+        showHitCount(Counter);
+      }
+    });
+  </script>
 
 
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Polybar Nord主题配置 - Yucklys的小站</title>
+  <title>Polybar Nord主题配置 - Yucklys&#39; Blog</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -33,10 +33,12 @@
 
 
 
-<meta name="generator" content="Hugo 0.56.3" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 
 <link rel="canonical" href="https://www.yucklys.com/post/i3-nord-theme/" />
+
+
 
 
 
@@ -52,7 +54,7 @@
 
 
 
-<link rel="stylesheet" href="/sass/jane.min.af20b78e95c84de86b00a0242a4a77bd2601700e1b250edf27537d957ac0041d.css" integrity="sha256-ryC3jpXITehrAKAkKkp3vSYBcA4bJQ7fJ1N9lXrABB0=" media="screen" crossorigin="anonymous">
+<link rel="stylesheet" href="/sass/jane.min.fa3d941d1d0e0ddc985804227feabffea55c89883eb0af34e0532a7ae9135151.css" integrity="sha256-&#43;j2UHR0ODdyYWAQif&#43;q//qVciYg&#43;sK804FMqeukTUVE=" media="screen" crossorigin="anonymous">
 
 
 
@@ -60,7 +62,6 @@
 
 <meta property="og:title" content="Polybar Nord主题配置" />
 <meta property="og:description" content="最近迷上了 Nord 配色，把我的终端、vim、以及 i3wm 的配色全部换成了Nord。不过 Polybar 我并没有找到合适的 Nord 配色，所以花了点时间，重新写了一遍配置，使用了 Nord 配色并且基本支持所有的官方 module 和一些社区以及本人写的 module。
-
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.yucklys.com/post/i3-nord-theme/" />
@@ -68,21 +69,16 @@
 <meta property="article:modified_time" content="2019-08-05T00:00:00+00:00" />
 <meta itemprop="name" content="Polybar Nord主题配置">
 <meta itemprop="description" content="最近迷上了 Nord 配色，把我的终端、vim、以及 i3wm 的配色全部换成了Nord。不过 Polybar 我并没有找到合适的 Nord 配色，所以花了点时间，重新写了一遍配置，使用了 Nord 配色并且基本支持所有的官方 module 和一些社区以及本人写的 module。
-
 ">
-
-
 <meta itemprop="datePublished" content="2019-08-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2019-08-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1868">
+<meta itemprop="wordCount" content="1840">
 
 
 
-<meta itemprop="keywords" content="polybar," />
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="polybar," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Polybar Nord主题配置"/>
 <meta name="twitter:description" content="最近迷上了 Nord 配色，把我的终端、vim、以及 i3wm 的配色全部换成了Nord。不过 Polybar 我并没有找到合适的 Nord 配色，所以花了点时间，重新写了一遍配置，使用了 Nord 配色并且基本支持所有的官方 module 和一些社区以及本人写的 module。
-
 "/>
 
 <!--[if lte IE 9]>
@@ -106,13 +102,14 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+<script data-ad-client="ca-pub-8383164891462758" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 
 </head>
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">Yucklys的小站</a>
+    <a href="/" class="logo">Yucklys&#39; Blog</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -168,7 +165,7 @@ if (!doNotTrack) {
     <div class="logo-wrapper">
   <a href="/" class="logo">
     
-      Yucklys的小站
+      Yucklys&#39; Blog
     
   </a>
 </div>
@@ -249,12 +246,18 @@ if (!doNotTrack) {
             <a href="https://www.yucklys.com/categories/linux/"> Linux </a>
             
           </div>
-        
+        <span class="more-meta"> 约 1840 字 </span>
+          <span class="more-meta"> 预计阅读 4 分钟 </span>
 
         
         
 
         
+        
+          <span id="/post/i3-nord-theme/" class="leancloud_visitors" data-flag-title="Polybar Nord主题配置">
+            <span class="post-meta-item-text"> | 阅读 </span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
         
       </div>
     </header>
@@ -265,32 +268,27 @@ if (!doNotTrack) {
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#概况">概况</a></li>
-<li><a href="#modules">Modules</a>
-<ul>
-<li><a href="#alsa">alsa</a></li>
-<li><a href="#backlight">backlight</a></li>
-<li><a href="#date">date</a></li>
-<li><a href="#notify">notify</a></li>
-<li><a href="#network-detail">network-detail</a></li>
-<li><a href="#network-short">network-short</a></li>
-<li><a href="#battery">battery</a></li>
-<li><a href="#keyboard">keyboard</a></li>
-<li><a href="#systray">systray</a></li>
-<li><a href="#mpd">mpd</a></li>
-<li><a href="#i3">i3</a></li>
-<li><a href="#workspace-name">workspace-name</a></li>
-<li><a href="#weather">weather</a></li>
-<li><a href="#info-hackspeed">info-hackspeed</a></li>
-<li><a href="#daily-poem">daily-poem</a></li>
-<li><a href="#temperature">temperature</a></li>
-<li><a href="#memory">memory</a></li>
-<li><a href="#cpu">cpu</a></li>
-<li><a href="#show-desktop">show-desktop</a></li>
-</ul></li>
-<li><a href="#结语">结语</a></li>
-</ul>
+  <ul>
+    <li><a href="#alsa">alsa</a></li>
+    <li><a href="#backlight">backlight</a></li>
+    <li><a href="#date">date</a></li>
+    <li><a href="#notify">notify</a></li>
+    <li><a href="#network-detail">network-detail</a></li>
+    <li><a href="#network-short">network-short</a></li>
+    <li><a href="#battery">battery</a></li>
+    <li><a href="#keyboard">keyboard</a></li>
+    <li><a href="#systray">systray</a></li>
+    <li><a href="#mpd">mpd</a></li>
+    <li><a href="#i3">i3</a></li>
+    <li><a href="#workspace-name">workspace-name</a></li>
+    <li><a href="#weather">weather</a></li>
+    <li><a href="#info-hackspeed">info-hackspeed</a></li>
+    <li><a href="#daily-poem">daily-poem</a></li>
+    <li><a href="#temperature">temperature</a></li>
+    <li><a href="#memory">memory</a></li>
+    <li><a href="#cpu">cpu</a></li>
+    <li><a href="#show-desktop">show-desktop</a></li>
+  </ul>
 </nav>
   </div>
 </div>
@@ -298,13 +296,9 @@ if (!doNotTrack) {
     
     <div class="post-content">
       <p>最近迷上了 <a href="https://www.nordtheme.com/">Nord</a> 配色，把我的终端、vim、以及 i3wm 的配色全部换成了Nord。不过 Polybar 我并没有找到合适的 Nord 配色，所以花了点时间，重新写了一遍配置，使用了 Nord 配色并且基本支持所有的官方 module 和一些社区以及本人写的 module。</p>
-
-<p><img src="https://tupp.xyz/2019/08/05/15650043555d481243502de.png" alt="i3-nord.png" /></p>
-
+<p><img src="https://github.com/Yucklys/polybar-nord-theme/raw/master/polybar-nord.png" alt="polybar-nord.png"></p>
 <h1 id="概况">概况</h1>
-
 <p>支持的 module：</p>
-
 <ol>
 <li><a href="#alsa">alsa</a></li>
 <li><a href="#backlight">backlight</a></li>
@@ -327,31 +321,21 @@ if (!doNotTrack) {
 <li><a href="#cpu">cpu</a></li>
 <li><a href="#show-desktop">show-desktop</a></li>
 </ol>
-
 <p>必需依赖：</p>
-
 <ol>
 <li><a href="https://www.archlinux.org/packages/community/any/ttf-font-awesome/">Font Awesome</a> （必选）</li>
 </ol>
-
 <p>可选依赖：</p>
-
 <ol>
 <li><a href="https://github.com/erikflowers/weather-icons">Weather Icon</a>（weather 组件需要）</li>
 <li>Dunst （notify 组件显示历史通知需要）</li>
 <li>redshift （backlight 开关 redshift 功能）</li>
 </ol>
-
 <p>配置放在了 <a href="https://github.com/Yucklys/polybar-nord-theme">GitHub</a> 上，clone 到自己的 Polybar 配置文件夹下替换即可，建议提前做好备份。`</p>
-
 <p>前排提示，配合<a href="https://github.com/polybar/polybar/wiki">官方wiki</a>食用口味更佳。</p>
-
 <h1 id="modules">Modules</h1>
-
 <h2 id="alsa">alsa</h2>
-
 <p>显示当前音量，根据音量共有三种不同颜色图标。默认声卡选择为<code>default</code>，可以在<code>nord-config</code>里调整声卡选项。</p>
-
 <table>
 <thead>
 <tr>
@@ -359,29 +343,23 @@ if (!doNotTrack) {
 <th>事件</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>鼠标左击</td>
 <td>静音/恢复</td>
 </tr>
-
 <tr>
 <td>滚轮上</td>
 <td>音量 +，每次 +5%</td>
 </tr>
-
 <tr>
 <td>滚轮下</td>
 <td>音量 -，每次 -5%</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="backlight">backlight</h2>
-
 <p>调整屏幕亮度。可选左击开关 redshift，需要提前配置好 redshift 或者修改 scripts/</p>
-
 <table>
 <thead>
 <tr>
@@ -389,24 +367,19 @@ if (!doNotTrack) {
 <th>事件</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>滚轮上</td>
 <td>亮度 +，每次 +5%</td>
 </tr>
-
 <tr>
 <td>滚轮下</td>
 <td>亮度 -，每次 -5%</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="date">date</h2>
-
 <p>显示时间。</p>
-
 <table>
 <thead>
 <tr>
@@ -414,7 +387,6 @@ if (!doNotTrack) {
 <th>事件</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>鼠标左击</td>
@@ -422,11 +394,8 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-
 <h2 id="notify">notify</h2>
-
 <p>通知图标。</p>
-
 <table>
 <thead>
 <tr>
@@ -434,7 +403,6 @@ if (!doNotTrack) {
 <th>事件</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>鼠标左击</td>
@@ -442,43 +410,26 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-
 <h2 id="network-detail">network-detail</h2>
-
 <p>显示上传及下载速度，单位为KB/s，需要在<code>nord-config</code>中<code>interface</code>字段设置自己的 interface。</p>
-
 <h2 id="network-short">network-short</h2>
-
 <p>显示网络连接图标，图标颜色代表网络连接延迟程度，颜色越偏红说明延迟越高。</p>
-
 <h2 id="battery">battery</h2>
-
 <p>显示电池信息，需要在<code>nord-config</code>中设置<code>battery-full-at</code>、<code>battery-bat</code>以及<code>battery-adp</code>字段。</p>
-
 <h2 id="keyboard">keyboard</h2>
-
 <p>显示键盘大写锁定。因为使用的键盘没有 NumLock，所以暂时不支持，如果需要可以自行添加。</p>
-
 <h2 id="systray">systray</h2>
-
 <p>显示系统托盘。我的系统是 Manjaro i3 社区版，i3 版本 4.16.1，polybar 版本 3.4.0，按照如此配置没有产生显示错误。如果遇到问题可以到官方 issue 中查找，有图标问题的人挺多的。</p>
-
 <h2 id="mpd">mpd</h2>
-
 <p>显示 mpd 信息，当 mpd 进程不存在时隐藏。总共有三种显示方式，分别为<strong>播放中</strong>、<strong>暂停</strong>以及<strong>停止</strong>。</p>
-
 <ul>
-<li>播放状态下显示全部内容，包括*暂停*、*上一首*、*歌手 - 歌名*、*下一首*、*停止*、*进度条*、*列表循环*以及*列表随机*。</li>
-<li>暂停状态下显示部分内容，包括*播放*、*上一首*、*歌手 - 歌名*、*下一首*、*停止*。</li>
-<li>停止状态下仅显示*播放*。</li>
+<li>播放状态下显示全部内容，包括<em>暂停</em>、<em>上一首</em>、<em>歌手 - 歌名</em>、<em>下一首</em>、<em>停止</em>、<em>进度条</em>、<em>列表循环</em>以及<em>列表随机</em>。</li>
+<li>暂停状态下显示部分内容，包括<em>播放</em>、<em>上一首</em>、<em>歌手 - 歌名</em>、<em>下一首</em>、<em>停止</em>。</li>
+<li>停止状态下仅显示<em>播放</em>。</li>
 </ul>
-
 <p>需要在<code>nord-config</code>中设置<code>mpd-host</code>及<code>mpd-port</code>。</p>
-
 <h2 id="i3">i3</h2>
-
 <p>显示 i3 workspace 图标，图标可在<code>nord-top</code>中定义。</p>
-
 <table>
 <thead>
 <tr>
@@ -486,41 +437,29 @@ if (!doNotTrack) {
 <th>事件</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>鼠标左击</td>
-<td>i3-msg workspace <index></td>
+<td>i3-msg workspace <!-- raw HTML omitted --></td>
 </tr>
-
 <tr>
 <td>滚轮上</td>
 <td>i3-msg workspace prev</td>
 </tr>
-
 <tr>
 <td>滚轮下</td>
 <td>i3-msg workspace next</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="workspace-name">workspace-name</h2>
-
 <p>显示当前 workspace 名字，在 i3 的配置文件处定义，格式为 <code>index:name</code>，例如<code>1:Home</code>。</p>
-
 <h2 id="weather">weather</h2>
-
 <p>显示 Openweather 天气信息，使用的脚本来自于<a href="https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/openweathermap-fullfeatured">polybar/polybar-scripts/openweather-fullfeatured</a>，需要个人API及城市代码，在脚本中设置，具体情况可查看项目 Readme。</p>
-
 <h2 id="info-hackspeed">info-hackspeed</h2>
-
 <p>显示每分钟输入速度，单位默认为 cpm (char per minute)，可选 wpm (word per minute)，在脚本中设置。来自于<a href="https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/info-hackspeed">polybar/polybar-scripts/info-hackspeed</a>。</p>
-
 <h2 id="daily-poem">daily-poem</h2>
-
 <p>显示今日诗词，使用了 V友@lhx2008 分享的<a href="https://www.jinrishici.com/">今日诗词 API</a>，支持显示诗词推荐、来源以及匹配标签。使用需要获取 token，可到 <a href="https://v2.jinrishici.com/token">https://v2.jinrishici.com/token</a> 获取 token 后替换我在<code>nord-down</code>中的 token。</p>
-
 <table>
 <thead>
 <tr>
@@ -528,46 +467,33 @@ if (!doNotTrack) {
 <th>事件</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>鼠标左击</td>
 <td>显示诗词内容</td>
 </tr>
-
 <tr>
 <td>滚轮上</td>
 <td>显示诗词来源</td>
 </tr>
-
 <tr>
 <td>滚轮下</td>
 <td>显示匹配标签</td>
 </tr>
-
 <tr>
 <td>鼠标右击</td>
 <td>更新诗词</td>
 </tr>
 </tbody>
 </table>
-
 <h2 id="temperature">temperature</h2>
-
 <p>显示温度，可在<code>nord-config</code>中设置<code>thermal-zone</code>，默认为0。当温度低于<code>base-temperature</code>时切换为最低温度显示，当温度高于<code>warn-temperature</code>时切换为警戒温度显示，温度图标颜色会根据温度在<code>base-temperature</code>到<code>warn-temperature</code>之间变化，根据自身情况设置合理的值即可。</p>
-
 <h2 id="memory">memory</h2>
-
 <p>显示内存使用情况，格式为 used/total。</p>
-
 <h2 id="cpu">cpu</h2>
-
 <p>显示 cpu 使用情况。</p>
-
 <h2 id="show-desktop">show-desktop</h2>
-
 <p>显示桌面。默认是切换到<code>25:Desktop</code>，可在<code>nord-down</code>中调整。如果 i3wm 启动了 workspace back_and_forth 的话，两次左击可返回原来桌面。</p>
-
 <table>
 <thead>
 <tr>
@@ -575,7 +501,6 @@ if (!doNotTrack) {
 <th>事件</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>鼠标左击</td>
@@ -583,9 +508,7 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-
 <h1 id="结语">结语</h1>
-
 <p>除了 Polybar，我还写了 rofi，i3 以及 dunst 的配置，有时间再整理整理发出来吧。干这活的确挺繁琐的，Polybar 的配置难度算是比较低的了，官方的 wiki 简单易懂，不需要什么学什么额外的东西。其实还有一些细节处可以调整一下，比如歌手名和歌名的样式分开，不过这需要声明一个环境变量，对于通用的配置来说过于复杂了，所以个人配置我自己再琢磨琢磨，给大家一份开箱即用的配置就可以了。</p>
     </div>
 
@@ -605,6 +528,19 @@ if (!doNotTrack) {
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/fcitx-nord-%E7%9A%AE%E8%82%A4%E5%88%86%E4%BA%AB/">
+            
+            <i class="iconfont">
+              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
+</svg>
+
+            </i>
+            <span class="prev-text nav-default">fcitx Nord 皮肤分享</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         
           <a class="next" href="/post/electron%E4%B8%8Ereact%E7%BB%93%E5%90%88/">
             <span class="next-text nav-default">在 React 中引入 Electron</span>
@@ -641,6 +577,32 @@ if (!doNotTrack) {
   
 
     
+
+  <div id="comments"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+  <script>
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+              $('html, body').animate({scrollTop: $(window.location.hash).offset().top-90}, 700);
+              clearInterval(checkExist);
+            }
+        }, 10);
+    }
+  </script>
+  <script type="text/javascript">
+    new Valine({
+        el: '#comments' ,
+        appId: 'KUblOPKlq50rTW3lTrMNovfT-gzGzoHsz',
+        appKey: 'gi4gkH2uAcjg12ua1Hg5DPAj',
+        notify:  false , 
+        verify:  false , 
+        avatar:'mm', 
+        placeholder: '喵喵喵?',
+        visitor:  false 
+    });
+  </script>
 
         </div>
       </div>
@@ -697,7 +659,7 @@ if (!doNotTrack) {
     &copy;
     
       2018 -
-    2019
+    2020
     <span class="heart">
       
       <i class="iconfont">
@@ -741,7 +703,7 @@ if (!doNotTrack) {
 
 
 
-<script type="text/javascript" src="/js/main.638251f4230630f0335d8c6748e53a96f94b72670920b60c09a56fdc8bece214.js" integrity="sha256-Y4JR9CMGMPAzXYxnSOU6lvlLcmcJILYMCaVv3Ivs4hQ=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/main.dee43230127a73d039a734510fa896c89c3c7ce0cf0be0c7a7433f8fd69b76dc.js" integrity="sha256-3uQyMBJ6c9A5pzRRD6iWyJw8fODPC&#43;DHp0M/j9abdtw=" crossorigin="anonymous"></script>
 
 
 
@@ -753,6 +715,121 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
+
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script type="text/javascript">
+    AV.initialize("KUblOPKlq50rTW3lTrMNovfT-gzGzoHsz", "gi4gkH2uAcjg12ua1Hg5DPAj");
+  </script>
+
+  <script>
+    function showHitCount(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push($(this).attr("id").trim());
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var hits = item.get('hits');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(hits);
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if (countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function (results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("hits");
+            counter.save(null, {
+              success: function (counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('hits'));
+              },
+              error: function (counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+             
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+             
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("hits", 1);
+            newcounter.save(null, {
+              success: function (newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('hits'));
+              },
+              error: function (newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function (error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function () {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        
+        addCount(Counter);
+      } else if ($('.post-link').length > 1) {
+        
+        showHitCount(Counter);
+      }
+    });
+  </script>
 
 
 
