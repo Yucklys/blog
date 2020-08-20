@@ -3,7 +3,6 @@ title = "fcitx Nord 皮肤分享"
 date = 2020-03-20
 draft = false
 categories = ["Linux", "Customization"]
-tags = ["input"]
 toc = true
 comment = true
 +++
